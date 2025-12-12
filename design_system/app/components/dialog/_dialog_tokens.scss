@@ -1,0 +1,42 @@
+:root {
+
+  // Dialog dimensions
+  --dialog--min-width: var(--px-320);
+  --dialog--max-width: var(--px-600);
+  --dialog--min-height: var(--px-200);
+  --dialog--padding: var(--px-24);
+  --dialog--gap: var(--px-16);
+
+  // Dialog container
+  --dialog--bg: var(--color-bg-uno);
+  --dialog--border-radius: var(--radius-m);
+  --dialog--shadow: 0 var(--px-20) var(--px-60) rgba(0, 0, 0, 0.3);
+
+
+  // HEADER
+  --dialog--title-font-size: var(--font-size-xl);
+  --dialog--title-color: var(--color-font-uno);
+
+  // CONTENT - Dialog body content
+  --dialog--content-font-size: var(--font-size-m);
+  --dialog--content-line-height: var(--px-24);
+  --dialog--content-color: var(--color-font-dos);
+
+  // FOOTER - Dialog footer
+  --dialog--footer-gap: var(--px-8);
+
+  // Backdrop (overlay)
+  --dialog--backdrop-bg: rgba(0, 0, 0, 0.5);
+
+
+
+  
+  // CLOSE BUTTON - Close button in header
+  --dialog--close-size: var(--px-32);
+  --dialog--close-icon-size: var(--px-24);
+  --dialog--close-color: var(--color-font-tres);
+  --dialog--close-color-hover: var(--color-font-uno);
+  --dialog--close-bg-hover: var(--color-bg-dos);
+  --dialog--close-border-radius: var(--radius-xs);
+}
+

@@ -1,0 +1,13 @@
+/* Design tokens */
+/* Hierarchical token system: core → semantic → component */
+
+/* Core tokens (primitives) */
+@import 'core/px';
+@import 'core/colors';
+
+/* Semantic tokens (reusable abstractions) */
+@import 'semantic/colors';
+@import 'semantic/fonts';
+@import 'semantic/radius';
+@import 'semantic/outline';
+@import 'semantic/disabled';
