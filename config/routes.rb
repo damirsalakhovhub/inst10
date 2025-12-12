@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   # Root path
   root "home#index"
 
+  # Landing page
+  get "landing", to: "landing#index"
+
   # UI Kit
   scope path: "kit", module: "ui_kit", as: "ui_kit" do
     root "pages#index"
