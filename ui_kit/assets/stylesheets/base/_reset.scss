@@ -1,0 +1,83 @@
+// Base reset and body styles
+// CSS reset for consistent cross-browser rendering
+// Modern practices for 2025: accessibility, performance, cross-browser compatibility
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-m);
+  line-height: var(--px-20);
+  color: var(--color-font-uno);
+  background: var(--color-bg-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
+svg {
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+

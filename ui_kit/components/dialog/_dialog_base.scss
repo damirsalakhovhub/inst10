@@ -1,0 +1,73 @@
+// Dialog component - Base styles
+
+// Native dialog element
+dialog {
+  // Reset default dialog styles
+  padding: 0;
+  border: none;
+  background: transparent;
+  max-width: 30vw;
+  max-height: 90vh;
+  margin: auto;
+
+  // Backdrop (overlay) - native browser support
+  &::backdrop {
+    background: var(--dialog--backdrop-bg);
+    backdrop-filter: blur(2px);
+  }
+
+  // Dialog container
+  .dialog-container {
+    display: flex;
+    flex-direction: column;
+    min-width: var(--dialog--min-width);
+    max-width: var(--dialog--max-width);
+    min-height: var(--dialog--min-height);
+    background: var(--dialog--bg);
+    border-radius: var(--dialog--border-radius);
+    box-shadow: var(--dialog--shadow);
+    overflow: hidden;
+    gap: var(--dialog--gap);  }
+
+  // Header section
+  .dialog-header {
+    position: relative;
+    padding-inline: var(--dialog--padding);
+    padding-top: var(--dialog--padding);
+    // padding-right: calc(var(--dialog--padding) + var(--dialog--close-size) + var(--dialog--gap));
+  }
+
+  // Title
+  .dialog-title {
+    font-size: var(--dialog--title-font-size);
+    color: var(--dialog--title-color);
+  }
+
+  // Close button (absolute positioned in top-right corner)
+  .dialog-close {
+    position: absolute;
+    top: var(--px-6);
+    right: var(--px-6);
+    z-index: 1;
+  }
+
+  // Main content area
+  .dialog-main {
+    flex: 1;
+    padding-inline: var(--dialog--padding);
+    font-size: var(--dialog--content-font-size);
+    line-height: var(--dialog--content-line-height);
+    color: var(--dialog--content-color);
+    overflow-y: auto;
+  }
+
+  // Footer section
+  .dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--dialog--footer-gap);
+    padding-inline: var(--dialog--padding);
+    padding-bottom: var(--dialog--padding);
+  }
+}
+
