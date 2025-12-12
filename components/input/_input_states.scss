@@ -1,0 +1,44 @@
+// Input component - States
+
+.input {
+  // Hover state
+  &:hover:not(:disabled):not(:focus) {
+    border-color: var(--input--border-color-hover);
+  }
+
+  // Focus state - keyboard and mouse
+  &:focus {
+    outline: none;
+    border-color: var(--input--border-color-focus);
+  }
+
+  // Focus visible (keyboard navigation only)
+  &:focus-visible {
+    outline: 2px solid var(--input--border-color-focus);
+    outline-offset: 2px;
+  }
+
+  // Disabled state
+  &:disabled {
+    background-color: var(--input--disabled-bg);
+    border-color: var(--input--disabled-border-color);
+    color: var(--input--disabled-text-color);
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: var(--input--disabled-text-color);
+    }
+  }
+}
+
+// Disabled label style
+.input-wrapper:has(.input:disabled) .input-label {
+  color: var(--input--disabled-text-color);
+  cursor: not-allowed;
+}
+
+// Disabled icon style
+.input-wrapper:has(.input:disabled) .input-icon {
+  color: var(--input--disabled-text-color);
+}
+
