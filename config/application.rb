@@ -45,5 +45,8 @@ module RailsTemplate
 
     # Rack::Attack middleware
     config.middleware.use Rack::Attack
+
+    # Add design system components to autoload paths for ViewComponent
+    config.autoload_paths << Rails.root.join("design_system/app/components")
   end
 end
