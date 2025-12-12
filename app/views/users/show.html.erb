@@ -1,0 +1,20 @@
+<div class="user-profile">
+  <%# Example of fragment caching %>
+  <%# Cache will be automatically invalidated when user is updated %>
+  <% cache @user do %>
+    <h1><%= @user.email %></h1>
+    <p>Role: <%= @user.admin? ? "Administrator" : "User" %></p>
+    <p>Joined: <%= @user.created_at.strftime("%B %d, %Y") %></p>
+
+    <%# Example of ActionText usage %>
+    <%# To use: add `has_rich_text :bio` to User model %>
+    <%# <%= @user.bio if @user.respond_to?(:bio) %>
+  <% end %>
+
+  <div class="actions">
+    <% if policy(@user).update? %>
+      <%= link_to "Edit Profile", edit_user_path(@user) %>
+    <% end %>
+  </div>
+</div>
+

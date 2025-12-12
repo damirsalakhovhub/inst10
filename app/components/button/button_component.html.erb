@@ -1,0 +1,31 @@
+<%#
+  Button Component Template
+  Universal button component with support for text, icons, variants, and sizes.
+  Renders a button element with optional icon (left/right) and text content.
+  See button_component.rb for component logic and button_component.scss for styles.
+%>
+
+<button type="<%= type %>"
+        class="<%= button_classes %>"
+        <%= tag.attributes(html_attributes).html_safe %>>
+
+  <%# Render icon on the left if present and position is left %>
+  <% if has_icon? && icon_position == :left %>
+    <span class="btn-icon btn-icon-left">
+      <%= render_icon %>
+    </span>
+  <% end %>
+  
+  <%# Render text content if available and not icon-only mode %>
+  <% if show_text? %>
+    <span class="btn-text"><%= text %></span>
+  <% end %>
+  
+  <%# Render icon on the right if present and position is right %>
+  <% if has_icon? && icon_position == :right %>
+    <span class="btn-icon btn-icon-right">
+      <%= render_icon %>
+    </span>
+  <% end %>
+
+</button>
