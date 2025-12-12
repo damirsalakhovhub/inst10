@@ -1,0 +1,85 @@
+#!/bin/bash
+
+echo "🔍 Running automated checks before push..."
+echo ""
+
+# Get the branch being pushed
+current_branch=$(git symbolic-ref --short HEAD)
+
+# Run tests
+echo "📝 Running tests..."
+if ! bundle exec rspec --format progress; then
+    echo "❌ Tests failed. Push cancelled."
+    exit 1
+fi
+echo "✅ Tests passed"
+echo ""
+
+# Check if OpenAI API key is configured
+if [ -z "$OPENAI_API_KEY" ]; then
+    echo "⚠️  OPENAI_API_KEY not set. Skipping AI review."
+    echo "   Set OPENAI_API_KEY environment variable to enable AI code review."
+    echo "🚀 Pushing to remote..."
+    exit 0
+fi
+
+# Get diff
+echo "🤖 Getting AI code review..."
+DIFF=$(git diff origin/main...HEAD 2>/dev/null || git diff HEAD~1...HEAD)
+
+if [ -z "$DIFF" ]; then
+    echo "ℹ️  No changes to review"
+    exit 0
+fi
+
+# Get commit messages for context
+COMMITS=$(git log origin/main..HEAD --oneline 2>/dev/null || git log -1 --oneline)
+
+# Call OpenAI API with properly escaped JSON
+PAYLOAD=$(jq -n \
+  --arg commits "$COMMITS" \
+  --arg diff "${DIFF:0:8000}" \
+  '{
+    model: "gpt-4o",
+    max_tokens: 1000,
+    messages: [
+      {
+        role: "system",
+        content: "You are a senior Ruby on Rails architect. Review code changes for: YAGNI, KISS, DRY, SOLID principles, Rails best practices, N+1 queries, fat controllers/models, security issues, performance. Be concise (max 500 chars). Say APPROVED if good, or list concerns."
+      },
+      {
+        role: "user",
+        content: ("Commits:\n" + $commits + "\n\nChanges:\n" + $diff)
+      }
+    ]
+  }')
+
+RESPONSE=$(curl -s https://api.openai.com/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d "$PAYLOAD")
+
+# Extract review from response  
+REVIEW=$(echo "$RESPONSE" | jq -r '.choices[0].message.content // empty')
+
+if [ -z "$REVIEW" ]; then
+    echo "⚠️  AI review failed (API error), but allowing push"
+    echo ""
+    exit 0
+fi
+
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "$REVIEW"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+
+# Check if approved
+if echo "$REVIEW" | grep -qi "APPROVED"; then
+    echo "✅ AI Review: APPROVED"
+else
+    echo "⚠️  AI Review: Has concerns (review above and address if needed)"
+fi
+
+echo "🚀 Pushing to remote..."
+exit 0
+

@@ -1,0 +1,30 @@
+<%#
+  Input Component Template
+  Universal input component with label, optional icon, required indicator, and accessibility support.
+  Renders an input element with label, optional left icon, and required asterisk.
+  See input_component.rb for component logic and input_component.scss for styles.
+%>
+
+<div class="<%= wrapper_classes %>" role="group">
+  <%# Label with required indicator %>
+  <label class="input-label" for="<%= id %>">
+    <span class="input-label-text"><%= label %></span>
+    <% if required? %>
+      <span class="input-label-required" aria-hidden="true">*</span>
+    <% end %>
+  </label>
+  
+  <%# Input container with optional icon %>
+  <div class="input-container">
+    <%# Render icon on the left if present %>
+    <% if has_icon? %>
+      <span class="input-icon" aria-hidden="true">
+        <%= render_icon %>
+      </span>
+    <% end %>
+    
+    <%# Input element %>
+    <%= tag.input(**input_attributes) %>
+  </div>
+</div>
+

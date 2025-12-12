@@ -1,0 +1,80 @@
+// Button component - Sizes
+// Size variants: tiny, small, medium (default), large, xlarge
+
+.btn {
+  
+  // Tiny size
+  &-tiny {
+    font-size: var(--btn-tiny-font-size);
+    line-height: var(--btn-tiny-line-height);
+    padding-inline: var(--btn-tiny-padding-inline);
+    padding-block: var(--btn-tiny-padding-block);
+    gap: var(--btn-tiny-gap);
+
+    &.btn-icon-only {
+      padding-inline: var(--btn-tiny-icon-only-padding-inline);
+    }
+
+    .btn-icon {
+      width: var(--btn-tiny-icon-size);
+      height: var(--btn-tiny-icon-size);
+    }
+  }
+
+  // Small size
+  &-small {
+    padding-inline: var(--btn-small-padding-inline);
+    padding-block: var(--btn-small-padding-block);
+    font-size: var(--btn-small-font-size);
+    line-height: var(--btn-small-line-height);
+    gap: var(--btn-small-gap);
+
+    &.btn-icon-only {
+      padding-inline: var(--btn-small-icon-only-padding-inline);
+    }
+
+    .btn-icon {
+      width: var(--btn-small-icon-size);
+      height: var(--btn-small-icon-size);
+    }
+  }
+
+  // Medium is default - styles are in _button_base.scss
+
+  // Large size
+  &-large {
+    padding-inline: var(--btn-large-padding-inline);
+    padding-block: var(--btn-large-padding-block);
+    font-size: var(--btn-large-font-size);
+    line-height: var(--btn-large-line-height);
+    gap: var(--btn-large-gap);
+
+    &.btn-icon-only {
+      padding-inline: var(--btn-large-icon-only-padding-inline);
+    }
+
+    .btn-icon {
+      width: var(--btn-large-icon-size);
+      height: var(--btn-large-icon-size);
+    }
+  }
+
+  // XLarge size
+  &-xlarge {
+    padding-inline: var(--btn-xlarge-padding-inline);
+    padding-block: var(--btn-xlarge-padding-block);
+    font-size: var(--btn-xlarge-font-size);
+    line-height: var(--btn-xlarge-line-height);
+    gap: var(--btn-xlarge-gap);
+    
+    &.btn-icon-only {
+      padding-inline: var(--btn-xlarge-icon-only-padding-inline);
+    }
+
+    .btn-icon {
+      width: var(--btn-xlarge-icon-size);
+      height: var(--btn-xlarge-icon-size);
+    }
+  }
+}
+

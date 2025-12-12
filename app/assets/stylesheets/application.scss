@@ -1,0 +1,16 @@
+// Main stylesheet
+// Uses SCSS with dartsass-rails for preprocessing
+
+// Import tokens
+@import 'tokens';
+
+// Import base styles
+@import 'base';
+
+// Import page-specific styles
+@import 'ui_kit';
+
+// Import component styles  
+@import 'components/button/button_component';
+@import 'components/input/input_component';
+@import 'components/dialog/dialog_component';
