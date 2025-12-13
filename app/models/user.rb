@@ -7,6 +7,8 @@ class User < ApplicationRecord
   # Track all changes for audit trail
   has_paper_trail
 
+  has_many :projects, dependent: :destroy
+
   # Scopes
   scope :admins, -> { where(admin: true) }
   scope :regular_users, -> { where(admin: false) }

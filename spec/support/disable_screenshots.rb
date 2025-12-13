@@ -3,9 +3,11 @@
 
 RSpec.configure do |config|
   config.before(:suite) do
-    module ActionDispatch::SystemTesting::TestHelpers::ScreenshotHelper
-      def take_failed_screenshot
-        # Disabled - we use rack_test which doesn't support screenshots
+    if defined?(ActionDispatch::SystemTesting::TestHelpers::ScreenshotHelper)
+      module ActionDispatch::SystemTesting::TestHelpers::ScreenshotHelper
+        def take_failed_screenshot
+          # Disabled - we use rack_test which doesn't support screenshots
+        end
       end
     end
   end

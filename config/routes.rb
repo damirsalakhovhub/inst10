@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   # Exclude Devise reserved paths to avoid route conflicts
   resources :users, only: [ :index, :show ], constraints: { id: /[0-9]+/ }
 
+  resources :projects, except: [ :destroy ]
+
   # Avo admin panel (development only)
   authenticate :user, ->(user) { user.admin? } do
     mount Avo::Engine, at: Avo.configuration.root_path
