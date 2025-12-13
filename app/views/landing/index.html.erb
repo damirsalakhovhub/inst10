@@ -50,6 +50,12 @@
           variant: :primary
         ) %>
       <% end %>
+      
+      <% if @devise_mapping&.recoverable? %>
+        <div class="auth-form-forgot">
+          <%= link_to t("landing.sign_in.forgot_password"), new_password_path(@resource_name), class: "auth-link" %>
+        </div>
+      <% end %>
     </div>
 
     <div class="auth-card">

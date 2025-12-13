@@ -19,6 +19,7 @@ en:
       password_label: "Password"
       remember_me: "Remember me"
       submit: "Sign In"
+      forgot_password: "Forgot your password?"
     sign_up:
       title: "Sign Up"
       email_label: "Email"

@@ -56,3 +56,18 @@ main {
   }
 }
 
+.auth-form-forgot {
+  margin-top: var(--px-8);
+  text-align: center;
+}
+
+.auth-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--px-14);
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+

@@ -30,6 +30,11 @@ require "rails_helper"
                   visit root_path
                   expect(page).to have_css("header.layout-header")
                 end
+
+                it "renders forgot password link" do
+                  visit root_path
+                  expect(page).to have_link("Forgot your password?", href: new_user_password_path)
+                end
               end
             end
 
