@@ -21,12 +21,21 @@
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, class: "input" %>
+    <%= render Input::InputComponent.new(
+      label: "Description",
+      name: "project[description]",
+      type: "text",
+      value: project.description,
+      placeholder: "Optional description"
+    ) %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= render Button::ButtonComponent.new(
+      text: project.persisted? ? "Update Project" : "Create Project",
+      type: "submit",
+      variant: :primary
+    ) %>
   </div>
 <% end %>
 
