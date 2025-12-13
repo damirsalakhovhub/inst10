@@ -1,0 +1,16 @@
+ru:
+  landing:
+    title: "Надежное Управление Продуктом"
+    signed_in_as: "Вы вошли как %{email}"
+    sign_in:
+      title: "Вход"
+      email_label: "Email"
+      password_label: "Пароль"
+      submit: "Войти"
+    sign_up:
+      title: "Регистрация"
+      email_label: "Email"
+      password_label: "Пароль"
+      password_confirmation_label: "Подтверждение пароля"
+      submit: "Зарегистрироваться"
+

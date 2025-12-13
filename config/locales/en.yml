@@ -29,3 +29,18 @@
 
 en:
   hello: "Hello world"
+  
+  landing:
+    title: "Bulletproof Product Management"
+    signed_in_as: "You are signed in as %{email}"
+    sign_in:
+      title: "Sign In"
+      email_label: "Email"
+      password_label: "Password"
+      submit: "Sign In"
+    sign_up:
+      title: "Sign Up"
+      email_label: "Email"
+      password_label: "Password"
+      password_confirmation_label: "Password Confirmation"
+      submit: "Sign Up"

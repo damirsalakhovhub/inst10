@@ -11,20 +11,20 @@
   </header>
 
   <section>
-    <h1 class="text-display">Bulletproof Product Management</h1>
+    <h1 class="text-display"><%= t("landing.title") %></h1>
     <%# <p>Hero description text</p> %>
     <%# <a href="#cta">Call to action</a> %>
   </section>
 
   <section class="auth-section">
     <% if user_signed_in? %>
-      <p>You are signed in as <%= current_user.email %></p>
+      <p><%= t("landing.signed_in_as", email: current_user.email) %></p>
     
     <% else %>
 
     <div class="auth-card">
     
-      <h3>Sign In</h3>
+      <h3><%= t("landing.sign_in.title") %></h3>
     
       <%= form_for(
         @resource,
@@ -34,24 +34,22 @@
       ) do |f| %>
         
         <%= render Input::InputComponent.new(
-          label: "Email",
+          label: t("landing.sign_in.email_label"),
           name: "user[email]",
           type: "email",
-          
           required: true,
           value: f.object.email
         ) %>
         
         <%= render Input::InputComponent.new(
-          label: "Password",
+          label: t("landing.sign_in.password_label"),
           name: "user[password]",
           type: "password",
-          
           required: true
         ) %>
         
         <%= render Button::ButtonComponent.new(
-          text: "Sign In",
+          text: t("landing.sign_in.submit"),
           type: "submit",
           variant: :primary
         ) %>
@@ -59,7 +57,7 @@
     </div>
 
     <div class="auth-card">
-        <h3>Sign Up</h3>
+        <h3><%= t("landing.sign_up.title") %></h3>
         <%= form_for(
           @resource,
           as: @resource_name,
@@ -68,29 +66,26 @@
         ) do |f| %>
           <%= render "devise/shared/error_messages", resource: @resource %>
           <%= render Input::InputComponent.new(
-            label: "Email",
+            label: t("landing.sign_up.email_label"),
             name: "user[email]",
             type: "email",
-            
             required: true,
             value: f.object.email
           ) %>
           <%= render Input::InputComponent.new(
-            label: "Password",
+            label: t("landing.sign_up.password_label"),
             name: "user[password]",
             type: "password",
-            
             required: true
           ) %>
           <%= render Input::InputComponent.new(
-            label: "Password Confirmation",
+            label: t("landing.sign_up.password_confirmation_label"),
             name: "user[password_confirmation]",
             type: "password",
-            
             required: true
           ) %>
           <%= render Button::ButtonComponent.new(
-            text: "Sign Up",
+            text: t("landing.sign_up.submit"),
             type: "submit",
             variant: :primary
           ) %>
