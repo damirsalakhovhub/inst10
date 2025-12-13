@@ -30,13 +30,6 @@
   <body>
     <%= render LayoutHeader::LayoutHeader.new(user: current_user) %>
 
-    <% if notice.present? %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert.present? %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-
     <%= yield %>
   </body>
 </html>

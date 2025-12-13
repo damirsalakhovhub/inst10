@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   end
 
   # User management (example of Pagy, authorization, caching)
-  resources :users, only: [ :index, :show ]
+  # Exclude Devise reserved paths to avoid route conflicts
+  resources :users, only: [ :index, :show ], constraints: { id: /[0-9]+/ }
 
   # Avo admin panel (development only)
   authenticate :user, ->(user) { user.admin? } do

@@ -23,6 +23,8 @@ class UsersController < ApplicationController
   private
 
   def set_user
+    # Prevent conflicts with Devise routes (sign_out, sign_in, etc.)
+    raise ActiveRecord::RecordNotFound if params[:id].match?(/\A(sign_out|sign_in|sign_up|password|cancel|edit)\z/)
     @user = User.find(params[:id])
   end
 end
