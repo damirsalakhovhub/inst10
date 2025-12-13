@@ -57,7 +57,12 @@
 
       <div>
         <h3>Sign Up</h3>
-        <%= form_for(@resource, as: @resource_name, url: registration_path(@resource_name), html: { class: "form-auth" }) do |f| %>
+        <%= form_for(
+          @resource,
+          as: @resource_name,
+          url: registration_path(@resource_name),
+          html: { class: "form-auth" }
+        ) do |f| %>
           <%= render "devise/shared/error_messages", resource: @resource %>
           <%= render Input::InputComponent.new(
             label: "Email",
