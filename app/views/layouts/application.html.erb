@@ -28,6 +28,12 @@
   </head>
 
   <body>
+    <header style="padding: 1rem; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: flex-end;">
+      <% if user_signed_in? %>
+        <span><%= current_user.email %></span>
+      <% end %>
+    </header>
+
     <% if notice.present? %>
       <p class="notice"><%= notice %></p>
     <% end %>
