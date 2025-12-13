@@ -17,6 +17,7 @@ en:
       title: "Sign In"
       email_label: "Email"
       password_label: "Password"
+      remember_me: "Remember me"
       submit: "Sign In"
     sign_up:
       title: "Sign Up"
