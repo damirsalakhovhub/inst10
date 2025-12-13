@@ -17,6 +17,13 @@ main {
   font-weight: 900;
 }
 
+.auth-section {
+  display: flex;
+  flex-direction: row;
+  gap: var(--px-16);
+  flex-wrap: wrap;
+}
+
 .auth-card {
   display: flex;
   flex-direction: column;
