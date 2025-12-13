@@ -1,0 +1,13 @@
+---
+alwaysApply: true
+---
+description: Testing + Git rules: run relevant tests, report status, never commit/deploy unless asked.
+
+Testing
+- After code changes, run relevant tests (fastest meaningful subset).
+- Only claim completion after tests pass.
+- If tests fail: attempt one fix iteration; if still failing or unclear, stop and report findings + next steps.
+
+Git / deploy
+- Do not commit unless explicitly asked.
+- Do not deploy unless explicitly asked.

@@ -1,0 +1,33 @@
+---
+alwaysApply: true
+---
+
+description: Using basecamp/fizzy as a reference project (learning only, no copying).
+
+Reference project
+- basecamp/fizzy (https://github.com/basecamp/fizzy)
+
+Purpose
+- Learn patterns and engineering decisions (architecture, Rails conventions, UI flows).
+- Do NOT copy code verbatim or port features 1:1. Implement independently.
+
+License / compliance
+- Treat Fizzy as “source-available with restrictions”, not a drop-in template.
+- Never paste Fizzy code into this repo.
+- If reuse is ever considered, stop and check license compatibility first.
+
+How to use Fizzy (workflow)
+- Default: follow this repo’s conventions first.
+- Use Fizzy only when implementing a NEW subsystem or a design choice is unclear.
+  Examples: kanban board behavior, card lifecycle, attachments/viewers, background jobs, routing conventions.
+
+When referencing
+- Provide a short “pattern summary” in plain English.
+- Link to the exact Fizzy file(s) and commit/tag being referenced.
+- Extract principles, not code.
+
+Architecture guidance (example)
+- Prefer RESTful CRUD resources; if an action does not map cleanly, model it as a new resource. (This matches Fizzy’s own style guidance.) 
+
+Output expectations
+- After referencing: list what you adopted (principle), what you rejected, and why.

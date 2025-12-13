@@ -1,0 +1,28 @@
+---
+alwaysApply: true
+---
+description: Rails backend rules: small diffs, safe migrations, predictable APIs, performance awareness.
+globs:
+  - "app/models/**/*"
+  - "app/controllers/**/*"
+  - "app/services/**/*"
+  - "app/jobs/**/*"
+  - "app/serializers/**/*"
+  - "db/migrate/**/*"
+  - "config/**/*"
+---
+
+Backend (Rails)
+- Smallest diff; no architectural rewrites unless requested.
+- Prefer existing patterns in the repo (service objects, concerns, etc.).
+
+Data & migrations
+- Migrations must be safe and reversible when possible.
+- Avoid long locks / unsafe column changes; use additive changes first.
+
+Performance
+- Watch for N+1 queries and expensive loops.
+- Avoid loading large datasets into memory when not needed.
+
+API discipline
+- Do not invent endpoints/fields; follow existing controllers/serializers/contracts.

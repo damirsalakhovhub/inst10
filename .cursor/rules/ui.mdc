@@ -1,0 +1,29 @@
+---
+alwaysApply: true
+---
+description: UI rules: no invented layout/content, stable selectors, no inline styles, English copy.
+globs:
+  - "**/*.js"
+  - "**/*.jsx"
+  - "**/*.ts"
+  - "**/*.tsx"
+  - "**/*.vue"
+  - "**/*.css"
+  - "**/*.scss"
+  - "app/views/**/*"
+  - "app/assets/**/*"
+  - "frontend/**/*"
+---
+
+UI & styling
+- Do not invent layout or UX flows that were not requested.
+- Do not invent content or hardcode fake data.
+- UI text/copy must be in English.
+
+CSS rules
+- No inline styles unless explicitly requested.
+- Prefer existing design system / utility classes / shared styles used in the repo.
+
+UI robustness
+- Avoid fragile selectors; prefer stable data attributes (e.g., data-testid).
+- Keep UI changes minimal and consistent with existing patterns.

@@ -1,0 +1,54 @@
+---
+alwaysApply: true
+---
+
+description: 37signals-inspired web development rules (Rails + HTML-over-the-wire + strong defaults).
+globs:
+  - "app/**/*"
+  - "db/**/*"
+  - "config/**/*"
+  - "frontend/**/*"
+  - "app/views/**/*"
+---
+
+Guiding philosophy
+- Prefer simpler architectures that a small team can carry.
+- Optimize for readability and long-term maintenance over “framework cleverness”.
+- Design the Golden Path (great defaults) before adding configuration knobs.
+
+Rails structure (vanilla Rails)
+- Default to “vanilla Rails”: controllers and jobs talk to domain models directly.
+- Do NOT introduce service/action/interactor layers by default. Add a new layer only when the code proves it needs it (and explain why).
+- Encapsulate business logic behind explicit, well-named model methods (ActiveRecord or POROs).
+
+Routes & HTTP endpoints (resource-first)
+- Model endpoints as CRUD operations on resources (REST).
+- If an action does not map cleanly to CRUD, introduce a new resource rather than a one-off verb endpoint.
+- Keep controllers thin: load input, call model API, render/redirect/stream.
+
+HTML over the wire / progressive enhancement
+- Default to server-rendered HTML.
+- Use small, targeted JavaScript for behavior, not for building the whole UI.
+- Prefer progressive enhancement: baseline semantic HTML works, JS improves UX.
+
+Concerns (use with discipline)
+- Use concerns to organize cohesive traits, not as a dumping ground.
+- Keep each concern as a single “has trait / acts as” unit.
+- Placement convention:
+  - Shared model concerns: app/models/concerns
+  - Model-specific concerns: app/models/<model_name>/*
+
+Code review mindset (quality matters)
+- Names matter: prefer precise, consistent naming.
+- Prefer small, idiomatic improvements that reduce cognitive load.
+- Avoid cleverness. Prefer obvious code.
+
+Defaults & UX
+- Prefer “works out of the box” defaults.
+- Add configuration only after a real, repeating need is observed.
+- When adding options, keep the default path excellent.
+
+When referencing 37signals/Fizzy materials
+- Use them for principles and patterns only.
+- Do not copy-paste code verbatim from external repos.
+- If you cite a pattern, include a short note: what principle you adopted and what you intentionally did NOT adopt.
