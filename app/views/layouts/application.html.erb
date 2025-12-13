@@ -28,12 +28,7 @@
   </head>
 
   <body>
-    <header class="header">
-      <% if user_signed_in? %>
-        <span><%= current_user.email %></span>
-        <%= link_to t("common.sign_out"), destroy_user_session_path, method: :delete, class: "header-link" %>
-      <% end %>
-    </header>
+    <%= render LayoutHeader::LayoutHeader.new(user: current_user) %>
 
     <% if notice.present? %>
       <p class="notice"><%= notice %></p>
