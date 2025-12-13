@@ -4,3 +4,15 @@ main {
   padding: 0 var(--px-16);
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--px-80);
+}
+
+.text-display {
+  font-size: var(--px-64);
+  line-height: 1.1;
+  font-weight: 900;
+}

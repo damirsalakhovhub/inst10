@@ -1,17 +1,17 @@
 // Main stylesheet
 // Uses SCSS with dartsass-rails for preprocessing
 
-// Import design system tokens (load-path includes design_system/app)
+// Import UI kit tokens (load-path includes ui_kit)
 @import 'assets/stylesheets/tokens';
 
-// Import design system base styles
+// Import UI kit base styles
 @import 'assets/stylesheets/base';
 
 // Import page-specific styles
-@import 'ui_kit';
-@import '../views/landing/index';
+@import 'assets/stylesheets/ui_kit';
+@import 'landing/index';
 
-// Import design system component styles  
+// Import UI kit component styles  
 @import 'components/button/button_component';
 @import 'components/input/input_component';
 @import 'components/dialog/dialog_component';

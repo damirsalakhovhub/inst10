@@ -1,2 +1,2 @@
 web: bin/rails server -p 3000
-css: bundle exec sass --watch --poll --load-path=app --load-path=design_system/app --no-source-map app/assets/stylesheets/application.scss:app/assets/builds/application.css
+css: bundle exec sass --watch --poll --load-path=app --load-path=ui_kit --load-path=app/views --no-source-map app/assets/stylesheets/application.scss:app/assets/builds/application.css

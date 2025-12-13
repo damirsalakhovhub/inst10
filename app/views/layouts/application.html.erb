@@ -23,12 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <%# Includes compiled CSS from dartsass %>
-    <%# In development, add timestamp to bust browser cache for immediate CSS updates %>
-    <% if Rails.env.development? %>
-      <%= stylesheet_link_tag "application?v=#{File.mtime(Rails.root.join('app/assets/builds/application.css')).to_i}", "data-turbo-track": "reload" %>
-    <% else %>
-      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <% end %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
