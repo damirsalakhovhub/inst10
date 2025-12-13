@@ -15,3 +15,17 @@
 @import 'components/button/button_component';
 @import 'components/input/input_component';
 @import 'components/dialog/dialog_component';
+
+// Layout styles
+.header {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-link {
+  text-decoration: none;
+}

@@ -1,4 +1,7 @@
 ru:
+  common:
+    sign_out: "Выйти"
+  
   landing:
     title: "Надежное Управление Продуктом"
     signed_in_as: "Вы вошли как %{email}"

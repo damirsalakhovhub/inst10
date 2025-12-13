@@ -8,10 +8,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Root path
-  root "home#index"
-
-  # Landing page
-  get "landing", to: "landing#index"
+  root "landing#index"
 
   # UI Kit
   scope path: "kit", module: "ui_kit", as: "ui_kit" do

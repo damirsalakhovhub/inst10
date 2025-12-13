@@ -28,9 +28,10 @@
   </head>
 
   <body>
-    <header style="padding: 1rem; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: flex-end;">
+    <header class="header">
       <% if user_signed_in? %>
         <span><%= current_user.email %></span>
+        <%= link_to t("common.sign_out"), destroy_user_session_path, method: :delete, class: "header-link" %>
       <% end %>
     </header>
 

@@ -1,3 +1,35 @@
+en:
+  hello: "Hello world"
+  
+  common:
+    sign_out: "Sign Out"
+  
+  landing:
+    title: "Bulletproof Product Management"
+    signed_in_as: "You are signed in as %{email}"
+    sign_in:
+      title: "Sign In"
+      email_label: "Email"
+      password_label: "Password"
+      submit: "Sign In"
+    sign_up:
+      title: "Sign Up"
+      email_label: "Email"
+      password_label: "Password"
+      password_confirmation_label: "Password Confirmation"
+      submit: "Sign Up"
+
+
+
+
+
+
+
+
+
+
+
+
 # Files in the config/locales directory are used for internationalization and
 # are automatically loaded by Rails. If you want to use locales other than
 # English, add the necessary files in this directory.
@@ -26,21 +58,3 @@
 #     en:
 #       "yes": yup
 #       enabled: "ON"
-
-en:
-  hello: "Hello world"
-  
-  landing:
-    title: "Bulletproof Product Management"
-    signed_in_as: "You are signed in as %{email}"
-    sign_in:
-      title: "Sign In"
-      email_label: "Email"
-      password_label: "Password"
-      submit: "Sign In"
-    sign_up:
-      title: "Sign Up"
-      email_label: "Email"
-      password_label: "Password"
-      password_confirmation_label: "Password Confirmation"
-      submit: "Sign Up"
