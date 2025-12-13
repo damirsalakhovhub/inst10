@@ -27,6 +27,11 @@ en:
       password_confirmation_label: "Password Confirmation"
       submit: "Sign Up"
 
+  projects:
+    nav:
+      index: "Projects"
+      new: "New Project"
+
 
 
 

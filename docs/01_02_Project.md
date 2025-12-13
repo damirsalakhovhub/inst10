@@ -34,8 +34,8 @@ Jobs to be done
    ⏸️ DELETE /projects/:id - удаление
 
 5. UI
-   ◽️ Список проектов с кнопкой "Create Project"
-   ◽️ Форма создания/редактирования проекта
+   ✅ Список проектов с кнопкой "Create Project" (Projects#index, New Project link)
+   ✅ Форма создания/редактирования проекта (new/edit + form partial)
    ◽️ Карточка проекта со списком задач внутри
    ⏸️ Кнопки Edit/Delete на карточке проекта
 
