@@ -37,7 +37,7 @@
           required: true
         ) %>
         
-        <% if devise_mapping.rememberable? %>
+        <% if @devise_mapping&.rememberable? %>
           <div class="auth-form-remember">
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me, t("landing.sign_in.remember_me") %>
