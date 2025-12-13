@@ -16,12 +16,21 @@
     <%# <a href="#cta">Call to action</a> %>
   </section>
 
-  <section style="max-width: 400px; margin: 2rem auto; padding: 2rem;">
+  <section class="form-container">
     <% if user_signed_in? %>
       <p>You are signed in as <%= current_user.email %></p>
+    
     <% else %>
+    
       <h3>Sign In</h3>
-      <%= form_for(@resource, as: @resource_name, url: session_path(@resource_name), html: { class: "form" }) do |f| %>
+    
+      <%= form_for(
+        @resource,
+        as: @resource_name,
+        url: session_path(@resource_name),
+        html: { class: "form-auth" }
+      ) do |f| %>
+        
         <%= render Input::InputComponent.new(
           label: "Email",
           name: "user[email]",
@@ -30,6 +39,7 @@
           required: true,
           value: f.object.email
         ) %>
+        
         <%= render Input::InputComponent.new(
           label: "Password",
           name: "user[password]",
@@ -37,6 +47,7 @@
           placeholder: "Password",
           required: true
         ) %>
+        
         <%= render Button::ButtonComponent.new(
           text: "Sign In",
           type: "submit",
@@ -44,9 +55,9 @@
         ) %>
       <% end %>
 
-      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e0e0e0;">
+      <div>
         <h3>Sign Up</h3>
-        <%= form_for(@resource, as: @resource_name, url: registration_path(@resource_name), html: { class: "form" }) do |f| %>
+        <%= form_for(@resource, as: @resource_name, url: registration_path(@resource_name), html: { class: "form-auth" }) do |f| %>
           <%= render "devise/shared/error_messages", resource: @resource %>
           <%= render Input::InputComponent.new(
             label: "Email",
