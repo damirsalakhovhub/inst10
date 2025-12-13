@@ -11,13 +11,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, required: true %>
+    <%= render Input::InputComponent.new(
+      label: "Name",
+      name: "project[name]",
+      type: "text",
+      required: true,
+      value: project.name
+    ) %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description, rows: 4 %>
+    <%= form.text_area :description, rows: 4, class: "input" %>
   </div>
 
   <div class="actions">

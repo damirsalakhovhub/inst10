@@ -19,6 +19,7 @@ UI & styling
 - Do not invent layout or UX flows that were not requested.
 - Do not invent content or hardcode fake data.
 - UI text/copy must be in English.
+- If the design system already has a component (e.g., button, input, link), reuse it. Do not create new ad-hoc elements instead of existing UI kit components.
 
 CSS rules
 - No inline styles unless explicitly requested.
