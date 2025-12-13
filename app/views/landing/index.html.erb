@@ -27,14 +27,16 @@
           name: "user[email]",
           type: "email",
           required: true,
-          value: f.object.email
+          value: f.object.email,
+          autocomplete: "email"
         ) %>
         
         <%= render Input::InputComponent.new(
           label: t("landing.sign_in.password_label"),
           name: "user[password]",
           type: "password",
-          required: true
+          required: true,
+          autocomplete: "current-password"
         ) %>
         
         <% if @devise_mapping&.rememberable? %>

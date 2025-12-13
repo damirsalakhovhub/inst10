@@ -7,10 +7,11 @@ RSpec.describe "Home", type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    it "displays app name and tagline" do
+    it "displays landing page content" do
       get root_path
-      expect(response.body).to include(Rails.application.config.app_name)
-      expect(response.body).to include("Start building features, not infrastructure")
+      expect(response.body).to include("Bulletproof Product Management")
+      expect(response.body).to include("Sign In")
+      expect(response.body).to include("Sign Up")
     end
   end
 end

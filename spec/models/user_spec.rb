@@ -22,6 +22,17 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
     end
 
+    it 'is not valid with password shorter than 8 characters' do
+      user = build(:user, password: 'short', password_confirmation: 'short')
+      expect(user).not_to be_valid
+      expect(user.errors[:password]).to be_present
+    end
+
+    it 'is valid with password 8 characters or longer' do
+      user = build(:user, password: 'password123', password_confirmation: 'password123')
+      expect(user).to be_valid
+    end
+
     it 'is not valid with duplicate email' do
       create(:user, email: 'test@example.com')
       user = build(:user, email: 'test@example.com')
