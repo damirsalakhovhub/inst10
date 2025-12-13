@@ -17,8 +17,20 @@ main {
   font-weight: 900;
 }
 
-.form {
+.auth-card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--px-16);
+  background-color: var(--color-bg-dos);
+  padding: var(--px-32);
+  border-radius: var(--radius-m);
 }
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--px-24);
+  min-width: 300px;
+  max-width: 30%;
+}
+

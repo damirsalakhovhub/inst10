@@ -21,6 +21,8 @@
       <p>You are signed in as <%= current_user.email %></p>
     
     <% else %>
+
+    <div class="auth-card">
     
       <h3>Sign In</h3>
     
@@ -28,14 +30,14 @@
         @resource,
         as: @resource_name,
         url: session_path(@resource_name),
-        html: { class: "form-auth" }
+        html: { class: "auth-form" }
       ) do |f| %>
         
         <%= render Input::InputComponent.new(
           label: "Email",
           name: "user[email]",
           type: "email",
-          placeholder: "Email",
+          
           required: true,
           value: f.object.email
         ) %>
@@ -44,7 +46,7 @@
           label: "Password",
           name: "user[password]",
           type: "password",
-          placeholder: "Password",
+          
           required: true
         ) %>
         
@@ -54,21 +56,22 @@
           variant: :primary
         ) %>
       <% end %>
+    </div>
 
-      <div>
+    <div class="auth-card">
         <h3>Sign Up</h3>
         <%= form_for(
           @resource,
           as: @resource_name,
           url: registration_path(@resource_name),
-          html: { class: "form-auth" }
+          html: { class: "auth-form" }
         ) do |f| %>
           <%= render "devise/shared/error_messages", resource: @resource %>
           <%= render Input::InputComponent.new(
             label: "Email",
             name: "user[email]",
             type: "email",
-            placeholder: "Email",
+            
             required: true,
             value: f.object.email
           ) %>
@@ -76,14 +79,14 @@
             label: "Password",
             name: "user[password]",
             type: "password",
-            placeholder: "Password (minimum 8 characters)",
+            
             required: true
           ) %>
           <%= render Input::InputComponent.new(
             label: "Password Confirmation",
             name: "user[password_confirmation]",
             type: "password",
-            placeholder: "Password confirmation",
+            
             required: true
           ) %>
           <%= render Button::ButtonComponent.new(
@@ -92,7 +95,6 @@
             variant: :primary
           ) %>
         <% end %>
-      </div>
     <% end %>
   </section>
 
