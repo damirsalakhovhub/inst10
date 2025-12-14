@@ -3,7 +3,7 @@ class Users::SessionsController < Devise::SessionsController
     super do |resource|
       # If sign in failed, redirect to landing page with error message
       unless resource.persisted?
-        set_flash_message!(:alert, :invalid)
+        flash[:alert] = I18n.t("devise.failure.invalid", authentication_keys: "Email")
         redirect_to root_path and return
       end
     end
@@ -21,7 +21,7 @@ class Users::SessionsController < Devise::SessionsController
     if resource.persisted?
       super
     else
-      set_flash_message!(:alert, :invalid)
+      flash[:alert] = I18n.t("devise.failure.invalid", authentication_keys: "Email")
       redirect_to root_path
     end
   end
