@@ -1,0 +1,18 @@
+---
+alwaysApply: true
+---
+
+# Port Configuration Rules
+
+## Default Ports by Framework
+
+- **Ruby on Rails projects**: Always use port **5000** (not 3000)
+  - Example: `PORT=5000 bin/rails server`
+  - When using foreman/Procfile.dev, ensure web process uses PORT=5000
+
+- **React projects**: Use port **3000** (default)
+  - Example: `npm start` or `yarn start` (defaults to 3000)
+
+## Rationale
+
+Port 5000 for Rails avoids conflicts with React development servers which commonly use 3000.
