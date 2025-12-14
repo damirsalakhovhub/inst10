@@ -59,3 +59,37 @@ bin/rails assets:clobber
 1. Run `bin/dev`
 2. Change SCSS/Ruby code → auto-recompile → browser auto-refreshes (Hotwire LiveReload)
 3. No manual rebuild needed
+
+---
+
+# Troubleshooting
+
+## After bundle install
+
+Always run `rbenv rehash` to update shims for new executables:
+```bash
+bundle install
+rbenv rehash
+```
+
+## Server not responding or 403/500 errors
+
+1. Check if server is actually running:
+   ```bash
+   curl -I http://localhost:5000/
+   ```
+   - Expected: `HTTP/1.1 200 OK` or redirect to login
+   - If `403` from AirTunes or other service: port conflict, kill and restart
+   - If connection refused: server not started
+
+2. Check logs in terminal where `bin/dev` is running
+3. Common fixes:
+   - `bundle install && rbenv rehash`
+   - `bin/rails tmp:cache:clear`
+   - Kill all processes and restart: `pkill -f "foreman|rails server|sass"; bin/dev`
+
+## Expected behavior
+
+- Landing page (`/`) should return **200 OK** for unauthenticated users (shows login/signup forms)
+- If you get a working HTML page (even with auth redirect), server is OK
+- Never claim "403 is normal" or "server works but page doesn't load" — always verify server returns proper response
