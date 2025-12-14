@@ -21,9 +21,14 @@ UI & styling
 - UI text/copy must be in English.
 - If the design system already has a component (e.g., button, input, link), reuse it. Do not create new ad-hoc elements instead of existing UI kit components.
 
-CSS rules
+CSS/SCSS rules
 - No inline styles unless explicitly requested.
 - Prefer existing design system / utility classes / shared styles used in the repo.
+- **Use SCSS nesting features:**
+  - Use `&` parent selector for BEM-like class names (e.g., `.component { &-child { } }` → `.component-child`)
+  - Nest related selectors within parent blocks for better organization
+  - Keep nesting depth reasonable (max 3-4 levels)
+  - Use nesting for pseudo-classes (`&:hover`, `&:focus`) and modifiers
 
 UI robustness
 - Avoid fragile selectors; prefer stable data attributes (e.g., data-testid).
