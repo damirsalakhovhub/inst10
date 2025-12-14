@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   # Hotwire LiveReload (development only)
   mount Hotwire::Livereload::Engine, at: "/hotwire-livereload" if Rails.env.development?
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
   # Health check endpoint
   get "up" => "rails/health#show", as: :rails_health_check
