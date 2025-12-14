@@ -65,7 +65,7 @@ RSpec.describe "User Authentication", type: :request do
     end
 
     context 'with invalid params' do
-      it 'does not create a user' do
+      it 'does not create a user and redirects to landing page' do
         expect {
           post user_registration_path, params: {
             user: {
@@ -76,7 +76,8 @@ RSpec.describe "User Authentication", type: :request do
           }
         }.not_to change(User, :count)
 
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:found)
+        expect(response).to redirect_to(root_path)
       end
     end
   end
