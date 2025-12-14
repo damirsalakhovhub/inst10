@@ -6,30 +6,30 @@
   gap: 1rem;
   height: var(--px-80);
   background-color: var(--color-bg-uno);
-}
 
-.layout-header-nav {
-  display: flex;
-  gap: var(--px-16);
-}
-
-.layout-header-link {
-  color: var(--color-text-primary);
-  text-decoration: none;
-  font-weight: 600;
-
-  &:hover {
-    text-decoration: underline;
+  &-nav {
+    display: flex;
+    gap: var(--px-16);
   }
-}
 
-.layout-header-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--px-12);
-}
+  &-link {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-weight: 600;
 
-.layout-header-email {
-  font-size: var(--px-14);
-  color: var(--color-text-secondary);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--px-12);
+  }
+
+  &-email {
+    font-size: var(--px-14);
+    color: var(--color-text-secondary);
+  }
 }
