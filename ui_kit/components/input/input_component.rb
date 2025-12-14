@@ -16,6 +16,7 @@ class Input::InputComponent < ViewComponent::Base
     type: "text",
     value: nil,
     disabled: false,
+    error: nil,
     **options
   )
     @label = label
@@ -28,12 +29,13 @@ class Input::InputComponent < ViewComponent::Base
     @type = type
     @value = value
     @disabled = disabled
+    @error = error
     @options = options
   end
 
   private
 
-  attr_reader :label, :name, :id, :placeholder, :required, :icon, :size, :type, :value, :disabled, :options
+  attr_reader :label, :name, :id, :placeholder, :required, :icon, :size, :type, :value, :disabled, :error, :options
 
   # Check if input has an icon
   def has_icon?
@@ -45,10 +47,16 @@ class Input::InputComponent < ViewComponent::Base
     required
   end
 
+  # Check if input has an error
+  def has_error?
+    error.present?
+  end
+
   # Generate CSS classes for wrapper
   def wrapper_classes
     classes = ["input-wrapper"]
     classes << "input-wrapper-#{size}" unless size == :medium
+    classes << "input-wrapper-error" if has_error?
     classes << options[:wrapper_class] if options[:wrapper_class]
     classes.compact.join(" ")
   end

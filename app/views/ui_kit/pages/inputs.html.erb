@@ -39,6 +39,16 @@
             disabled: true
           ) %>
         </div>
+
+        <div style="max-width: 400px;">
+          <%= render Input::InputComponent.new(
+            label: "Input with Error",
+            name: "input_error",
+            placeholder: "Enter email",
+            type: "email",
+            error: "Please include an '@' in the email address"
+          ) %>
+        </div>
       </div>
     </section>
   </main>

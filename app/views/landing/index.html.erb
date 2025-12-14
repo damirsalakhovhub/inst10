@@ -15,12 +15,6 @@
     
       <h3><%= t("landing.sign_in.title") %></h3>
     
-      <% if flash[:alert] %>
-        <div class="auth-form-errors">
-          <p><%= flash[:alert] %></p>
-        </div>
-      <% end %>
-    
       <%= form_for(
         @resource,
         as: @resource_name,
@@ -34,7 +28,8 @@
           type: "email",
           required: true,
           value: f.object.email,
-          autocomplete: "email"
+          autocomplete: "email",
+          error: flash[:alert]
         ) %>
         
         <%= render Input::InputComponent.new(

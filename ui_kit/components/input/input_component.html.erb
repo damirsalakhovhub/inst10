@@ -26,5 +26,12 @@
     <%# Input element %>
     <%= tag.input(**input_attributes) %>
   </div>
+  
+  <%# Error message %>
+  <% if has_error? %>
+    <div class="input-error" role="alert">
+      <%= error %>
+    </div>
+  <% end %>
 </div>
 
