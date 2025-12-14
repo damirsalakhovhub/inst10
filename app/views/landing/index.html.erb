@@ -19,7 +19,7 @@
         @resource,
         as: @resource_name,
         url: session_path(@resource_name),
-        html: { class: "auth-form" }
+        html: { class: "auth-form", novalidate: true }
       ) do |f| %>
         
         <%= render Input::InputComponent.new(
