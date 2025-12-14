@@ -37,8 +37,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--px-24);
-  min-width: 300px;
-  max-width: 30%;
+  width: 360px;
 }
 
 .auth-form-remember {
