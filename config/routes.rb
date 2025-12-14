@@ -7,11 +7,14 @@ Rails.application.routes.draw do
   # Health check endpoint
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Root path
+  # Root path - landing for unauthenticated, home for authenticated
   root "landing#index"
   
   # Landing page (alias for root)
   get "landing", to: "landing#index"
+  
+  # Home page (for authenticated users)
+  get "home", to: "home#index"
 
   # UI Kit
   scope path: "kit", module: "ui_kit", as: "ui_kit" do

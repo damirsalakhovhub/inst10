@@ -4,6 +4,9 @@ en:
   common:
     app_name: "Bulletproof PM"
     sign_out: "Sign Out"
+
+  home:
+    greeting: "Hello, %{username}!"
   
   devise:
     sessions:
