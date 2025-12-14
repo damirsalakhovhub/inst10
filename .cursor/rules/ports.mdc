@@ -16,3 +16,40 @@ alwaysApply: true
 ## Rationale
 
 Port 5000 for Rails avoids conflicts with React development servers which commonly use 3000.
+
+---
+
+# Development Mode Setup
+
+## Rails Development Server Setup
+
+For Rails projects, run two processes:
+
+1. **Sass compiler** (watches SCSS changes):
+   ```bash
+   bundle exec sass --watch --poll --load-path=app --load-path=ui_kit --load-path=app/views --no-source-map app/assets/stylesheets/application.scss:app/assets/builds/application.css
+   ```
+
+2. **Rails server** (on port 5000):
+   ```bash
+   PORT=5000 bin/rails server
+   ```
+
+## Cache Clearing
+
+After first run or config changes:
+```bash
+rm -rf public/assets/.manifest.json tmp/cache/*
+```
+
+## Key Configuration Files
+
+- `Procfile.dev` - two processes (web and css)
+- `config/initializers/assets.rb` - load-path for app, ui_kit, app/views
+- `config/environments/development.rb` - hotwire_livereload watches app/assets/builds, cache disabled
+- `config/application.rb` - autoload_paths and eager_load_paths for ui_kit/components
+- `config/initializers/view_component.rb` - component preloading
+
+## Workflow
+
+1. Change SCSS → Sass recompiles in 2-3 seconds → Hotwire LiveReload automatically refreshes browser
