@@ -2,6 +2,7 @@ en:
   hello: "Hello world"
   
   common:
+    app_name: "Bulletproof PM"
     sign_out: "Sign Out"
   
   devise:

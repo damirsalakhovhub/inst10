@@ -5,22 +5,28 @@
 %>
 
 <header class="layout-header">
-  <% if signed_in? %>
-    <nav class="layout-header-nav">
-      <%= link_to t("projects.nav.index"), projects_path, class: "layout-header-link" %>
-      <%= link_to t("projects.nav.new"), new_project_path, class: "layout-header-link" %>
-    </nav>
+  <div class="layout-header-left">
+    <span class="layout-header-brand"><%= t("common.app_name") %></span>
+  </div>
 
-    <div class="layout-header-actions">
-      <span class="layout-header-email"><%= user.email %></span>
-      <%= form_with url: destroy_user_session_path, method: :delete, local: true do |f| %>
-        <%= render Button::ButtonComponent.new(
-          text: t("common.sign_out"),
-          type: "submit",
-          variant: :basic,
-          size: :small
-        ) %>
-      <% end %>
+  <% if signed_in? %>
+    <div class="layout-header-right">
+      <nav class="layout-header-nav">
+        <%= link_to t("projects.nav.index"), projects_path, class: "layout-header-link" %>
+        <%= link_to t("projects.nav.new"), new_project_path, class: "layout-header-link" %>
+      </nav>
+
+      <div class="layout-header-actions">
+        <span class="layout-header-email"><%= user.email %></span>
+        <%= form_with url: destroy_user_session_path, method: :delete, local: true do |f| %>
+          <%= render Button::ButtonComponent.new(
+            text: t("common.sign_out"),
+            type: "submit",
+            variant: :basic,
+            size: :small
+          ) %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </header>

@@ -1,14 +1,33 @@
 .layout-header {
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
   gap: 1rem;
   height: var(--px-80);
   background-color: var(--color-bg-uno);
 
+  &-left {
+    display: flex;
+    align-items: center;
+    gap: var(--px-12);
+  }
+
+  &-brand {
+    font-size: var(--px-18);
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: var(--px-16);
+  }
+
   &-nav {
     display: flex;
+    align-items: center;
     gap: var(--px-16);
   }
 
@@ -21,6 +40,8 @@
       text-decoration: underline;
     }
   }
+
+  
 
   &-actions {
     display: flex;
