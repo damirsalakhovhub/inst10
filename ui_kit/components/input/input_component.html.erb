@@ -27,11 +27,9 @@
     <%= tag.input(**input_attributes) %>
   </div>
   
-  <%# Error message %>
-  <% if has_error? %>
-    <div class="input-error" role="alert">
-      <%= error %>
-    </div>
-  <% end %>
+  <%# Error message - always render container to prevent layout shift %>
+  <div class="input-error<%= ' input-error-visible' if has_error? %>" role="alert" aria-live="polite">
+    <%= error if has_error? %>
+  </div>
 </div>
 
