@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   mount Hotwire::Livereload::Engine, at: "/hotwire-livereload" if Rails.env.development?
 
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
 
   # Health check endpoint

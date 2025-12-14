@@ -69,25 +69,27 @@
           url: registration_path(@resource_name),
           html: { class: "auth-form", novalidate: true }
         ) do |f| %>
-          <%= render "devise/shared/error_messages", resource: @resource %>
           <%= render Input::InputComponent.new(
             label: t("landing.sign_up.email_label"),
             name: "user[email]",
             type: "email",
             required: true,
-            value: f.object.email
+            value: f.object.email,
+            error: @resource.errors[:email].first
           ) %>
           <%= render Input::InputComponent.new(
             label: t("landing.sign_up.password_label"),
             name: "user[password]",
             type: "password",
-            required: true
+            required: true,
+            error: @resource.errors[:password].first
           ) %>
           <%= render Input::InputComponent.new(
             label: t("landing.sign_up.password_confirmation_label"),
             name: "user[password_confirmation]",
             type: "password",
-            required: true
+            required: true,
+            error: @resource.errors[:password_confirmation].first
           ) %>
           <%= render Button::ButtonComponent.new(
             text: t("landing.sign_up.submit"),
