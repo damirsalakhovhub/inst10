@@ -6,11 +6,6 @@ class LandingController < ApplicationController
     @resource = User.new
     @resource_name = :user
     @devise_mapping = Devise.mappings[:user]
-    
-    # Preserve error message from failed sign in attempt
-    if flash[:alert]
-      @resource.errors.add(:base, flash[:alert])
-    end
   end
   
   def devise_mapping

@@ -15,7 +15,11 @@
     
       <h3><%= t("landing.sign_in.title") %></h3>
     
-      <%= render "devise/shared/error_messages", resource: @resource %>
+      <% if flash[:alert] %>
+        <div class="auth-form-errors">
+          <p><%= flash[:alert] %></p>
+        </div>
+      <% end %>
     
       <%= form_for(
         @resource,
