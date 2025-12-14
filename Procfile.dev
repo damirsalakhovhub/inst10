@@ -1,2 +1,2 @@
-web: bin/rails server -p 3000
-css: bundle exec sass --watch --poll --load-path=app/assets/stylesheets --load-path=app --load-path=ui_kit --no-source-map app/assets/stylesheets/application.scss:app/assets/builds/application.css
+web: PORT=5000 bin/rails server
+css: bundle exec sass --watch --poll --load-path=app --load-path=ui_kit --load-path=app/views --no-source-map app/assets/stylesheets/application.scss:app/assets/builds/application.css
