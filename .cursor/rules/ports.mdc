@@ -44,8 +44,10 @@ css: bundle exec sass --watch --poll --load-path=app --load-path=ui_kit --load-p
 If styles or assets get stuck:
 ```bash
 bin/rails tmp:cache:clear
-bin/rails assets:clobber
+rm -rf public/assets  # Never use assets:precompile in dev!
 ```
+
+**NEVER run `bin/rails assets:precompile` in development** — it creates `public/assets/` which Rails serves instead of live-compiled CSS from `app/assets/builds/`, breaking hot reload.
 
 ## Key Configuration for Live Reloading
 
