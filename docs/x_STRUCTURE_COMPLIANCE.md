@@ -9,7 +9,7 @@
    ✅ controllers/ с подпапкой concerns/
    ✅ views/ организованы по ресурсам (users/, home/, landing/)
    ✅ policies/ - Pundit политики есть
-   ✅ components/ - ViewComponent компоненты есть
+   ✅ views/shared/ - переиспользуемые partials
    ✅ jobs/ - фоновые задачи
    ✅ mailers/ - почтовые шаблоны
    ✅ javascript/controllers/ - Stimulus контроллеры

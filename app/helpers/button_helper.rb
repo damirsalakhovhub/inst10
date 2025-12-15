@@ -1,5 +1,5 @@
 module ButtonHelper
-  # Simple button helper (37signals style, no ViewComponent)
+  # Simple button helper (37signals style)
   # Usage: button_tag "Click", class: "btn btn-primary"
   # Or: link_to "Click", path, class: "btn btn-primary"
   

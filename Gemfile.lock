@@ -512,7 +512,6 @@ DEPENDENCIES
   stimulus-rails
   thruster
   tzinfo-data
-  view_component
   web-console
   webmock
 

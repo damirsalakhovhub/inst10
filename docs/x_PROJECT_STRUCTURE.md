@@ -7,7 +7,7 @@ Project Structure Principles (based on Fizzy)
    - controllers/ - контроллеры с concerns в подпапке concerns/
    - views/ - views организованы по ресурсам (projects/, tasks/, users/)
    - policies/ - Pundit политики, одна на ресурс
-   - components/ - ViewComponent компоненты (если используем)
+   - views/shared/ - переиспользуемые partials и helpers
    - jobs/ - фоновые задачи
    - mailers/ - почтовые шаблоны
    - helpers/ - минимально, только если действительно нужно

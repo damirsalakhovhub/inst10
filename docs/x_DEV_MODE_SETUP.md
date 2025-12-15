@@ -14,8 +14,7 @@ rm -rf public/assets/.manifest.json tmp/cache/*
 Procfile.dev - два процесса (web и css)
 config/initializers/assets.rb - load-path для app, ui_kit, app/views
 config/environments/development.rb - hotwire_livereload слушает app/assets/builds, отключен кэш
-config/application.rb - autoload_paths и eager_load_paths для ui_kit/components
-config/initializers/view_component.rb - предзагрузка компонентов
+config/initializers/assets.rb - load-path для app, ui_kit, app/views
 
 Работа:
 
