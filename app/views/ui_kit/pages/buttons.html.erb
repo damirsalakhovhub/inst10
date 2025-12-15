@@ -23,7 +23,38 @@
               <% size_class = size == :medium ? "" : "btn-#{size}" %>
               <% variant_class = variant == :basic ? "btn btn-basic" : "btn btn-#{variant}" %>
               <% button_class = [variant_class, size_class].compact.join(" ") %>
+              
+              <%# Text only button %>
               <%= button_tag "Button", class: button_class %>
+              
+              <%# Like with icon left %>
+              <% icon_path = Rails.root.join("ui_kit/assets/images/icons/heart-icon.svg") %>
+              <% if File.exist?(icon_path) %>
+                <% icon_svg = File.read(icon_path).gsub(/\s(width|height)=["'][^"']*["']/, '').gsub(/<svg/, '<svg style="width: 100%; height: 100%;" class="btn-icon-svg"').html_safe %>
+                <%= button_tag class: button_class do %>
+                  <span class="btn-icon"><%= icon_svg %></span>
+                  <span class="btn-text">Like</span>
+                <% end %>
+              <% else %>
+                <%= button_tag "Like", class: button_class %>
+              <% end %>
+              
+              <%# Like with icon right %>
+              <% if File.exist?(icon_path) %>
+                <%= button_tag class: button_class do %>
+                  <span class="btn-text">Like</span>
+                  <span class="btn-icon"><%= icon_svg %></span>
+                <% end %>
+              <% else %>
+                <%= button_tag "Like", class: button_class %>
+              <% end %>
+              
+              <%# Icon only %>
+              <% if File.exist?(icon_path) %>
+                <%= button_tag class: "#{button_class} btn-icon-only", aria: { label: "Like" } do %>
+                  <span class="btn-icon"><%= icon_svg %></span>
+                <% end %>
+              <% end %>
             </div>
           <% end %>
         </div>
