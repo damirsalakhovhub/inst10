@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_paper_trail
 
   has_many :projects, dependent: :destroy
+  has_many :sessions, dependent: :destroy
 
   # Scopes
   scope :admins, -> { where(admin: true) }
