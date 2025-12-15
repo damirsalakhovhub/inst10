@@ -4,11 +4,6 @@
   Provides modal dialog with backdrop, focus trap, and keyboard navigation.
   
   Usage:
-    <%= render "shared/dialog", id: "my-dialog", title: "Dialog Title", open: false do %>
-      <p>Dialog content here</p>
-    <% end %>
-  
-  Or with body parameter:
     <%= render "shared/dialog", id: "my-dialog", title: "Dialog Title", body: "Dialog content" %>
 %>
 <% dialog_id = local_assigns[:id] || "dialog-#{SecureRandom.hex(4)}" %>
@@ -56,11 +51,7 @@
 
     <%# Main content area %>
     <main class="dialog-main">
-      <% if local_assigns[:body] && local_assigns[:body].present? %>
-        <%= local_assigns[:body] %>
-      <% else %>
-        <%= yield if block_given? %>
-      <% end %>
+      <%= local_assigns[:body] if local_assigns[:body].present? %>
     </main>
     
     <%# Footer with action buttons %>
