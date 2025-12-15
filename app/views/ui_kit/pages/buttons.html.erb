@@ -15,25 +15,24 @@
 
     <section class="ui-kit-section">
       <h2>Classic Buttons (No ViewComponent - 37signals style)</h2>
-      <div class="ui-kit-element-group">
-        <div class="ui-kit-row">
-          <%= button_tag "Primary", class: "btn btn-primary" %>
-          <%= button_tag "Secondary", class: "btn btn-secondary" %>
-          <%= button_tag "Basic", class: "btn btn-basic" %>
+      <% variants.each do |variant| %>
+        <h3><%= variant.to_s.capitalize %></h3>
+        <div class="ui-kit-element-group">
+          <% sizes.each do |size| %>
+            <div class="ui-kit-row">
+              <% size_class = size == :medium ? "" : "btn-#{size}" %>
+              <% variant_class = variant == :basic ? "btn btn-basic" : "btn btn-#{variant}" %>
+              <% button_class = [variant_class, size_class].compact.join(" ") %>
+              <%= button_tag "Button", class: button_class %>
+            </div>
+          <% end %>
         </div>
-        <div class="ui-kit-row">
-          <%= button_tag "Small", class: "btn btn-primary btn-small" %>
-          <%= button_tag "Medium", class: "btn btn-primary" %>
-          <%= button_tag "Large", class: "btn btn-primary btn-large" %>
-        </div>
-        <div class="ui-kit-row">
-          <%= link_to "Link Button", "#", class: "btn btn-primary" %>
-          <%= button_tag "Disabled", class: "btn btn-primary", disabled: true %>
-        </div>
-      </div>
+      <% end %>
     </section>
 
-    <% variants.each do |variant| %>
+    <section class="ui-kit-section">
+      <h2>Button Variants (ViewComponent)</h2>
+      <% variants.each do |variant| %>
       <section class="ui-kit-section">
         <h2><%= variant.to_s.capitalize %></h2>
         <div class="ui-kit-element-group">
