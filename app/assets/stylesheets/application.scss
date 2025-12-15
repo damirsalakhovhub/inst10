@@ -18,5 +18,6 @@
 @import 'components/input/input_component';
 @import 'components/dialog/dialog_component';
 
-// Application components
+// Application components (classic Rails style)
+@import 'components/button';
 @import 'components/layout_header';
