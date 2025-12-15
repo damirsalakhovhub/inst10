@@ -87,11 +87,7 @@
             required: true,
             error: @resource.errors[:password_confirmation].first
           ) %>
-          <%= render Button::ButtonComponent.new(
-            text: t("landing.sign_up.submit"),
-            type: "submit",
-            variant: :primary
-          ) %>
+          <%= f.submit t("landing.sign_up.submit"), class: "btn btn-primary" %>
         <% end %>
     <% end %>
   </section>

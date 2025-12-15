@@ -9,13 +9,7 @@
       </p>
       
       <div class="ui-kit-row" data-controller="dialog">
-        <%= render Button::ButtonComponent.new(
-          text: "Open Dialog",
-          variant: :primary,
-          data: { 
-            action: "click->dialog#open"
-          }
-        ) %>
+        <%= button_tag "Open Dialog", class: "btn btn-primary", data: { action: "click->dialog#open" } %>
 
         <%= render Dialog::DialogComponent.new(
           title: "Dialog Title Long Example To Show How It Behaves",
