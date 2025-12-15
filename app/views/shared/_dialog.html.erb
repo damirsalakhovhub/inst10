@@ -1,11 +1,4 @@
-<%#
-  Dialog Partial
-  Native HTML5 dialog element with full accessibility support.
-  Provides modal dialog with backdrop, focus trap, and keyboard navigation.
-  
-  Usage:
-    <%= render "shared/dialog", id: "my-dialog", title: "Dialog Title", body: "Dialog content" %>
-%>
+
 <% dialog_id = local_assigns[:id] || "dialog-#{SecureRandom.hex(4)}" %>
 <% title_id = "#{dialog_id}-title" %>
 <% dialog_open = local_assigns[:open] ? "open" : "" %>
