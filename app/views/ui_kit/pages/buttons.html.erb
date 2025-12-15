@@ -61,11 +61,9 @@
       <% end %>
     </section>
 
-    <section class="ui-kit-section">
-      <h2>Button Variants (ViewComponent)</h2>
-      <% variants.each do |variant| %>
+    <% variants.each do |variant| %>
       <section class="ui-kit-section">
-        <h2><%= variant.to_s.capitalize %></h2>
+        <h2><%= variant.to_s.capitalize %> (ViewComponent)</h2>
         <div class="ui-kit-element-group">
           <% sizes.each do |size| %>
             <div class="ui-kit-row">
