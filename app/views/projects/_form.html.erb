@@ -31,11 +31,7 @@
   </div>
 
   <div class="actions">
-    <%= render Button::ButtonComponent.new(
-      text: project.persisted? ? "Update Project" : "Create Project",
-      type: "submit",
-      variant: :primary
-    ) %>
+    <%= form.submit project.persisted? ? "Update Project" : "Create Project", class: "btn btn-primary" %>
   </div>
 <% end %>
 
