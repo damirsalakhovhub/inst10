@@ -101,11 +101,11 @@ class Button::ButtonComponent < ViewComponent::Base
     attrs
   end
 
-  # Render icon SVG by loading from assets/images/icons/ directory
+  # Render icon SVG by loading from ui_kit/assets/images/icons/ directory
   # Rails.root.join - builds file path safely, works on any OS (handles / vs \)
   def render_icon
-    # Load SVG from assets/images/icons/
-    icon_path = Rails.root.join("app/assets/images/icons/#{icon}-icon.svg")
+    # Load SVG from ui_kit/assets/images/icons/
+    icon_path = Rails.root.join("ui_kit/assets/images/icons/#{icon}-icon.svg")
     
     if File.exist?(icon_path)
       # Load and inline SVG from file

@@ -127,9 +127,9 @@ class Input::InputComponent < ViewComponent::Base
     nil
   end
 
-  # Render icon SVG by loading from assets/images/icons/ directory
+  # Render icon SVG by loading from ui_kit/assets/images/icons/ directory
   def render_icon
-    icon_path = Rails.root.join("app/assets/images/icons/#{icon}-icon.svg")
+    icon_path = Rails.root.join("ui_kit/assets/images/icons/#{icon}-icon.svg")
     
     if File.exist?(icon_path)
       svg_content = File.read(icon_path)
