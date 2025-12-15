@@ -8,6 +8,6 @@ class CreateSessions < ActiveRecord::Migration[8.0]
       t.timestamps
     end
 
-    add_index :sessions, :user_id
+    # Index is automatically created by t.references, so we don't need add_index
   end
 end
