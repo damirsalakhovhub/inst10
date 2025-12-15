@@ -1,4 +1,8 @@
 class Current < ActiveSupport::CurrentAttributes
-  attribute :user
-end
+  attribute :user, :session
 
+  def user=(user)
+    super(user)
+    # Can add additional logic here if needed
+  end
+end
