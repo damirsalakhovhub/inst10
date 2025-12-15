@@ -28,7 +28,7 @@
   </head>
 
   <body>
-    <%= render LayoutHeader::LayoutHeader.new(user: current_user) %>
+    <%= render "shared/header" %>
 
     <%= yield %>
   </body>
