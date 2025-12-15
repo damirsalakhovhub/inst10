@@ -58,9 +58,12 @@
   
   // Primary variant
   --btn-primary-bg: var(--color-bg-primary);
+  --btn-primary-bg-hover: var(--color-bg-primary-hover);
+  --btn-primary-bg-active: var(--color-bg-primary-active);
+
   --btn-primary-color:var(--white);
-  --btn-primary-bg-hover: var(--color-link-uno-hover);
-  --btn-primary-bg-active: var(--color-link-uno-active);
+  
+  
   
   // Secondary variant
   --btn-secondary-bg: var(--color-bg-tres);

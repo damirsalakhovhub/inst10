@@ -1,8 +1,12 @@
 :root {
 
   // Background colors LIGHT
-  --color-bg-base: var(--gray-99);
+    
   --color-bg-primary: var(--blue-50);
+  --color-bg-primary-hover: var(--blue-deep-45);
+  --color-bg-primary-active: var(--blue-deep-40);
+
+  --color-bg-base: var(--gray-97);
 
   --color-bg-uno: var(--gray-95);
   --color-bg-uno-hover: var(--gray-92);
@@ -93,37 +97,38 @@
   :root {
 
     // Background colors DARK
-    --color-bg-base: var(--gray-3);
+
+    --color-bg-base: var(--gray-8);
     
-    --color-bg-uno: var(--gray-6);
-    --color-bg-uno-hover: var(--gray-9);
-    --color-bg-uno-active: var(--gray-11);
+    --color-bg-uno: var(--gray-8);
+    --color-bg-uno-hover: var(--gray-11);
+    --color-bg-uno-active: var(--gray-12);
 
-    --color-bg-dos: var(--gray-9);
-    --color-bg-dos-hover: var(--gray-12);
-    --color-bg-dos-active: var(--gray-14);
+    --color-bg-dos: var(--gray-11);
+    --color-bg-dos-hover: var(--gray-14);
+    --color-bg-dos-active: var(--gray-15);
 
-    --color-bg-tres: var(--gray-20);
-    --color-bg-tres-hover: var(--gray-25);
-    --color-bg-tres-active: var(--gray-30);
+    --color-bg-tres: var(--gray-14);
+    --color-bg-tres-hover: var(--gray-15);
+    --color-bg-tres-active: var(--gray-16);
 
-    --color-bg-cuatro: var(--gray-25);
-    --color-bg-cuatro-hover: var(--gray-30);
-    --color-bg-cuatro-active: var(--gray-35);
+    --color-bg-cuatro: var(--gray-17);
+    --color-bg-cuatro-hover: var(--gray-20);
+    --color-bg-cuatro-active: var(--gray-21);
 
-    --color-bg-cinco: var(--gray-30);
-    --color-bg-cinco-hover: var(--gray-35);
-    --color-bg-cinco-active: var(--gray-40);
+    --color-bg-cinco: var(--gray-20);
+    --color-bg-cinco-hover: var(--gray-23);
+    --color-bg-cinco-active: var(--gray-24);
 
-    --color-bg-seis: var(--gray-35);
-    --color-bg-seis-hover: var(--gray-40);
-    --color-bg-seis-active: var(--gray-45);
+    --color-bg-seis: var(--gray-23);
+    --color-bg-seis-hover: var(--gray-26);
+    --color-bg-seis-active: var(--gray-27);
 
     // Font colors DARK
     --color-font-contrast: var(--white);
     --color-font-invert: var(--black);
 
-    --color-font-uno: var(--gray-100);
+    --color-font-uno: var(--gray-98);
     --color-font-uno-hover: var(--gray-95);
     --color-font-uno-active: var(--gray-90);
 

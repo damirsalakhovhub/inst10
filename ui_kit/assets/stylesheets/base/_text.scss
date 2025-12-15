@@ -13,17 +13,17 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin: 0;
   padding: 0;
-  line-height: 1.4;
+  // line-height: 1.4;
 }
 
 h1 {
   font-size: var(--px-48);
-  // line-height: var(--px-56);
+  line-height: var(--px-56);
 }
 
 h2 {
   font-size: var(--px-32);
-  // line-height: var(--px-40);
+  line-height: 3 !important;
 }
 
 h3 {
