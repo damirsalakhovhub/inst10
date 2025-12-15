@@ -1,17 +1,4 @@
-<%#
-  Input Partial
-  Universal input component with label, optional icon, required indicator, and accessibility support.
-  
-  Usage:
-    <%= render "shared/input",
-      label: "Email",
-      name: "user[email]",
-      type: "email",
-      required: true,
-      value: @user.email,
-      error: @user.errors[:email].first
-    %>
-%>
+
 <% input_id = local_assigns[:id] || input_id_from_name(local_assigns[:name]) %>
 <% input_type = local_assigns[:type] || "text" %>
 <% input_size = local_assigns[:size] || :medium %>
