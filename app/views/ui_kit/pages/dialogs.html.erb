@@ -11,10 +11,11 @@
       <div class="ui-kit-row" data-controller="dialog">
         <%= button_tag "Open Dialog", class: "btn btn-primary", data: { action: "click->dialog#open" } %>
 
-        <%= render Dialog::DialogComponent.new(
+        <%= render "shared/dialog",
+          id: "demo-dialog",
           title: "Dialog Title Long Example To Show How It Behaves",
           body: "This is a basic dialog with title and content. It uses the native HTML5 dialog element for full accessibility support. This is a basic dialog with title and content. It uses the native HTML5 dialog element for full accessibility support."
-        ) %>
+        %>
       </div>
     </section>
   </main>

@@ -1,0 +1,77 @@
+<%#
+  Dialog Partial
+  Native HTML5 dialog element with full accessibility support.
+  Provides modal dialog with backdrop, focus trap, and keyboard navigation.
+  
+  Usage:
+    <%= render "shared/dialog", id: "my-dialog", title: "Dialog Title", open: false do %>
+      <p>Dialog content here</p>
+    <% end %>
+  
+  Or with body parameter:
+    <%= render "shared/dialog", id: "my-dialog", title: "Dialog Title", body: "Dialog content" %>
+%>
+
+<% dialog_id = id || "dialog-#{SecureRandom.hex(4)}" %>
+<% title_id = "#{dialog_id}-title" %>
+
+<dialog id="<%= dialog_id %>"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="<%= title_id %>"
+        <% if open %>open<% end %>
+        data-dialog-target="dialog"
+        data-action="click->dialog#handleBackdropClick"
+        <% if local_assigns[:data] %>
+          <% data.each { |k, v| %>data-<%= k %>="<%= v %>" <% } %>
+        <% end %>>
+  <div class="dialog-container">
+    <%# Header with title and close button %>
+    <header class="dialog-header">
+      <h2 id="<%= title_id %>" class="dialog-title">
+        <%= title %>
+      </h2>
+      <% close_icon_path = Rails.root.join("ui_kit/assets/images/icons/close-icon.svg") %>
+      <% if File.exist?(close_icon_path) %>
+        <% close_icon_svg = File.read(close_icon_path).gsub(/\s(width|height)=["'][^"']*["']/, '').gsub(/<svg/, '<svg style="width: 100%; height: 100%;" class="btn-icon-svg"').html_safe %>
+        <button type="button"
+                class="btn btn-ghost btn-medium dialog-close"
+                aria-label="Close dialog"
+                data-action="dialog#close">
+          <span class="btn-icon"><%= close_icon_svg %></span>
+        </button>
+      <% else %>
+        <button type="button"
+                class="btn btn-ghost btn-medium dialog-close"
+                aria-label="Close dialog"
+                data-action="dialog#close">
+          ×
+        </button>
+      <% end %>
+    </header>
+
+    <%# Main content area %>
+    <main class="dialog-main">
+      <% if local_assigns[:body] && body.present? %>
+        <%= body %>
+      <% elsif block_given? %>
+        <%= yield %>
+      <% end %>
+    </main>
+    
+    <%# Footer with action buttons %>
+    <footer class="dialog-footer">
+      <button type="button"
+              class="btn btn-default"
+              aria-label="Close dialog"
+              data-action="dialog#close">
+        Close
+      </button>
+      <button type="button"
+              class="btn btn-primary">
+        Action
+      </button>
+    </footer>
+  </div>
+</dialog>
+
