@@ -50,8 +50,5 @@ module RailsTemplate
     # Rack::Attack middleware
     config.middleware.use Rack::Attack
 
-    # Add UI kit components to autoload paths for ViewComponent
-    config.autoload_paths << Rails.root.join("ui_kit/components")
-    config.eager_load_paths << Rails.root.join("ui_kit/components")
   end
 end

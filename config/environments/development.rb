@@ -59,7 +59,7 @@ Rails.application.configure do
   # config.i18n.raise_on_missing_translations = true
 
   # Annotate rendered view with file names.
-  # Disabled to remove HTML comments from ViewComponent templates
+  # Disabled to remove HTML comments from rendered templates
   config.action_view.annotate_rendered_view_with_filenames = false
 
   # Uncomment if you wish to allow Action Cable access from any origin.
