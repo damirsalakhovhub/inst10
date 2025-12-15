@@ -11,25 +11,29 @@
   Or with body parameter:
     <%= render "shared/dialog", id: "my-dialog", title: "Dialog Title", body: "Dialog content" %>
 %>
-
-<% dialog_id = id || "dialog-#{SecureRandom.hex(4)}" %>
+<% dialog_id = local_assigns[:id] || "dialog-#{SecureRandom.hex(4)}" %>
 <% title_id = "#{dialog_id}-title" %>
+<% dialog_open = local_assigns[:open] ? "open" : "" %>
+<% dialog_data_attrs = "" %>
+<% if local_assigns[:data] %>
+  <% local_assigns[:data].each do |k, v| %>
+    <% dialog_data_attrs += "data-#{k}=\"#{v}\" " %>
+  <% end %>
+<% end %>
 
 <dialog id="<%= dialog_id %>"
         role="dialog"
         aria-modal="true"
         aria-labelledby="<%= title_id %>"
-        <% if open %>open<% end %>
+        <%= dialog_open %>
         data-dialog-target="dialog"
         data-action="click->dialog#handleBackdropClick"
-        <% if local_assigns[:data] %>
-          <% data.each { |k, v| %>data-<%= k %>="<%= v %>" <% } %>
-        <% end %>>
+        <%= dialog_data_attrs %>>
   <div class="dialog-container">
     <%# Header with title and close button %>
     <header class="dialog-header">
       <h2 id="<%= title_id %>" class="dialog-title">
-        <%= title %>
+        <%= local_assigns[:title] %>
       </h2>
       <% close_icon_path = Rails.root.join("ui_kit/assets/images/icons/close-icon.svg") %>
       <% if File.exist?(close_icon_path) %>
@@ -52,10 +56,10 @@
 
     <%# Main content area %>
     <main class="dialog-main">
-      <% if local_assigns[:body] && body.present? %>
-        <%= body %>
-      <% elsif block_given? %>
-        <%= yield %>
+      <% if local_assigns[:body] && local_assigns[:body].present? %>
+        <%= local_assigns[:body] %>
+      <% else %>
+        <%= yield if block_given? %>
       <% end %>
     </main>
     
