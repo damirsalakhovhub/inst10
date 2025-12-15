@@ -11,23 +11,23 @@
   <% end %>
 
   <div class="field">
-    <%= render Input::InputComponent.new(
+    <%= render "shared/input",
       label: "Name",
       name: "project[name]",
       type: "text",
       required: true,
       value: project.name
-    ) %>
+    %>
   </div>
 
   <div class="field">
-    <%= render Input::InputComponent.new(
+    <%= render "shared/input",
       label: "Description",
       name: "project[description]",
       type: "text",
       value: project.description,
       placeholder: "Optional description"
-    ) %>
+    %>
   </div>
 
   <div class="actions">

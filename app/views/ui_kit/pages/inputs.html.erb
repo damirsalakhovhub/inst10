@@ -6,48 +6,48 @@
       <h2>Input Variants</h2>
       <div class="ui-kit-element-group">
         <div style="max-width: 400px;">
-          <%= render Input::InputComponent.new(
+          <%= render "shared/input",
             label: "Label",
             name: "input_basic",
             placeholder: "Placeholder text"
-          ) %>
+          %>
         </div>
 
         <div style="max-width: 400px;">
-          <%= render Input::InputComponent.new(
+          <%= render "shared/input",
             label: "Required Field",
             name: "input_required",
             placeholder: "This field is required",
             required: true
-          ) %>
+          %>
         </div>
 
         <div style="max-width: 400px;">
-          <%= render Input::InputComponent.new(
+          <%= render "shared/input",
             label: "With Icon",
             name: "input_icon",
             placeholder: "Input with left icon",
             icon: "heart"
-          ) %>
+          %>
         </div>
 
         <div style="max-width: 400px;">
-          <%= render Input::InputComponent.new(
+          <%= render "shared/input",
             label: "Disabled Input",
             name: "input_disabled",
             placeholder: "Cannot edit this field",
             disabled: true
-          ) %>
+          %>
         </div>
 
         <div style="max-width: 400px;">
-          <%= render Input::InputComponent.new(
+          <%= render "shared/input",
             label: "Input with Error",
             name: "input_error",
             placeholder: "Enter email",
             type: "email",
             error: "Please include an '@' in the email address"
-          ) %>
+          %>
         </div>
       </div>
     </section>

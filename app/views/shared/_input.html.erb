@@ -1,0 +1,81 @@
+<%#
+  Input Partial
+  Universal input component with label, optional icon, required indicator, and accessibility support.
+  
+  Usage:
+    <%= render "shared/input",
+      label: "Email",
+      name: "user[email]",
+      type: "email",
+      required: true,
+      value: @user.email,
+      error: @user.errors[:email].first
+    %>
+%>
+<% input_id = local_assigns[:id] || input_id_from_name(local_assigns[:name]) %>
+<% input_type = local_assigns[:type] || "text" %>
+<% input_size = local_assigns[:size] || :medium %>
+<% has_icon = local_assigns[:icon].present? %>
+<% has_error = local_assigns[:error].present? %>
+
+<%# Wrapper classes %>
+<% wrapper_classes = ["input-wrapper"] %>
+<% wrapper_classes << "input-wrapper-#{input_size}" unless input_size == :medium %>
+<% wrapper_classes << "input-wrapper-error" if has_error %>
+<% wrapper_classes << local_assigns[:wrapper_class] if local_assigns[:wrapper_class] %>
+
+<%# Input classes %>
+<% input_classes = ["input"] %>
+<% input_classes << "input-#{input_size}" unless input_size == :medium %>
+<% input_classes << "input-with-icon" if has_icon %>
+<% input_classes << local_assigns[:class] if local_assigns[:class] %>
+
+<%# Autocomplete attribute %>
+<% autocomplete_value = local_assigns[:autocomplete] || auto_detect_autocomplete(type: input_type, name: local_assigns[:name]) %>
+
+<div class="<%= wrapper_classes.compact.join(" ") %>" role="group">
+  <%# Label with required indicator %>
+  <label class="input-label" for="<%= input_id %>">
+    <span class="input-label-text"><%= local_assigns[:label] %></span>
+    <% if local_assigns[:required] %>
+      <span class="input-label-required" aria-hidden="true">*</span>
+    <% end %>
+  </label>
+  
+  <%# Input container with optional icon %>
+  <div class="input-container">
+    <%# Render icon on the left if present %>
+    <% if has_icon %>
+      <span class="input-icon" aria-hidden="true">
+        <%= render_input_icon(local_assigns[:icon]) %>
+      </span>
+    <% end %>
+    
+    <%# Input element %>
+    <input type="<%= input_type %>"
+           id="<%= input_id %>"
+           name="<%= local_assigns[:name] %>"
+           class="<%= input_classes.compact.join(" ") %>"
+           <% if local_assigns[:placeholder] %>placeholder="<%= local_assigns[:placeholder] %>"<% end %>
+           <% if local_assigns[:value] %>value="<%= local_assigns[:value] %>"<% end %>
+           <% if local_assigns[:required] %>required<% end %>
+           <% if local_assigns[:disabled] %>disabled<% end %>
+           <% if autocomplete_value %>autocomplete="<%= autocomplete_value %>"<% end %>
+           <% if local_assigns[:aria] %>
+             <% local_assigns[:aria].each do |k, v| %>
+               aria-<%= k %>="<%= v %>"
+             <% end %>
+           <% end %>
+           <% if local_assigns[:data] %>
+             <% local_assigns[:data].each do |k, v| %>
+               data-<%= k %>="<%= v %>"
+             <% end %>
+           <% end %>>
+  </div>
+  
+  <%# Error message - always render container to prevent layout shift %>
+  <div class="input-error<%= ' input-error-visible' if has_error %>" role="alert" aria-live="polite">
+    <%= local_assigns[:error] if has_error %>
+  </div>
+</div>
+

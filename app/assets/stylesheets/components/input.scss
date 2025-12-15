@@ -1,0 +1,9 @@
+// Input component styles
+// Universal input component with design tokens support
+// Imports from ui_kit/components/input via load-path
+
+@import 'components/input/input_tokens';
+@import 'components/input/input_base';
+@import 'components/input/input_sizes';
+@import 'components/input/input_states';
+
