@@ -92,5 +92,8 @@ group :development do
 
   # Live reload for CSS/JS changes without page refresh
   gem "hotwire-livereload"
+
+  # Procfile runner
+  gem "foreman"
 end
 # graphiql-rails removed with GraphQL

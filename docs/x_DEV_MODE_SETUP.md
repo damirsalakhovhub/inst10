@@ -1,22 +1,26 @@
 Dev Mode Setup
 
-Запуск в двух терминалах:
+Запуск (одна команда):
 
-bundle exec sass --watch --poll --load-path=app --load-path=ui_kit --load-path=app/views --no-source-map app/assets/stylesheets/application.scss:app/assets/builds/application.css
-PORT=3000 bin/rails server
-
-После первого запуска или изменения конфигов:
-
-rm -rf public/assets/.manifest.json tmp/cache/*
+```
+bin/dev   # поднимает Rails на PORT=7000, CSS без sass
+```
 
 Ключевые настройки:
 
-Procfile.dev - два процесса (web и css)
-config/initializers/assets.rb - load-path для app, ui_kit, app/views
-config/environments/development.rb - hotwire_livereload слушает app/assets/builds, отключен кэш
-config/initializers/assets.rb - load-path для app, ui_kit, app/views
+- `Procfile.dev`: только `web: PORT=7000 bin/rails server`
+- CSS лежит в `app/assets/stylesheets`, без SCSS и sass-watch
+- `config/environments/development.rb`: hotwire_livereload слушает `app/assets/stylesheets`
+- Кэш отключён в dev (`public_file_server` no-store)
 
-Работа:
+Если застряло:
 
-Изменяешь SCSS → Sass пересобирает через 2-3 сек → Hotwire LiveReload обновляет браузер автоматически
+```
+bin/rails tmp:cache:clear
+rm -rf public/assets
+```
+
+Запрещено:
+
+- `bin/rails assets:precompile` в dev (ломает live обновление)
 

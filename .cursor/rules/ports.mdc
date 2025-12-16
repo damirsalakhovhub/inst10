@@ -30,14 +30,13 @@ Port 5000 for Rails avoids conflicts with React development servers which common
 bin/dev
 ```
 
-This starts both Rails server (port 7000) and Sass compiler via `Procfile.dev`.
+This starts Rails server (port 7000). No Sass watcher — CSS is plain files.
 
 ## Procfile.dev Configuration
 
 Ensure `Procfile.dev` contains:
 ```
 web: PORT=7000 bin/rails server
-css: bundle exec sass --watch --poll --load-path=app --load-path=ui_kit --load-path=app/views --no-source-map app/assets/stylesheets/application.scss:app/assets/builds/application.css
 ```
 
 ## Cache Clearing (if needed)
@@ -52,15 +51,13 @@ rm -rf public/assets  # Never use assets:precompile in dev!
 
 ## Key Configuration for Live Reloading
 
-- `config/environments/development.rb` - hotwire_livereload watches `app/assets/builds`, cache disabled
-- `config/initializers/assets.rb` - load-path for app, ui_kit, app/views
-- `config/application.rb` - autoload_paths for ui_kit/components (no eager_load in dev)
-- Component preloading should be **disabled** in development to allow hot reloading
+- `config/environments/development.rb` - hotwire_livereload watches `app/assets/stylesheets`, cache disabled
+- `config/initializers/assets.rb` - CSS served directly by Propshaft (no Sass)
 
 ## Workflow
 
 1. Run `bin/dev`
-2. Change SCSS/Ruby code → auto-recompile → browser auto-refreshes (Hotwire LiveReload)
+2. Change CSS/Ruby → browser auto-refreshes (Hotwire LiveReload)
 3. No manual rebuild needed
 
 ---

@@ -72,7 +72,6 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
 
   # Hotwire LiveReload watches for changes and auto-refreshes browser
-  config.hotwire_livereload.listen_paths << Rails.root.join("app/assets/builds")
   config.hotwire_livereload.listen_paths << Rails.root.join("app/assets/stylesheets")
   
   # Disable all asset caching in development
