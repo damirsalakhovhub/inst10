@@ -3,10 +3,14 @@
   /* Background colors LIGHT */
     
   --color-bg-primary: var(--blue-50);
-  --color-bg-primary-hover: var(--blue-deep-45);
-  --color-bg-primary-active: var(--blue-deep-40);
+  --color-bg-primary-hover: var(--blue-deep-50);
+  --color-bg-primary-active: var(--blue-deep-50);
 
   --color-bg-base: var(--gray-97);
+
+  --color-bg-invert: var(--gray-3);
+  --color-bg-invert-hover: var(--gray-15);
+  --color-bg-invert-active: var(--gray-20);
 
   --color-bg-uno: var(--gray-95);
   --color-bg-uno-hover: var(--gray-92);
@@ -33,7 +37,6 @@
   --color-bg-seis-active: var(--gray-81);
 
   /* Font colors LIGHT */
-  --color-font-contrast: var(--black);
   --color-font-invert: var(--white);
 
   --color-font-uno: var(--gray-10);
@@ -99,7 +102,11 @@
     /* Background colors DARK */
 
     --color-bg-base: var(--gray-8);
-    
+
+    --color-bg-invert: var(--gray-97);
+    --color-bg-invert-hover: var(--gray-90);
+    --color-bg-invert-active: var(--gray-85);
+
     --color-bg-uno: var(--gray-8);
     --color-bg-uno-hover: var(--gray-11);
     --color-bg-uno-active: var(--gray-12);
@@ -125,7 +132,6 @@
     --color-bg-seis-active: var(--gray-27);
 
     /* Font colors DARK */
-    --color-font-contrast: var(--white);
     --color-font-invert: var(--black);
 
     --color-font-uno: var(--gray-98);

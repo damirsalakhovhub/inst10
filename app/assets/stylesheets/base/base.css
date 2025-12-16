@@ -1,7 +1,3 @@
-:root {
-  color-scheme: light dark;
-}
-
 body {
  background-color: var(--color-bg-base);
 }

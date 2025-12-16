@@ -3,6 +3,7 @@
 /* These are foundation tokens used to build semantic size tokens */
 
 :root {
+  color-scheme: light dark;
   --px-1: 0.0625rem; /* 1px */
   --px-2: 0.125rem; /* 2px */
   --px-3: 0.1875rem; /* 3px */

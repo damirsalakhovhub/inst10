@@ -45,7 +45,24 @@
   --gray-18: hsl(var(--grayBase), 18%);
   --gray-19: hsl(var(--grayBase), 19%);
   --gray-20: hsl(var(--grayBase), 20%);
+  --gray-21: hsl(var(--grayBase), 21%);
+  --gray-22: hsl(var(--grayBase), 22%);
+  --gray-23: hsl(var(--grayBase), 23%);
+  --gray-24: hsl(var(--grayBase), 24%);
   --gray-25: hsl(var(--grayBase), 25%);
+  --gray-26: hsl(var(--grayBase), 26%);
+  --gray-27: hsl(var(--grayBase), 27%);
+  --gray-28: hsl(var(--grayBase), 28%);
+  --gray-29: hsl(var(--grayBase), 29%);
+  --gray-30: hsl(var(--grayBase), 30%);
+  --gray-31: hsl(var(--grayBase), 31%);
+  --gray-32: hsl(var(--grayBase), 32%);
+  --gray-33: hsl(var(--grayBase), 33%);
+  --gray-34: hsl(var(--grayBase), 34%);
+  --gray-35: hsl(var(--grayBase), 35%);
+  --gray-36: hsl(var(--grayBase), 36%);
+  --gray-37: hsl(var(--grayBase), 37%);
+  --gray-38: hsl(var(--grayBase), 38%);
   --gray-30: hsl(var(--grayBase), 30%);
   --gray-35: hsl(var(--grayBase), 35%);
   --gray-40: hsl(var(--grayBase), 40%);
@@ -85,6 +102,17 @@
   --gray-98: hsl(var(--grayBase), 98%);
   --gray-99: hsl(var(--grayBase), 99%);
   --gray-100: hsl(var(--grayBase), 100%);
+
+
+  --gray-transparent-10: hsl(var(--grayBase), 50%, 0.1);
+  --gray-transparent-20: hsl(var(--grayBase), 50%, 0.2);
+  --gray-transparent-30: hsl(var(--grayBase), 50%, 0.3);
+  --gray-transparent-40: hsl(var(--grayBase), 50%, 0.4);
+  --gray-transparent-50: hsl(var(--grayBase), 50%, 0.5);
+  --gray-transparent-60: hsl(var(--grayBase), 50%, 0.6);
+  --gray-transparent-70: hsl(var(--grayBase), 50%, 0.7);
+  --gray-transparent-80: hsl(var(--grayBase), 50%, 0.8);
+  --gray-transparent-90: hsl(var(--grayBase), 50%, 0.9);
 
 
   --blueBase: 215, 100%;

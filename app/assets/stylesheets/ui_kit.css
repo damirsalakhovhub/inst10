@@ -2,70 +2,67 @@
   display: flex;
   flex-direction: row;
   background-color: var(--color-bg-base);
+}
 
-  &-sidebar {
-    width: clamp(200px, 15vw, 300px);
-    background-color: var(--color-bg-uno);
-    flex-shrink: 0; 
-    /* height: 100vh; */
-  }
+.ui-kit-sidebar {
+  width: clamp(200px, 15vw, 300px);
+  background-color: var(--color-bg-uno);
+  flex-shrink: 0; 
+  /* height: 100vh; */
+}
 
-  &-nav-list {
-    list-style: none;
-    padding: var(--px-12);
-  }
+.ui-kit-nav-list {
+  list-style: none;
+  padding: var(--px-12);
+}
 
-  &-nav-link {
-    display: flex;
-    align-items: center;
-    color: var(--color-font-tres);
-    text-decoration: none;
-    height: var(--px-40);
-    padding-inline: var(--px-12);
-    border-radius: var(--radius-xs);
-    
-    &:hover {
-      background: var(--color-bg-dos);
-      color: var(--color-font-uno);
-      text-decoration: none;
-    }
+.ui-kit-nav-link {
+  display: flex;
+  align-items: center;
+  color: var(--color-font-tres);
+  text-decoration: none;
+  height: var(--px-40);
+  padding-inline: var(--px-12);
+  border-radius: var(--radius-xs);
+}
 
-    &.active {
-      background: var(--color-bg-dos);
-    }
-  }
+.ui-kit-nav-link:hover {
+  background: var(--color-bg-dos);
+  color: var(--color-font-uno);
+  text-decoration: none;
+}
 
+.ui-kit-nav-link.active {
+  background: var(--color-bg-dos);
+}
 
+.ui-kit-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--px-40);
+  padding: var(--px-48) var(--px-64);
+  margin: 0 auto;
+  width: 100%;
+}
 
-  &-main {
-    display: flex;
-    flex-direction: column;
-    gap: var(--px-40);
-    padding: var(--px-48) var(--px-64);
-    margin: 0 auto;
-    width: 100%;
-  }
+.ui-kit-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--px-16);
+}
 
-  &-section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--px-16);
-  }
+.ui-kit-element-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--px-20);
+}
 
-  &-element-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--px-20);
-  }
+.ui-kit-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--px-8);
+}
 
-  &-row {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--px-8);
-  }
-
-  &-element {
-    max-width: 400px;
-  }
-
+.ui-kit-element {
+  max-width: 400px;
 }

@@ -13,6 +13,56 @@
   <main class="ui-kit-main">
     <h1>Buttons</h1>
 
+    <%# New button (37signals style) %>
+    <section class="ui-kit-section">
+      <h2>New Button</h2>
+      <div class="ui-kit-element-group">
+        <div class="ui-kit-row">
+          <%= button_tag "Button", class: "btn-new btn-new-small"%>
+          <%= button_tag "Button", class: "btn-new"%>
+          <%= button_tag "Button", class: "btn-new btn-new-large"%>
+
+          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-rounded"%>
+          <%= button_tag "Button", class: "btn-new btn-new-rounded"%>
+          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-rounded"%>
+
+        </div>
+        
+        <div class="ui-kit-row">
+          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-primary"%>
+          <%= button_tag "Button", class: "btn-new btn-new-primary"%>
+          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-primary"%>
+
+          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-rounded btn-new-primary"%>
+          <%= button_tag "Button", class: "btn-new btn-new-rounded btn-new-primary"%>
+          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-rounded btn-new-primary"%>
+        </div>
+
+
+        <div class="ui-kit-row">
+          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-contrast"%>
+          <%= button_tag "Button", class: "btn-new btn-new-contrast"%>
+          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-contrast"%>
+
+          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-rounded btn-new-contrast"%>
+          <%= button_tag "Button", class: "btn-new btn-new-rounded btn-new-contrast"%>
+          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-rounded btn-new-contrast"%>
+        </div>
+
+
+        <div class="ui-kit-row">
+          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-primary", disabled: true %>
+          <%= button_tag "Button", class: "btn-new btn-new-primary", disabled: true %>
+          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-primary", disabled: true%>
+
+          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-rounded btn-new-primary", disabled: true%>
+          <%= button_tag "Button", class: "btn-new btn-new-rounded btn-new-primary", disabled: true%>
+          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-rounded btn-new-primary", disabled: true%>
+        </div>
+
+      </div>
+    </section>
+
     <% variants.each do |variant| %>
       <section class="ui-kit-section">
         <h2><%= variant.to_s.capitalize %></h2>

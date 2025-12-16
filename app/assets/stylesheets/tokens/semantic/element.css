@@ -1,0 +1,15 @@
+:root {
+
+  --element-color-bg: var(--color-bg-cuatro);
+  --element-color-bg-hover: var(--color-bg-cuatro-hover);
+  --element-color-bg-active: var(--color-bg-cuatro-active);
+
+  --element-padding-inline: .625em;
+  --element-radius: .375em;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+  }
+}
