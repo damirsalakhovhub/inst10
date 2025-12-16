@@ -2,6 +2,6 @@
 /* Native HTML5 dialog element with full accessibility support */
 /* Imports from ui_kit/components/dialog via load-path */
 
-@import "components/dialog/dialog_tokens.css";
-@import "components/dialog/dialog_base.css";
+@import "./dialog/dialog_tokens.css";
+@import "./dialog/dialog_base.css";
 

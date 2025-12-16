@@ -2,8 +2,8 @@
 /* Universal input component with design tokens support */
 /* Imports from ui_kit/components/input via load-path */
 
-@import "components/input/input_tokens.css";
-@import "components/input/input_base.css";
-@import "components/input/input_sizes.css";
-@import "components/input/input_states.css";
+@import "./input/input_tokens.css";
+@import "./input/input_base.css";
+@import "./input/input_sizes.css";
+@import "./input/input_states.css";
 

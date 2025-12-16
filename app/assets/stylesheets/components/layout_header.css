@@ -6,6 +6,7 @@
   gap: 1rem;
   height: var(--px-80);
   background-color: var(--color-bg-uno);
+  
 
   &-left {
     display: flex;
@@ -23,6 +24,7 @@
     display: flex;
     align-items: center;
     gap: var(--px-16);
+    flex-direction: row;
   }
 
   &-nav {
@@ -43,6 +45,7 @@
 
   &-actions {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: var(--px-12);
   }

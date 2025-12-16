@@ -1,1 +1,2 @@
 web: PORT=7000 bundle exec bin/rails server
+css: npm run build:css:watch

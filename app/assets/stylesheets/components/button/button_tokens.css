@@ -45,9 +45,8 @@
   --btn-xlarge-icon-size: var(--px-24);
   /* --btn-xlarge-gap: var(--px-3); */
 
-  /* ============================================ */
+  
   /* VARIANTS - Color variant tokens */
-  /* ============================================ */
   
   /* Basic variant (default) */
   --btn-basic-bg: var(--color-bg-dos);
@@ -62,7 +61,6 @@
   --btn-primary-bg-active: var(--color-bg-primary-active);
 
   --btn-primary-color:var(--white);
-  
   
   
   /* Secondary variant */
