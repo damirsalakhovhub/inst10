@@ -73,6 +73,7 @@ Rails.application.configure do
 
   # Hotwire LiveReload watches for changes and auto-refreshes browser
   config.hotwire_livereload.listen_paths << Rails.root.join("app/assets/builds")
+  config.hotwire_livereload.listen_paths << Rails.root.join("app/assets/stylesheets")
   
   # Disable all asset caching in development
   config.public_file_server.enabled = true
