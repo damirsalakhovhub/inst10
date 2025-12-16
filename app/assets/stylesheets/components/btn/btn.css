@@ -1,4 +1,4 @@
-.btn-new {
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -8,10 +8,12 @@
   
   font-size: var(--font-size-m);
   line-height: var(--px-32);
+  --btn-height: var(--px-32);
   font-weight: 500;
     
   background-color: var(--element-color-bg);
   border-radius: var(--element-radius);
+  --btn-icon-size: var(--px-20);
   
   transition: background-color 0.1s linear;
 
@@ -35,39 +37,78 @@
   }
 }
 
+/* Icons ------------------------------------------------------------ */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--btn-icon-size);
+  height: var(--btn-icon-size);
+  color: inherit;
+}
+
+.btn-icon svg,
+.btn-icon .btn-icon-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* Use these on the icon element to control side */
+.btn-icon-left {
+  order: -1;
+}
+.btn-icon-right {
+  order: 1;
+}
+
+.btn-icon-only {
+  width: var(--btn-height);
+  min-width: var(--btn-height);
+  height: var(--btn-height);
+  padding: 0;
+  justify-content: center;
+}
+
 
 /* Sizes ------------------------------------------------------------ */
 
-.btn-new-small {
+.btn-small {
   font-size: var(--font-size-s);
   line-height: var(--px-24);
+  --btn-height: var(--px-24);
 }
 
-.btn-new-large {
+.btn-large {
   font-size: var(--font-size-l);
   line-height: var(--px-40);
+  --btn-height: var(--px-40);
   padding-inline: 1em;
 }
 
 
 /* Variants: Primary ------------------------------------------------ */
-.btn-new-primary {
+.btn-primary {
   background-color: var(--color-bg-primary);
   color: var(--white);
 }
 
-.btn-new-primary:hover {
+.btn-primary:hover {
   background-color: var(--color-bg-primary-hover);
 }
 
-.btn-new-primary:active {
+.btn-primary:active {
   background-color: var(--color-bg-primary-active);
 }
 
 
 /* Variants: Contrast ---------------------------------------------- */
 
-.btn-new-contrast {
+.btn-contrast {
   background-color: var(--color-bg-invert);
   color: var(--color-font-invert);
   
@@ -81,6 +122,6 @@
 }
 
 /* Rounded ---------------------------------------------------------- */
-.btn-new-rounded {
+.btn-rounded {
   border-radius: var(--radius-full);
 }

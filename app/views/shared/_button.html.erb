@@ -1,0 +1,44 @@
+<%
+  # Defaults
+  text        = local_assigns.fetch(:text, nil)
+  icon_left   = local_assigns.fetch(:icon_left, nil)
+  icon_right  = local_assigns.fetch(:icon_right, nil)
+  variant     = local_assigns.fetch(:variant, nil) # :primary, :contrast, or nil
+  size        = local_assigns.fetch(:size, nil)    # :small, :large, or nil
+  rounded     = local_assigns.fetch(:rounded, false)
+  icon_only   = local_assigns.fetch(:icon_only, false)
+  disabled    = local_assigns.fetch(:disabled, false)
+  aria        = local_assigns.fetch(:aria, {})
+
+  variant_class = case variant
+                  when :primary then "btn-primary"
+                  when :contrast then "btn-contrast"
+                  else nil
+                  end
+
+  size_class = case size
+               when :small then "btn-small"
+               when :large then "btn-large"
+               else nil
+               end
+
+  rounded_class = rounded ? "btn-rounded" : nil
+  icon_only_class = icon_only ? "btn-icon-only" : nil
+
+  classes = ["btn", variant_class, size_class, rounded_class, icon_only_class].compact.join(" ")
+%>
+
+<%= button_tag type: :button, class: classes, disabled: disabled, aria: aria do %>
+  <% if icon_left.present? %>
+    <span class="btn-icon btn-icon-left"><%= icon_left.html_safe %></span>
+  <% end %>
+
+  <% unless icon_only %>
+    <span><%= text %></span>
+  <% end %>
+
+  <% if icon_right.present? %>
+    <span class="btn-icon btn-icon-right"><%= icon_right.html_safe %></span>
+  <% end %>
+<% end %>
+

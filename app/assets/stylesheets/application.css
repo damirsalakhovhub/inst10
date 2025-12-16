@@ -3,9 +3,6 @@
 @import "./base/index.css";
 @import "./components/layout_header.css";
 @import "./components/btn/btn.css";
-@import "./components/button/button_tokens.css";
-@import "./components/button/button_base.css";
-@import "./components/button/button_variants.css";
 @import "./components/input.css";
 @import "./components/dialog.css";
 @import "./landing/index.css";

@@ -13,147 +13,69 @@
   <main class="ui-kit-main">
     <h1>Buttons</h1>
 
-    <%# New button (37signals style) %>
+    <%# Sizes & variants ------------------------------------------------ %>
     <section class="ui-kit-section">
-      <h2>New Button</h2>
+      <h2>Base</h2>
       <div class="ui-kit-element-group">
         <div class="ui-kit-row">
-          <%= button_tag "Button", class: "btn-new btn-new-small"%>
-          <%= button_tag "Button", class: "btn-new"%>
-          <%= button_tag "Button", class: "btn-new btn-new-large"%>
-
-          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-rounded"%>
-          <%= button_tag "Button", class: "btn-new btn-new-rounded"%>
-          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-rounded"%>
-
+          <%= render "shared/button", text: "Small",  size: :small %>
+          <%= render "shared/button", text: "Medium" %>
+          <%= render "shared/button", text: "Large",  size: :large %>
         </div>
-        
         <div class="ui-kit-row">
-          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-primary"%>
-          <%= button_tag "Button", class: "btn-new btn-new-primary"%>
-          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-primary"%>
-
-          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-rounded btn-new-primary"%>
-          <%= button_tag "Button", class: "btn-new btn-new-rounded btn-new-primary"%>
-          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-rounded btn-new-primary"%>
+          <%= render "shared/button", text: "Primary S", size: :small, variant: :primary %>
+          <%= render "shared/button", text: "Primary"   ,               variant: :primary %>
+          <%= render "shared/button", text: "Primary L", size: :large,  variant: :primary %>
         </div>
-
-
         <div class="ui-kit-row">
-          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-contrast"%>
-          <%= button_tag "Button", class: "btn-new btn-new-contrast"%>
-          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-contrast"%>
-
-          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-rounded btn-new-contrast"%>
-          <%= button_tag "Button", class: "btn-new btn-new-rounded btn-new-contrast"%>
-          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-rounded btn-new-contrast"%>
+          <%= render "shared/button", text: "Contrast S", size: :small, variant: :contrast %>
+          <%= render "shared/button", text: "Contrast"   ,               variant: :contrast %>
+          <%= render "shared/button", text: "Contrast L", size: :large,  variant: :contrast %>
         </div>
-
-
-        <div class="ui-kit-row">
-          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-primary", disabled: true %>
-          <%= button_tag "Button", class: "btn-new btn-new-primary", disabled: true %>
-          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-primary", disabled: true%>
-
-          <%= button_tag "Button", class: "btn-new btn-new-small btn-new-rounded btn-new-primary", disabled: true%>
-          <%= button_tag "Button", class: "btn-new btn-new-rounded btn-new-primary", disabled: true%>
-          <%= button_tag "Button", class: "btn-new btn-new-large btn-new-rounded btn-new-primary", disabled: true%>
-        </div>
-
       </div>
     </section>
 
-    <% variants.each do |variant| %>
-      <section class="ui-kit-section">
-        <h2><%= variant.to_s.capitalize %></h2>
-        <div class="ui-kit-element-group">
-          <% sizes.each do |size| %>
-            <div class="ui-kit-row">
-              <% size_class = size == :medium ? "" : "btn-#{size}" %>
-              <% variant_class = variant == :basic ? "btn btn-basic" : "btn btn-#{variant}" %>
-              <% button_class = [variant_class, size_class].compact.join(" ") %>
-              
-              <%# Text only button %>
-              <%= button_tag "Button", class: button_class %>
-              
-              <%# Like with icon left %>
-              <% icon_path = Rails.root.join("app/assets/images/icons/heart-icon.svg") %>
-              <% if File.exist?(icon_path) %>
-                <% icon_svg = File.read(icon_path).gsub(/\s(width|height)=["'][^"']*["']/, '').gsub(/<svg/, '<svg style="width: 100%; height: 100%;" class="btn-icon-svg"').html_safe %>
-                <%= button_tag class: button_class do %>
-                  <span class="btn-icon"><%= icon_svg %></span>
-                  <span class="btn-text">Like</span>
-                <% end %>
-              <% else %>
-                <%= button_tag "Like", class: button_class %>
-              <% end %>
-              
-              <%# Like with icon right %>
-              <% if File.exist?(icon_path) %>
-                <%= button_tag class: button_class do %>
-                  <span class="btn-text">Like</span>
-                  <span class="btn-icon"><%= icon_svg %></span>
-                <% end %>
-              <% else %>
-                <%= button_tag "Like", class: button_class %>
-              <% end %>
-              
-              <%# Icon only %>
-              <% if File.exist?(icon_path) %>
-                <%= button_tag class: "#{button_class} btn-icon-only", aria: { label: "Like" } do %>
-                  <span class="btn-icon"><%= icon_svg %></span>
-                <% end %>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </section>
-    <% end %>
-
-    <%# Rounded buttons %>
+    <%# Rounded --------------------------------------------------------- %>
     <section class="ui-kit-section">
       <h2>Rounded</h2>
       <div class="ui-kit-element-group">
-        <% [:basic, :primary].each do |variant| %>
-          <% [:medium, :large].each do |size| %>
-            <div class="ui-kit-row">
-              <% size_class = size == :medium ? "" : "btn-#{size}" %>
-              <% variant_class = variant == :basic ? "btn btn-basic" : "btn btn-#{variant}" %>
-              <% button_class = ["#{variant_class} btn-rounded", size_class].compact.join(" ") %>
-              
-              <%# Text only button %>
-              <%= button_tag "Button", class: button_class %>
-              
-              <%# Like with icon left %>
-              <% icon_path = Rails.root.join("app/assets/images/icons/heart-icon.svg") %>
-              <% if File.exist?(icon_path) %>
-                <% icon_svg = File.read(icon_path).gsub(/\s(width|height)=["'][^"']*["']/, '').gsub(/<svg/, '<svg style="width: 100%; height: 100%;" class="btn-icon-svg"').html_safe %>
-                <%= button_tag class: button_class do %>
-                  <span class="btn-icon"><%= icon_svg %></span>
-                  <span class="btn-text">Like</span>
-                <% end %>
-              <% else %>
-                <%= button_tag "Like", class: button_class %>
-              <% end %>
-              
-              <%# Like with icon right %>
-              <% if File.exist?(icon_path) %>
-                <%= button_tag class: button_class do %>
-                  <span class="btn-text">Like</span>
-                  <span class="btn-icon"><%= icon_svg %></span>
-                <% end %>
-              <% else %>
-                <%= button_tag "Like", class: button_class %>
-              <% end %>
-              
-              <%# Icon only %>
-              <% if File.exist?(icon_path) %>
-                <%= button_tag class: "#{button_class} btn-icon-only", aria: { label: "Like" } do %>
-                  <span class="btn-icon"><%= icon_svg %></span>
-                <% end %>
-              <% end %>
-            </div>
-          <% end %>
+        <div class="ui-kit-row">
+          <%= render "shared/button", text: "Rounded", rounded: true %>
+          <%= render "shared/button", text: "Primary", rounded: true, variant: :primary %>
+          <%= render "shared/button", text: "Contrast", rounded: true, variant: :contrast %>
+        </div>
+      </div>
+    </section>
+
+    <%# Disabled -------------------------------------------------------- %>
+    <section class="ui-kit-section">
+      <h2>Disabled</h2>
+      <div class="ui-kit-element-group">
+        <div class="ui-kit-row">
+          <%= render "shared/button", text: "Default", disabled: true %>
+          <%= render "shared/button", text: "Primary", variant: :primary, disabled: true %>
+          <%= render "shared/button", text: "Contrast", variant: :contrast, disabled: true %>
+          <%= render "shared/button", text: "Rounded", rounded: true, disabled: true %>
+        </div>
+      </div>
+    </section>
+
+    <%# Icons ----------------------------------------------------------- %>
+    <section class="ui-kit-section">
+      <h2>Icons</h2>
+      <div class="ui-kit-element-group">
+        <% icon_path = Rails.root.join("app/assets/images/icons/heart-icon.svg") %>
+        <% if File.exist?(icon_path) %>
+          <% icon_svg = File.read(icon_path).gsub(/\s(width|height)=["'][^"']*["']/, '').gsub(/<svg/, '<svg style="width: 100%; height: 100%;" class="btn-icon-svg"').html_safe %>
+          <div class="ui-kit-row">
+            <%= render "shared/button", text: "Like", icon_left: icon_svg, variant: :primary %>
+            <%= render "shared/button", text: "Like", icon_right: icon_svg, variant: :primary %>
+            <%= render "shared/button", icon_left: icon_svg, icon_only: true, variant: :primary, aria: { label: "Like" } %>
+          </div>
+        <% else %>
+          <div class="ui-kit-row">
+            <%= button_tag "Add heart-icon.svg to see icons", class: "btn" %>
+          </div>
         <% end %>
       </div>
     </section>
