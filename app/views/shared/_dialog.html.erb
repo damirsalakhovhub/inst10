@@ -23,7 +23,7 @@
       <h2 id="<%= title_id %>" class="dialog-title">
         <%= local_assigns[:title] %>
       </h2>
-      <% close_icon_path = Rails.root.join("ui_kit/assets/images/icons/close-icon.svg") %>
+      <% close_icon_path = Rails.root.join("app/assets/images/icons/close-icon.svg") %>
       <% if File.exist?(close_icon_path) %>
         <% close_icon_svg = File.read(close_icon_path).gsub(/\s(width|height)=["'][^"']*["']/, '').gsub(/<svg/, '<svg style="width: 100%; height: 100%;" class="btn-icon-svg"').html_safe %>
         <button type="button"

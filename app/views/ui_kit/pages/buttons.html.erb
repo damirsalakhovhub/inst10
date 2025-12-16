@@ -27,7 +27,7 @@
               <%= button_tag "Button", class: button_class %>
               
               <%# Like with icon left %>
-              <% icon_path = Rails.root.join("ui_kit/assets/images/icons/heart-icon.svg") %>
+              <% icon_path = Rails.root.join("app/assets/images/icons/heart-icon.svg") %>
               <% if File.exist?(icon_path) %>
                 <% icon_svg = File.read(icon_path).gsub(/\s(width|height)=["'][^"']*["']/, '').gsub(/<svg/, '<svg style="width: 100%; height: 100%;" class="btn-icon-svg"').html_safe %>
                 <%= button_tag class: button_class do %>
@@ -75,7 +75,7 @@
               <%= button_tag "Button", class: button_class %>
               
               <%# Like with icon left %>
-              <% icon_path = Rails.root.join("ui_kit/assets/images/icons/heart-icon.svg") %>
+              <% icon_path = Rails.root.join("app/assets/images/icons/heart-icon.svg") %>
               <% if File.exist?(icon_path) %>
                 <% icon_svg = File.read(icon_path).gsub(/\s(width|height)=["'][^"']*["']/, '').gsub(/<svg/, '<svg style="width: 100%; height: 100%;" class="btn-icon-svg"').html_safe %>
                 <%= button_tag class: button_class do %>
