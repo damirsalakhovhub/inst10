@@ -6,9 +6,10 @@ alwaysApply: true
 
 ## Default Ports by Framework
 
-- **Ruby on Rails projects**: Always use port **5000** (not 3000)
-  - Example: `PORT=5000 bin/rails server`
-  - When using foreman/Procfile.dev, ensure web process uses PORT=5000
+- **Ruby on Rails projects**: Use port **7000** (or 5000 if 7000 unavailable)
+  - Example: `PORT=7000 bin/rails server`
+  - When using foreman/Procfile.dev, ensure web process uses PORT=7000
+  - Note: Port 6000 is blocked by Chrome as unsafe
 
 - **React projects**: Use port **3000** (default)
   - Example: `npm start` or `yarn start` (defaults to 3000)
@@ -29,13 +30,13 @@ Port 5000 for Rails avoids conflicts with React development servers which common
 bin/dev
 ```
 
-This starts both Rails server (port 5000) and Sass compiler via `Procfile.dev`.
+This starts both Rails server (port 7000) and Sass compiler via `Procfile.dev`.
 
 ## Procfile.dev Configuration
 
 Ensure `Procfile.dev` contains:
 ```
-web: PORT=5000 bin/rails server
+web: PORT=7000 bin/rails server
 css: bundle exec sass --watch --poll --load-path=app --load-path=ui_kit --load-path=app/views --no-source-map app/assets/stylesheets/application.scss:app/assets/builds/application.css
 ```
 
@@ -74,24 +75,30 @@ bundle install
 rbenv rehash
 ```
 
-## Server not responding or 403/500 errors
+## Server Verification (CRITICAL)
 
-1. Check if server is actually running:
-   ```bash
-   curl -I http://localhost:5000/
-   ```
-   - Expected: `HTTP/1.1 200 OK` or redirect to login
-   - If `403` from AirTunes or other service: port conflict, kill and restart
-   - If connection refused: server not started
+**ALWAYS verify server works in a browser, NOT via curl.**
 
-2. Check logs in terminal where `bin/dev` is running
-3. Common fixes:
+1. **Open browser and navigate to** `http://localhost:7000/`
+   - Expected: Landing page loads with login/signup forms
+   - If page doesn't load or shows errors: server is NOT working
+   - **curl responses are irrelevant** — only browser verification counts
+
+2. **If browser shows errors:**
+   - Check logs in terminal where `bin/dev` is running
+   - Check for port conflicts: `lsof -ti:7000`
+   - Kill conflicting processes: `pkill -f "foreman|rails server|puma|sass"`
+   - Restart: `bundle install && rbenv rehash && bin/dev`
+
+3. **Common fixes:**
    - `bundle install && rbenv rehash`
    - `bin/rails tmp:cache:clear`
-   - Kill all processes and restart: `pkill -f "foreman|rails server|sass"; bin/dev`
+   - `rm -rf public/assets` (if assets:precompile was run in dev)
+   - Kill all processes and restart: `pkill -f "foreman|rails server|puma|sass"; bin/dev`
 
 ## Expected behavior
 
-- Landing page (`/`) should return **200 OK** for unauthenticated users (shows login/signup forms)
-- If you get a working HTML page (even with auth redirect), server is OK
-- Never claim "403 is normal" or "server works but page doesn't load" — always verify server returns proper response
+- Landing page (`/`) should **load in browser** for unauthenticated users (shows login/signup forms)
+- If browser shows error page or doesn't load: server is NOT working
+- **Never claim "server works" based on curl** — always verify in browser
+- **Never claim "403 is normal" or "server works but page doesn't load"** — if page doesn't load in browser, fix it
