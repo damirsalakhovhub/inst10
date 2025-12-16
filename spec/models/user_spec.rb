@@ -65,10 +65,4 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe 'paper_trail integration' do
-    it 'tracks changes' do
-      user = create(:user, email: 'old@example.com')
-      expect { user.update(email: 'new@example.com') }.to change { user.versions.count }.by(1)
-    end
-  end
 end

@@ -29,14 +29,9 @@ Rails.application.routes.draw do
     get "typography", to: "pages#typography"
   end
 
-  # User management (example of Pagy, authorization, caching)
+  # User management (authorization, caching)
   # Exclude Devise reserved paths to avoid route conflicts
   resources :users, only: [ :index, :show ], constraints: { id: /[0-9]+/ }
 
   resources :projects, except: [ :destroy ]
-
-  # Avo admin panel (development only)
-  authenticate :user, ->(user) { user.admin? } do
-    mount Avo::Engine, at: Avo.configuration.root_path
-  end if Rails.env.development?
 end

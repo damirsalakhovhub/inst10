@@ -1,7 +1,6 @@
 <div class="users-index">
   <h1>Users</h1>
 
-  <%# Example of Pagy pagination %>
   <div class="users-list">
     <% @users.each do |user| %>
       <div class="user-card">
@@ -11,10 +10,5 @@
       </div>
     <% end %>
   </div>
-
-  <%# Pagy navigation %>
-  <nav class="pagination">
-    <%== pagy_nav(@pagy) %>
-  </nav>
 </div>
 

@@ -48,7 +48,7 @@ class Rack::Attack
 
   # Throttle admin panel access
   throttle("admin/ip", limit: 100, period: 1.minute) do |req|
-    req.ip if req.path.start_with?("/admin") || req.path.start_with?("/avo")
+    req.ip if req.path.start_with?("/admin")
   end
 
   # Block suspicious requests

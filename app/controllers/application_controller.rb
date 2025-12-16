@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   include Pundit::Authorization
-  include Pagy::Backend
 
   before_action :set_current_user
 
