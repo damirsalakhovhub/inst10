@@ -1,0 +1,49 @@
+
+.btn {
+
+  /* Primary */
+  &-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-color);
+
+    &:hover:not(:disabled) {
+      background-color: var(--btn-primary-bg-hover);
+    }
+
+    &:active:not(:disabled) {
+      background-color: var(--btn-primary-bg-active);
+    }
+  }
+
+  /* Ghost (transparent background) */
+  &-ghost {
+    background-color: transparent;
+    color: var(--color-font-uno);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-bg-uno);
+    }
+
+    &:active:not(:disabled) {
+      background-color: var(--color-bg-uno-hover);
+    }
+  }
+
+  /* Link (no background, underline on hover) */
+  /* &-link { */
+  /* background-color: transparent; */
+  /* color: var(--color-link-uno); */
+  /* padding-left: 0; */
+  /* padding-right: 0; */
+  /* text-decoration: none; */
+  /*  */
+  /* &:hover:not(:disabled) { */
+  /* color: var(--color-link-uno-hover); */
+  /* text-decoration: underline; */
+  /* } */
+  /*  */
+  /* &:active:not(:disabled) { */
+  /* color: var(--color-link-uno-active); */
+  /* } */
+  /* } */
+}

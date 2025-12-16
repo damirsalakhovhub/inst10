@@ -1,0 +1,19 @@
+/* Main stylesheet (plain CSS, native nesting supported by modern browsers) */
+
+/* Design tokens */
+@import "tokens/_index.css";
+
+/* Base styles */
+@import "base/_index.css";
+
+/* UI kit page layout */
+@import "ui_kit.css";
+
+/* Application-specific styles */
+@import "landing/_index.css";
+
+/* Components */
+@import "components/button/button_component.css";
+@import "components/input.css";
+@import "components/dialog.css";
+@import "components/layout_header.css";

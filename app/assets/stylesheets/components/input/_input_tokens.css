@@ -1,0 +1,49 @@
+:root {
+
+  /* ============================================ */
+  /* SIZES - Size variant tokens */
+  /* ============================================ */
+
+  /* Medium (default) */
+  --input-medium--font-size: var(--font-size-m);
+  --input-medium--line-height: var(--px-24);
+  --input-medium--padding-inline: var(--px-12);
+  --input-medium--padding-block: var(--px-8);
+  --input-medium--padding-inline-with-icon: var(--px-40);
+  --input-medium--icon-size: var(--px-20);
+  --input-medium--icon-position-left: var(--px-12);
+
+  /* ============================================ */
+  /* COLORS & STYLES - Component-level tokens */
+  /* ============================================ */
+
+  /* Input field */
+  --input--bg: var(--color-bg-uno);
+  --input--border-width: 1px;
+  --input--border-color: var(--color-bg-tres);
+  --input--border-color-hover: var(--color-bg-cinco);
+  --input--border-color-focus: var(--color-outline-uno);
+  --input--text-color: var(--color-font-uno);
+  --input--placeholder-color: var(--color-font-cuatro);
+  --input--border-radius: var(--radius-xs);
+
+  /* Label */
+  --input--label-font-size: var(--font-size-s);
+  --input--label-line-height: var(--px-20);
+  --input--label-color: var(--color-font-dos);
+  --input--label-font-weight: 500;
+  --input--label-margin-bottom: var(--px-4);
+
+  /* Required indicator (asterisk) */
+  --input--required-color: var(--color-danger);
+  --input--required-margin-left: var(--px-4);
+
+  /* Icon */
+  --input--icon-color: var(--color-font-tres);
+
+  /* Disabled state */
+  --input--disabled-bg: var(--color-bg-uno);
+  --input--disabled-text-color: var(--color-font-cinco);
+  --input--disabled-border-color: var(--color-bg-tres);
+}
+

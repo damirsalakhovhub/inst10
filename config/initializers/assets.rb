@@ -6,5 +6,4 @@ Rails.application.config.assets.version = "1.0"
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path
 
-# Add UI kit and views to Sass load paths
-Rails.application.config.dartsass.build_options = ["--load-path=app", "--load-path=ui_kit", "--load-path=app/views"]
+# CSS files are served directly via Propshaft in development and production.
