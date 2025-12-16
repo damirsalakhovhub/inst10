@@ -1,0 +1,7 @@
+/* Base styles */
+/* Global HTML element styles */
+
+@import "./reset.css";
+@import "./base.css";
+@import "./text.css";
+@import "./accessibility.css";
