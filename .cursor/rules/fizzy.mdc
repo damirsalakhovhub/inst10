@@ -2,7 +2,7 @@
 alwaysApply: true
 ---
 
-description: Using basecamp/fizzy as a reference project (learning only, no copying).
+description: Using basecamp/fizzy as a reference project.
 
 Reference project
 - basecamp/fizzy (https://github.com/basecamp/fizzy)
@@ -11,13 +11,9 @@ Reference project
 Purpose
 - Learn patterns and engineering decisions (architecture, Rails conventions, UI flows).
 - Look for good solutions and get inspired by their implementation approaches.
-- Do NOT copy code verbatim or port features 1:1. Implement independently.
+- You can copy code verbatim or port features 1:1. 
 - When implementing new features or making architectural decisions, check Fizzy for reference patterns.
 
-License / compliance
-- Treat Fizzy as “source-available with restrictions”, not a drop-in template.
-- Never paste Fizzy code into this repo.
-- If reuse is ever considered, stop and check license compatibility first.
 
 How to use Fizzy (workflow)
 - Default: follow this repo’s conventions first.
