@@ -5,7 +5,7 @@
 .btn {
   /* Icon size tokens */
   --btn-icon-size-s: var(--px-16);
-  --btn-icon-size-m: var(--px-24);
+  --btn-icon-size-m: var(--px-20);
   --btn-icon-size-l: var(--px-24);
 
   /* Layout */
