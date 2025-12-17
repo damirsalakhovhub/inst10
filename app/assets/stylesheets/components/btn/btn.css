@@ -3,6 +3,11 @@
    ============================================================================ */
 
 .btn {
+  /* Icon size tokens */
+  --btn-icon-size-s: var(--px-16);
+  --btn-icon-size-m: var(--px-24);
+  --btn-icon-size-l: var(--px-24);
+
   /* Layout */
   display: inline-flex;
   align-items: center;
@@ -23,7 +28,7 @@
   
   /* Variables */
   --btn-height: var(--px-32);
-  --btn-icon-size: var(--px-20);
+  --btn-icon-size: var(--btn-icon-size-m);
   --optical-compensation: 0.25em;
   
   /* Animation */
@@ -109,12 +114,14 @@
   font-size: var(--font-size-s);
   line-height: var(--px-24);
   --btn-height: var(--px-24);
+  --btn-icon-size: var(--btn-icon-size-s);
 }
 
 .btn-large {
   font-size: var(--font-size-l);
   line-height: var(--px-40);
   --btn-height: var(--px-40);
+  --btn-icon-size: var(--btn-icon-size-l);
   padding-inline: .75em;
 }
 
