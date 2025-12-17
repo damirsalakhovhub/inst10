@@ -8,8 +8,8 @@
   --element-radius: .375em;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
 
   }
-}
+} */

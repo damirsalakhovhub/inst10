@@ -72,6 +72,12 @@
             <%= render "shared/button", text: "Like", icon_right: icon_svg, variant: :primary %>
             <%= render "shared/button", icon_left: icon_svg, icon_only: true, variant: :primary, aria: { label: "Like" } %>
           </div>
+          <div class="ui-kit-row">
+            <%= render "shared/button", text: "Like", icon_left: icon_svg, variant: :primary, size: :small %>
+            <%= render "shared/button", icon_left: icon_svg, icon_only: true, variant: :primary, size: :small, aria: { label: "Like" } %>
+            <%= render "shared/button", text: "Like", icon_left: icon_svg, variant: :primary, size: :large %>
+            <%= render "shared/button", icon_left: icon_svg, icon_only: true, variant: :primary, size: :large, aria: { label: "Like" } %>
+          </div>
         <% else %>
           <div class="ui-kit-row">
             <%= button_tag "Add heart-icon.svg to see icons", class: "btn" %>

@@ -1,22 +1,35 @@
+/* ============================================================================
+   Base Button
+   ============================================================================ */
+
 .btn {
+  /* Layout */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--px-8);
+  gap: var(--px-4);
   
+  /* Spacing */
   padding-inline: var(--element-padding-inline);
   
+  /* Typography */
   font-size: var(--font-size-m);
   line-height: var(--px-32);
-  --btn-height: var(--px-32);
   font-weight: 500;
-    
+  
+  /* Appearance */
   background-color: var(--element-color-bg);
   border-radius: var(--element-radius);
-  --btn-icon-size: var(--px-20);
   
+  /* Variables */
+  --btn-height: var(--px-32);
+  --btn-icon-size: var(--px-20);
+  --optical-compensation: 0.25em;
+  
+  /* Animation */
   transition: background-color 0.1s linear;
 
+  /* States */
   &:hover {
     background-color: var(--element-color-bg-hover);
   }
@@ -37,7 +50,10 @@
   }
 }
 
-/* Icons ------------------------------------------------------------ */
+/* ============================================================================
+   Icons
+   ============================================================================ */
+
 .btn-icon {
   display: inline-flex;
   align-items: center;
@@ -58,7 +74,7 @@
   stroke-width: 2;
 }
 
-/* Use these on the icon element to control side */
+/* Icon Position */
 .btn-icon-left {
   order: -1;
 }
@@ -66,6 +82,7 @@
   order: 1;
 }
 
+/* Icon-only Button (square) */
 .btn-icon-only {
   width: var(--btn-height);
   min-width: var(--btn-height);
@@ -74,8 +91,19 @@
   justify-content: center;
 }
 
+/* Optical Compensation: add extra padding on the side without icon */
+.btn:not(.btn-icon-only):has(.btn-icon-left) {
+  padding-inline-end: calc(var(--element-padding-inline) + var(--optical-compensation));
+}
 
-/* Sizes ------------------------------------------------------------ */
+.btn:not(.btn-icon-only):has(.btn-icon-right) {
+  padding-inline-start: calc(var(--element-padding-inline) + var(--optical-compensation));
+}
+
+
+/* ============================================================================
+   Sizes
+   ============================================================================ */
 
 .btn-small {
   font-size: var(--font-size-s);
@@ -87,11 +115,15 @@
   font-size: var(--font-size-l);
   line-height: var(--px-40);
   --btn-height: var(--px-40);
-  padding-inline: 1em;
+  padding-inline: .75em;
 }
 
 
-/* Variants: Primary ------------------------------------------------ */
+/* ============================================================================
+   Variants
+   ============================================================================ */
+
+/* Primary Variant */
 .btn-primary {
   background-color: var(--color-bg-primary);
   color: var(--white);
@@ -105,9 +137,7 @@
   background-color: var(--color-bg-primary-active);
 }
 
-
-/* Variants: Contrast ---------------------------------------------- */
-
+/* Contrast Variant */
 .btn-contrast {
   background-color: var(--color-bg-invert);
   color: var(--color-font-invert);
@@ -121,7 +151,11 @@
   }
 }
 
-/* Rounded ---------------------------------------------------------- */
+/* ============================================================================
+   Modifiers
+   ============================================================================ */
+
+/* Rounded Button */
 .btn-rounded {
   border-radius: var(--radius-full);
 }
