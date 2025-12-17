@@ -1,11 +1,11 @@
 /* Build entrypoint: imports only (PostCSS resolves nesting/imports) */
-@import "./tokens/index.css";
-@import "./base/index.css";
+@import "./tokens.css";
+@import "./base.css";
 @import "./components/layout_header.css";
-@import "./components/btn/btn.css";
+@import "./button.css";
 @import "./components/input.css";
 @import "./components/dialog.css";
-@import "./landing/index.css";
+@import "./landing.css";
 @import "./ui_kit.css";
 
 .group-row {

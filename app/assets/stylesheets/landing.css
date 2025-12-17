@@ -1,6 +1,9 @@
 main { 
   margin: 0 auto;
   padding-inline: var(--padding-inline-edge);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-l);
 }
 
 .header {
@@ -10,10 +13,22 @@ main {
   height: var(--px-80);
 }
 
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-l);
+}
+
 .text-display {
   font-size: var(--px-64);
+  letter-spacing: var(--letters-tight);
   line-height: 1.1;
   font-weight: 900;
+  margin-left: -0.075em;
+}
+
+.text-hero {
+  font-size: var(--font-size-l);
 }
 
 .auth-section {

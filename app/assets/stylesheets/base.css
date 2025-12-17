@@ -2,6 +2,6 @@
 /* Global HTML element styles */
 
 @import "./reset.css";
-@import "./base.css";
-@import "./text.css";
+@import "./base_styles.css";
+@import "./typography.css";
 @import "./accessibility.css";

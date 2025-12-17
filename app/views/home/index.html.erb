@@ -1,3 +1,9 @@
 <main>
-  <h1 class="text-display"><%= t("home.greeting", username: current_user.email.split("@").first) %></h1>
+  <h1 class="text-display">
+  <%= t("home.greeting", username: current_user.email.split("@").first) %>
+  </h1>
+
+  <p class="text-body">
+  <%= t("home.description") %>
+  </p>
 </main>
