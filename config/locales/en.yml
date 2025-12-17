@@ -2,7 +2,7 @@ en:
   hello: "Hello world"
   
   common:
-    app_name: "Bulletproof PM"
+    app_name: "Instantum"
     sign_out: "Sign Out"
 
   home:
@@ -18,18 +18,18 @@ en:
     title: "Open source project management"
     signed_in_as: "You are signed in as %{email}"
     sign_in:
-      title: "Sign In"
+      title: "Log In"
       email_label: "Email"
       password_label: "Password"
       remember_me: "Remember me"
-      submit: "Sign In"
+      submit: "Log In"
       forgot_password: "Forgot your password?"
     sign_up:
-      title: "Sign Up"
+      title: "Registration"
       email_label: "Email"
       password_label: "Password"
       password_confirmation_label: "Password Confirmation"
-      submit: "Sign Up"
+      submit: "Register"
 
   projects:
     nav:
