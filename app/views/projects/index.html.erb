@@ -1,4 +1,5 @@
-<h1>Projects</h1>
+<main class="main">
+<h1 class="text-display">Projects</h1>
 
 <% if @projects.any? %>
   <ul>
@@ -14,5 +15,6 @@
 
 <p>
   <%= button_to "New Project", new_project_path, method: :get, class: "btn btn-primary" %>
-</p>
+  </p>
 
+</main>

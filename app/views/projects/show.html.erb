@@ -1,8 +1,9 @@
-<h1><%= @project.name %></h1>
+<main class="main">
+<h1 class="text-display"><%= @project.name %></h1>
 <p><%= @project.description %></p>
 
-<div class="project-actions">
-  <%= button_to "Edit", edit_project_path(@project), method: :get, class: "btn btn-secondary" %>
-  <%= button_to "Back", projects_path, method: :get, class: "btn btn-basic" %>
-</div>
-
+<div class="group-row">
+  <%= button_to "Edit", edit_project_path(@project), method: :get, class: "btn" %>
+  <%= button_to "Back", projects_path, method: :get, class: "btn" %>
+  </div>
+</main>

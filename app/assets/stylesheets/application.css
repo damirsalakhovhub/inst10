@@ -8,3 +8,8 @@
 @import "./landing/index.css";
 @import "./ui_kit.css";
 
+.group-row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-s);
+}

@@ -1,8 +1,10 @@
-<h1>New Project</h1>
+<main class="main">
+<h1 class="text-display">New Project</h1>
 
 <%= render "form", project: @project %>
 
 <p>
   <%= button_to "Back", projects_path, method: :get, class: "btn btn-basic" %>
-</p>
-
+    <%= button_to "Back", projects_path, method: :get, class: "btn btn-basic" %>
+  </p>
+</main>

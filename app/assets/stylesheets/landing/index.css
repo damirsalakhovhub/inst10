@@ -1,7 +1,6 @@
-main {
-  max-width: 1200px;
+main { 
   margin: 0 auto;
-  padding: 0 var(--px-16);
+  padding-inline: var(--padding-inline-edge);
 }
 
 .header {
