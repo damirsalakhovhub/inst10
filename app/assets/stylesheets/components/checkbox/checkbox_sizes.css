@@ -1,0 +1,10 @@
+.checkbox-wrapper-small {
+  font-size: var(--checkbox-small--font-size);
+
+  .checkbox-control {
+    height: var(--checkbox-small--size);
+    width: var(--checkbox-small--size);
+    border-radius: var(--checkbox-small--border-radius);
+  }
+}
+

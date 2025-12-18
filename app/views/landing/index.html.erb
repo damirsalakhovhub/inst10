@@ -41,13 +41,13 @@
         %>
         
         <% if @devise_mapping&.rememberable? %>
-          <div class="auth-form-remember">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me, t("landing.sign_in.remember_me") %>
-          </div>
+          <%= render "shared/checkbox",
+            label: t("landing.sign_in.remember_me"),
+            name: "user[remember_me]"
+          %>
         <% end %>
         
-        <%= f.submit t("landing.sign_in.submit"), class: "btn btn-primary" %>
+        <%= render "shared/button", text: t("landing.sign_in.submit"), variant: :primary, type: :submit %>
       <% end %>
       
       <% if @devise_mapping&.recoverable? %>
@@ -87,7 +87,7 @@
             required: true,
             error: @resource.errors[:password_confirmation].first
           %>
-          <%= f.submit t("landing.sign_up.submit"), class: "btn btn-primary" %>
+          <%= render "shared/button", text: t("landing.sign_up.submit"), variant: :primary, type: :submit %>
         <% end %>
     <% end %>
   </section>

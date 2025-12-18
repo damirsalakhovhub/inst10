@@ -3,7 +3,7 @@ text        = local_assigns[:text] || "Button"
 icon_left   = local_assigns[:icon_left]
 icon_right  = local_assigns[:icon_right]
 variant     = local_assigns[:variant]
-size        = local_assigns[:size]
+size        = local_assigns[:size]      # :small (32px), :tiny (24px), nil (default: 40px)
 rounded     = !!local_assigns[:rounded]
 icon_only   = !!local_assigns[:icon_only]
 href        = local_assigns[:href]
@@ -18,7 +18,7 @@ classes = ["btn"]
 classes << "btn-primary"   if variant == :primary
 classes << "btn-contrast"  if variant == :contrast
 classes << "btn-small"     if size == :small
-classes << "btn-large"     if size == :large
+classes << "btn-tiny"      if size == :tiny
 classes << "btn-rounded"   if rounded
 classes << "btn-icon-only" if icon_only
 classes << extra_class if extra_class.present?

@@ -12,6 +12,9 @@ class UiKit::PagesController < ApplicationController
   def inputs
   end
 
+  def checkboxes
+  end
+
   def typography
   end
 end

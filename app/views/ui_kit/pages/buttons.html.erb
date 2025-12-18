@@ -1,24 +1,19 @@
-<%
-  variants = [:basic, :primary, :ghost]
-  sizes = [:tiny, :small, :medium, :large, :xlarge]
-  button_templates = [
-    { text: "Button" },
-    { text: "Like", icon: "heart", icon_position: :left },
-    { text: "Like", icon: "heart", icon_position: :right },
-    { icon: "heart", icon_mode: :icon_only, aria: { label: "Like" } }
-  ]
-%>
-
 <%= render "ui_kit/shared/layout" do %>
   <main class="ui-kit-main">
     <h1>Buttons</h1>
 
     <% icon_path = Rails.root.join("app/assets/images/icons/heart-icon.svg") %>
     <% if File.exist?(icon_path) %>
-      <% icon_svg = File.read(icon_path).gsub(/\s(width|height)=["'][^"']*["']/, '').gsub(/<svg/, '<svg style="width: 100%; height: 100%;" class="btn-icon-svg"').html_safe %>
+      <% icon_svg = File.read(icon_path).gsub(/\s(width|height)=["'][^"']*["']/, '').gsub(/<svg/, '<svg class="btn-icon-svg"').html_safe %>
     <% end %>
 
-    <% sizes = [[:small, "Small"], [nil, "Medium"], [:large, "Large"]] %>
+    <%# Sizes definition for demo rows %>
+    <% sizes = [
+      [:tiny, "Tiny"], 
+      [:small, "Small"], 
+      [nil, "Default"]
+    ] %>
+
     <% sections = [
       { title: "Base",     variant: nil,       rounded: false, disabled: false },
       { title: "Primary",  variant: :primary,  rounded: false, disabled: false },
@@ -32,12 +27,15 @@
         <div class="ui-kit-element-group">
           <% sizes.each do |size_key, label| %>
             <div class="ui-kit-row">
-              <%= render "shared/button", text: "Like", size: size_key, variant: section[:variant], rounded: section[:rounded], disabled: section[:disabled] %>
-              <% if icon_svg.present? %>
-                <%= render "shared/button", text: "Like", icon_left: icon_svg, size: size_key, variant: section[:variant], rounded: section[:rounded], disabled: section[:disabled] %>
-                <%= render "shared/button", text: "Like", icon_right: icon_svg, size: size_key, variant: section[:variant], rounded: section[:rounded], disabled: section[:disabled] %>
-                <%= render "shared/button", icon_left: icon_svg, icon_only: true, size: size_key, variant: section[:variant], rounded: section[:rounded], disabled: section[:disabled], aria: { label: "Like" } %>
-              <% end %>
+              <span class="ui-kit-row-label"><%= label %></span>
+              <div class="ui-kit-row-content">
+                <%= render "shared/button", text: "Like", size: size_key, variant: section[:variant], rounded: section[:rounded], disabled: section[:disabled] %>
+                <% if icon_svg.present? %>
+                  <%= render "shared/button", text: "Like", icon_left: icon_svg, size: size_key, variant: section[:variant], rounded: section[:rounded], disabled: section[:disabled] %>
+                  <%= render "shared/button", text: "Like", icon_right: icon_svg, size: size_key, variant: section[:variant], rounded: section[:rounded], disabled: section[:disabled] %>
+                  <%= render "shared/button", icon_left: icon_svg, icon_only: true, size: size_key, variant: section[:variant], rounded: section[:rounded], disabled: section[:disabled], aria: { label: "Like" } %>
+                <% end %>
+              </div>
             </div>
           <% end %>
         </div>

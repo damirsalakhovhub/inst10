@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get "buttons", to: "pages#buttons"
     get "selects", to: "pages#selects"
     get "inputs", to: "pages#inputs"
+    get "checkboxes", to: "pages#checkboxes"
     get "dialogs", to: "pages#dialogs"
     get "typography", to: "pages#typography"
   end

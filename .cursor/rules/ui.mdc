@@ -30,6 +30,10 @@ CSS/SCSS rules
   - Keep nesting depth reasonable (max 3-4 levels)
   - Use nesting for pseudo-classes (`&:hover`, `&:focus`) and modifiers
 
+Animation timing functions
+- Default: use `linear` timing function for all animations and transitions.
+- Use `ease-in-out` or `ease-out` only for movement/resizing of large UI elements (modals, panels, page transitions).
+
 UI robustness
 - Avoid fragile selectors; prefer stable data attributes (e.g., data-testid).
 - Keep UI changes minimal and consistent with existing patterns.

@@ -1,0 +1,43 @@
+<%# Checkbox Component %>
+<%# Usage: render "shared/checkbox", name: "remember_me", label: "Remember me" %>
+
+<% checkbox_id = local_assigns[:id] || "checkbox_#{local_assigns[:name].to_s.gsub(/\[|\]/, '_').gsub(/__/, '_').gsub(/_$/, '')}" %>
+<% checkbox_size = local_assigns[:size] || :medium %>
+<% is_checked = local_assigns[:checked] || false %>
+<% is_disabled = local_assigns[:disabled] || false %>
+<% is_required = local_assigns[:required] || false %>
+
+<%# Wrapper classes %>
+<% wrapper_classes = ["checkbox-wrapper"] %>
+<% wrapper_classes << "checkbox-wrapper-#{checkbox_size}" unless checkbox_size == :medium %>
+<% wrapper_classes << local_assigns[:wrapper_class] if local_assigns[:wrapper_class] %>
+
+<label class="<%= wrapper_classes.compact.join(" ") %>" for="<%= checkbox_id %>">
+  <input type="checkbox"
+         id="<%= checkbox_id %>"
+         name="<%= local_assigns[:name] %>"
+         class="checkbox-input"
+         <% if is_checked %>checked<% end %>
+         <% if is_disabled %>disabled<% end %>
+         <% if is_required %>required<% end %>
+         <% if local_assigns[:value] %>value="<%= local_assigns[:value] %>"<% end %>
+         <% if local_assigns[:data] %>
+           <% local_assigns[:data].each do |k, v| %>
+             data-<%= k %>="<%= v %>"
+           <% end %>
+         <% end %>>
+  
+  <div class="checkbox-control">
+    <%= render_input_icon("check") %>
+  </div>
+
+  <% if local_assigns[:label] %>
+    <span class="checkbox-label">
+      <%= local_assigns[:label] %>
+      <% if is_required %>
+        <span class="input-label-required" aria-hidden="true">*</span>
+      <% end %>
+    </span>
+  <% end %>
+</label>
+

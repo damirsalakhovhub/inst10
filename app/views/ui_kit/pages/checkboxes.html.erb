@@ -1,0 +1,72 @@
+<%= render "ui_kit/shared/layout" do %>
+  <main class="ui-kit-main">
+    <h1>Checkboxes</h1>
+
+    <section class="ui-kit-section">
+      <h2>Checkbox Variants</h2>
+      <div class="ui-kit-element-group" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="ui-kit-element">
+          <%= render "shared/checkbox",
+            label: "Default Checkbox",
+            name: "checkbox_default"
+          %>
+        </div>
+
+        <div class="ui-kit-element">
+          <%= render "shared/checkbox",
+            label: "Checked by Default",
+            name: "checkbox_checked",
+            checked: true
+          %>
+        </div>
+
+        <div class="ui-kit-element">
+          <%= render "shared/checkbox",
+            label: "Required Checkbox",
+            name: "checkbox_required",
+            required: true
+          %>
+        </div>
+
+        <div class="ui-kit-element">
+          <%= render "shared/checkbox",
+            label: "Disabled Checkbox",
+            name: "checkbox_disabled",
+            disabled: true
+          %>
+        </div>
+
+        <div class="ui-kit-element">
+          <%= render "shared/checkbox",
+            label: "Disabled & Checked",
+            name: "checkbox_disabled_checked",
+            disabled: true,
+            checked: true
+          %>
+        </div>
+      </div>
+    </section>
+
+    <section class="ui-kit-section">
+      <h2>Checkbox Sizes</h2>
+      <div class="ui-kit-element-group" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="ui-kit-element">
+          <%= render "shared/checkbox",
+            label: "Small Checkbox",
+            name: "checkbox_small",
+            size: :small
+          %>
+        </div>
+
+        <div class="ui-kit-element">
+          <%= render "shared/checkbox",
+            label: "Medium Checkbox (Default)",
+            name: "checkbox_medium",
+            size: :medium
+          %>
+        </div>
+      </div>
+    </section>
+  </main>
+<% end %>
+

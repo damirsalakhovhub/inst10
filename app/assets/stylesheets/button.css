@@ -1,12 +1,12 @@
 /* ============================================================================
-   Base Button
+   Base Button (Default: 40px)
    ============================================================================ */
 
 .btn {
   /* Icon size tokens */
-  --btn-icon-size-s: var(--px-16);
-  --btn-icon-size-m: var(--px-20);
-  --btn-icon-size-l: var(--px-24);
+  --btn-icon-size-tiny: var(--px-16);
+  --btn-icon-size-small: var(--px-20);
+  --btn-icon-size-default: var(--px-24);
 
   /* Layout */
   display: inline-flex;
@@ -15,11 +15,13 @@
   gap: var(--px-4);
   
   /* Spacing */
-  padding-inline: var(--element-padding-inline);
+  padding-inline: .75em;
   
-  /* Typography */
-  font-size: var(--font-size-m);
-  line-height: var(--px-32);
+  /* Dimensions & Typography */
+  --btn-height: var(--px-40);
+  height: var(--btn-height);
+  font-size: var(--font-size-l);
+  line-height: 1; /* Reset line-height to use height/flex for centering */
   font-weight: 500;
   
   /* Appearance */
@@ -27,19 +29,18 @@
   border-radius: var(--element-radius);
   
   /* Variables */
-  --btn-height: var(--px-32);
-  --btn-icon-size: var(--btn-icon-size-m);
+  --btn-icon-size: var(--btn-icon-size-default);
   --optical-compensation: 0.25em;
   
   /* Animation */
   transition: background-color 0.1s linear;
 
   /* States */
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: var(--element-color-bg-hover);
   }
 
-  &:active {
+  &:active:not(:disabled) {
     background-color: var(--element-color-bg-active);
     transform: translateY(1px);
   }
@@ -51,7 +52,7 @@
   &:disabled {
     background-color: var(--disabled-color-bg);
     color: var(--disabled-color-font);
-    pointer-events: none;
+    cursor: not-allowed;
   }
 }
 
@@ -91,18 +92,17 @@
 .btn-icon-only {
   width: var(--btn-height);
   min-width: var(--btn-height);
-  height: var(--btn-height);
   padding: 0;
   justify-content: center;
 }
 
 /* Optical Compensation: add extra padding on the side without icon */
 .btn:not(.btn-icon-only):has(.btn-icon-left) {
-  padding-inline-end: calc(var(--element-padding-inline) + var(--optical-compensation));
+  padding-inline-end: calc(.75em + var(--optical-compensation));
 }
 
 .btn:not(.btn-icon-only):has(.btn-icon-right) {
-  padding-inline-start: calc(var(--element-padding-inline) + var(--optical-compensation));
+  padding-inline-start: calc(.75em + var(--optical-compensation));
 }
 
 
@@ -111,18 +111,29 @@
    ============================================================================ */
 
 .btn-small {
-  font-size: var(--font-size-s);
-  line-height: var(--px-24);
-  --btn-height: var(--px-24);
-  --btn-icon-size: var(--btn-icon-size-s);
+  --btn-height: var(--px-32);
+  height: var(--btn-height);
+  font-size: var(--font-size-m);
+  padding-inline: var(--element-padding-inline);
+  --btn-icon-size: var(--btn-icon-size-small);
 }
 
-.btn-large {
-  font-size: var(--font-size-l);
-  line-height: var(--px-40);
-  --btn-height: var(--px-40);
-  --btn-icon-size: var(--btn-icon-size-l);
-  padding-inline: .75em;
+.btn-tiny {
+  --btn-height: var(--px-24);
+  height: var(--btn-height);
+  font-size: var(--font-size-s);
+  padding-inline: var(--element-padding-inline);
+  --btn-icon-size: var(--btn-icon-size-tiny);
+}
+
+/* Override optical compensation for smaller sizes (using their specific padding) */
+.btn-small:not(.btn-icon-only):has(.btn-icon-left),
+.btn-tiny:not(.btn-icon-only):has(.btn-icon-left) {
+  padding-inline-end: calc(var(--element-padding-inline) + var(--optical-compensation));
+}
+.btn-small:not(.btn-icon-only):has(.btn-icon-right),
+.btn-tiny:not(.btn-icon-only):has(.btn-icon-right) {
+  padding-inline-start: calc(var(--element-padding-inline) + var(--optical-compensation));
 }
 
 
@@ -136,11 +147,11 @@
   color: var(--white);
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
   background-color: var(--color-bg-primary-hover);
 }
 
-.btn-primary:active {
+.btn-primary:active:not(:disabled) {
   background-color: var(--color-bg-primary-active);
 }
 
@@ -149,11 +160,11 @@
   background-color: var(--color-bg-invert);
   color: var(--color-font-invert);
   
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: var(--color-bg-invert-hover);
   }
 
-  &:active {
+  &:active:not(:disabled) {
     background-color: var(--color-bg-invert-active);
   }
 }
