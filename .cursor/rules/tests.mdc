@@ -9,5 +9,7 @@ Testing
 - If tests fail: attempt one fix iteration; if still failing or unclear, stop and report findings + next steps.
 
 Git / deploy
-- Do not commit unless explicitly asked.
-- Do not deploy unless explicitly asked.
+- **NEVER** commit unless the user explicitly requests it.
+- **NEVER** deploy unless the user explicitly requests it.
+- If the user says "commit" or "коммит" as part of a multi-step task, commit ONLY that specific step, not subsequent work.
+- After making file changes, do NOT automatically commit — wait for explicit instruction.
