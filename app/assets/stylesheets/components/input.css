@@ -1,35 +1,10 @@
-/* ============================================================================
-   Input Component
-   ============================================================================ */
-
-/* Universal input component with design tokens support */
-
 :root {
-  /* ============================================ */
-  /* SIZES - Size variant tokens */
-  /* ============================================ */
+  /* Icon sizes ----- */
+  --input-icon-size-small: var(--px-16);
+  --input-icon-size-medium: var(--px-20);
+  --input-icon-size-large: var(--px-24);
 
-  /* Medium (default) */
-  --input-medium--font-size: var(--font-size-m);
-  --input-medium--line-height: var(--px-24);
-  --input-medium--padding-inline: var(--px-12);
-  --input-medium--padding-block: var(--px-8);
-  --input-medium--padding-inline-with-icon: var(--px-40);
-  --input-medium--icon-size: var(--px-20);
-  --input-medium--icon-position-left: var(--px-12);
-
-  /* Large */
-  --input-large--font-size: var(--font-size-l);
-  --input-large--line-height: var(--px-28);
-  --input-large--padding-inline: var(--px-16);
-  --input-large--padding-block: var(--px-12);
-  --input-large--padding-inline-with-icon: var(--px-48);
-  --input-large--icon-size: var(--px-24);
-  --input-large--icon-position-left: var(--px-16);
-
-  /* ============================================ */
-  /* COLORS & STYLES - Component-level tokens */
-  /* ============================================ */
+  /* Colors & Styles ----- */
 
   /* Input field */
   --input--bg: var(--color-bg-uno);
@@ -41,28 +16,26 @@
   --input--placeholder-color: var(--color-font-cuatro);
   --input--border-radius: var(--element-radius);
 
-  /* Label */
+  /* Label ----- */
   --input--label-font-size: var(--font-size-s);
   --input--label-line-height: var(--px-20);
   --input--label-color: var(--color-font-dos);
   --input--label-font-weight: 500;
   --input--label-margin-bottom: var(--px-4);
 
-  /* Required indicator (asterisk) */
+  /* Required indicator (asterisk) ----- */
   --input--required-color: var(--color-danger);
   --input--required-margin-left: var(--px-4);
 
-  /* Icon */
+  /* Icon ----- */
   --input--icon-color: var(--color-font-tres);
 
-  /* Disabled state */
+  /* Disabled state ----- */
   --input--disabled-bg: var(--color-bg-uno);
   --input--disabled-text-color: var(--color-font-cinco);
   --input--disabled-border-color: var(--color-bg-tres);
 
-  /* ============================================ */
-  /* VARIANTS - Style variant tokens */
-  /* ============================================ */
+  /* Variants ----- */
 
   /* Accent variant (for promo/landing pages) */
   --input-accent--bg: var(--white);
@@ -73,9 +46,8 @@
   --input-accent--placeholder-color: var(--color-font-cuatro);
 }
 
-/* ============================================================================
-   Base Styles
-   ============================================================================ */
+
+/* Base Styles ----- */
 
 .input-wrapper {
   display: flex;
@@ -114,15 +86,17 @@
 .input {
   width: 100%;
   font-family: var(--font-family-sans);
-  line-height: var(--input-medium--line-height);
-  color: var(--input--text-color);
   
-  padding-inline: var(--input-medium--padding-inline);
-  padding-block: var(--input-medium--padding-block);
+  /* Medium (default) - from element tokens */
+  height: var(--element-medium--height);
+  font-size: var(--element-medium--font-size);
+  line-height: 1;
+  padding-inline: var(--element-padding-inline);
   
   background-color: var(--input--bg);
   box-shadow: inset 0 0 0 var(--input--border-width) var(--input--border-color);
   border-radius: var(--input--border-radius);
+  color: var(--input--text-color);
   
   transition: box-shadow 0.15s linear, background-color 0.15s linear;
   
@@ -132,18 +106,18 @@
 
   /* Input with icon - add left padding for icon space */
   &.input-with-icon {
-    padding-left: var(--input-medium--padding-inline-with-icon);
+    padding-left: var(--px-40);
   }
 }
 
 .input-icon {
   position: absolute;
-  left: var(--input-medium--icon-position-left);
+  left: var(--px-12);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--input-medium--icon-size);
-  height: var(--input-medium--icon-size);
+  width: var(--input-icon-size-medium);
+  height: var(--input-icon-size-medium);
   color: var(--input--icon-color);
   pointer-events: none;
 }
@@ -157,9 +131,9 @@
   stroke-width: 2;
 }
 
-/* ============================================================================
-   States
-   ============================================================================ */
+
+
+/* States ----- */
 
 .input {
   /* Hover state */
@@ -229,35 +203,40 @@
   }
 }
 
-/* ============================================================================
-   Sizes
-   ============================================================================ */
+
+/* Sizes ----- */
 
 /* Medium size is default, no additional class needed */
+
+/* Small size */
+.input-small,
+.input-wrapper-small .input {
+  height: var(--element-small--height);
+  font-size: var(--element-small--font-size);
+  line-height: 1;
+}
 
 /* Large size */
 .input-large,
 .input-wrapper-large .input {
-  font-size: var(--input-large--font-size);
-  line-height: var(--input-large--line-height);
-  padding-inline: var(--input-large--padding-inline);
-  padding-block: var(--input-large--padding-block);
+  height: var(--element-large--height);
+  font-size: var(--element-large--font-size);
+  line-height: 1;
 }
 
 .input-large.input-with-icon,
 .input-wrapper-large .input.input-with-icon {
-  padding-left: var(--input-large--padding-inline-with-icon);
+  padding-left: var(--px-48);
 }
 
 .input-wrapper-large .input-icon {
-  left: var(--input-large--icon-position-left);
-  width: var(--input-large--icon-size);
-  height: var(--input-large--icon-size);
+  left: var(--px-16);
+  width: var(--input-icon-size-large);
+  height: var(--input-icon-size-large);
 }
 
-/* ============================================================================
-   Variants
-   ============================================================================ */
+
+/* Variants ----- */
 
 /* Accent variant (for promo/landing pages) */
 .input-accent,

@@ -6,6 +6,30 @@
 
   --element-padding-inline: .625em;
   --element-radius: .375em;
+
+  /* Element sizes */
+  --element-size-tiny: var(--px-24);
+  --element-size-small: var(--px-32);
+  --element-size-medium: var(--px-40);
+  --element-size-large: var(--px-48);
+  --element-size-grand: var(--px-56);
+  --element-size-huge: var(--px-64);
+
+  /* Element size properties */
+  --element-tiny--height: var(--px-24);
+  --element-small--height: var(--px-32);
+  --element-medium--height: var(--px-40);
+  --element-large--height: var(--px-48);
+  --element-grand--height: var(--px-56);
+  --element-huge--height: var(--px-64);
+
+  --element-tiny--font-size: var(--px-12);
+  --element-small--font-size: var(--px-14);
+  --element-medium--font-size: var(--px-16);
+  --element-large--font-size: var(--px-18);
+  --element-grand--font-size: var(--px-20);
+  --element-huge--font-size: var(--px-24);
+
 }
 
 /* @media (prefers-color-scheme: dark) {

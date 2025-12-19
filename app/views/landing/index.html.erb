@@ -31,7 +31,13 @@
           variant: :accent,
           wrapper_class: "email-first-input"
         %>
-        <%= render "shared/button", text: "Continue", variant: :primary, type: :submit, class: "email-first-button" %>
+        <%= render "shared/button", 
+          text: "Continue", 
+          variant: :primary, 
+          type: :submit, 
+          class: "email-first-button",
+          size: :large
+        %>
       </form>
 
           <%# <p class="text-accent">
