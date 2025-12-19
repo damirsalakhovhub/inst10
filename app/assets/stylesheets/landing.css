@@ -28,10 +28,45 @@ main {
 }
 
 .text-hero {
-  font-size: var(--font-size-l);
+  font-size: var(--px-32);
+  line-height: 1.35;
+  max-width: 70vw;
+}
+
+.text-accent {
+  font-size: var(--px-20);
+  line-height: 1.35;
+  max-width: 70vw;
 }
 
 .auth-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--px-32);
+}
+
+.email-first-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--px-12);
+  max-width: 640px;
+}
+
+.email-first-form {
+  display: flex;
+  gap: var(--px-8);
+  align-items: flex-start;
+}
+
+.email-first-input {
+  flex: 1;
+}
+
+.email-first-button {
+  flex-shrink: 0;
+}
+
+.auth-cards-row {
   display: flex;
   flex-direction: row;
   gap: var(--px-16);

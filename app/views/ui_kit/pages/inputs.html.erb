@@ -51,6 +51,61 @@
         </div>
       </div>
     </section>
+
+    <section class="ui-kit-section">
+      <h2>Input Sizes</h2>
+      <div class="ui-kit-element-group" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="ui-kit-element">
+          <%= render "shared/input",
+            label: "Medium (Default)",
+            name: "input_medium",
+            placeholder: "Medium size input",
+            size: :medium
+          %>
+        </div>
+
+        <div class="ui-kit-element">
+          <%= render "shared/input",
+            label: "Large",
+            name: "input_large",
+            placeholder: "Large size input",
+            size: :large
+          %>
+        </div>
+      </div>
+    </section>
+
+    <section class="ui-kit-section">
+      <h2>Input Variants</h2>
+      <div class="ui-kit-element-group" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="ui-kit-element">
+          <%= render "shared/input",
+            label: "Default",
+            name: "input_default",
+            placeholder: "Default input style"
+          %>
+        </div>
+
+        <div class="ui-kit-element">
+          <%= render "shared/input",
+            label: "Accent (for promo/landing pages)",
+            name: "input_accent",
+            placeholder: "Accent variant input",
+            variant: :accent
+          %>
+        </div>
+
+        <div class="ui-kit-element">
+          <%= render "shared/input",
+            label: "Large Accent",
+            name: "input_large_accent",
+            placeholder: "Large accent input",
+            size: :large,
+            variant: :accent
+          %>
+        </div>
+      </div>
+    </section>
   </main>
 <% end %>
 

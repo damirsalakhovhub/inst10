@@ -2,18 +2,21 @@
 <% input_id = local_assigns[:id] || input_id_from_name(local_assigns[:name]) %>
 <% input_type = local_assigns[:type] || "text" %>
 <% input_size = local_assigns[:size] || :medium %>
+<% input_variant = local_assigns[:variant] %>
 <% has_icon = local_assigns[:icon].present? %>
 <% has_error = local_assigns[:error].present? %>
 
 <%# Wrapper classes %>
 <% wrapper_classes = ["input-wrapper"] %>
 <% wrapper_classes << "input-wrapper-#{input_size}" unless input_size == :medium %>
+<% wrapper_classes << "input-wrapper-#{input_variant}" if input_variant %>
 <% wrapper_classes << "input-wrapper-error" if has_error %>
 <% wrapper_classes << local_assigns[:wrapper_class] if local_assigns[:wrapper_class] %>
 
 <%# Input classes %>
 <% input_classes = ["input"] %>
 <% input_classes << "input-#{input_size}" unless input_size == :medium %>
+<% input_classes << "input-#{input_variant}" if input_variant %>
 <% input_classes << "input-with-icon" if has_icon %>
 <% input_classes << local_assigns[:class] if local_assigns[:class] %>
 
@@ -21,13 +24,15 @@
 <% autocomplete_value = local_assigns[:autocomplete] || auto_detect_autocomplete(type: input_type, name: local_assigns[:name]) %>
 
 <div class="<%= wrapper_classes.compact.join(" ") %>" role="group">
-  <%# Label with required indicator %>
-  <label class="input-label" for="<%= input_id %>">
-    <span class="input-label-text"><%= local_assigns[:label] %></span>
-    <% if local_assigns[:required] %>
-      <span class="input-label-required" aria-hidden="true">*</span>
-    <% end %>
-  </label>
+  <%# Label with required indicator (only if label is provided) %>
+  <% if local_assigns[:label].present? %>
+    <label class="input-label" for="<%= input_id %>">
+      <span class="input-label-text"><%= local_assigns[:label] %></span>
+      <% if local_assigns[:required] %>
+        <span class="input-label-required" aria-hidden="true">*</span>
+      <% end %>
+    </label>
+  <% end %>
   
   <%# Input container with optional icon %>
   <div class="input-container">

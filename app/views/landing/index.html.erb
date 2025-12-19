@@ -2,7 +2,10 @@
 
   <section class="hero-section">
     <h1 class="text-display"><%= t("landing.title") %></h1>
-    <p class="text-hero">Hero description text</p>
+    <p class="text-hero">
+    Small teams don't need enterprise software → 
+    We offer the basics that work reliably, every day → 
+    Less noise, less payments, more focus.</p>
   </section>
 
   <section class="auth-section">
@@ -11,6 +14,35 @@
     
     <% else %>
 
+    <%# Email-first flow %>
+    <div class="email-first-card">
+
+      <h4 class="text-accent">
+        Start with email:
+      </h4>
+
+      <form class="email-first-form" action="#" method="post">
+        <%= render "shared/input",
+          name: "email",
+          type: "email",
+          placeholder: "Type your email here",
+          required: true,
+          size: :large,
+          variant: :accent,
+          wrapper_class: "email-first-input"
+        %>
+        <%= render "shared/button", text: "Continue", variant: :primary, type: :submit, class: "email-first-button" %>
+      </form>
+
+          <%# <p class="text-accent">
+        We don't use Google Auth to minimize connections.
+      </p> %>
+
+      
+    </div>
+
+
+    <% if false %>
     <div class="auth-card">
     
       <h3><%= t("landing.sign_in.title") %></h3>
@@ -89,6 +121,8 @@
           %>
           <%= render "shared/button", text: t("landing.sign_up.submit"), variant: :primary, type: :submit %>
         <% end %>
+      </div>
+    <% end %>
     <% end %>
   </section>
 
