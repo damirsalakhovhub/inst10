@@ -1,39 +1,53 @@
 :root {
 
-  --element-color-bg: var(--color-bg-cuatro);
-  --element-color-bg-hover: var(--color-bg-cuatro-hover);
-  --element-color-bg-active: var(--color-bg-cuatro-active);
+  --element--color-bg: var(--color-bg-cuatro);
+  --element--color-bg-hover: var(--color-bg-cuatro-hover);
+  --element--color-bg-active: var(--color-bg-cuatro-active);
 
-  --element-padding-inline: .625em;
-  --element-radius: .375em;
+  --element--padding-inline: .625em;
+  --element--radius: .375em;
+  --element--gap: var(--px-4);
 
-  /* Element sizes */
-  --element-size-tiny: var(--px-24);
-  --element-size-small: var(--px-32);
-  --element-size-medium: var(--px-40);
-  --element-size-large: var(--px-48);
-  --element-size-grand: var(--px-56);
-  --element-size-huge: var(--px-64);
 
-  /* Element size properties */
+  /* Tiny */
   --element-tiny--height: var(--px-24);
-  --element-small--height: var(--px-32);
-  --element-medium--height: var(--px-40);
-  --element-large--height: var(--px-48);
-  --element-grand--height: var(--px-56);
-  --element-huge--height: var(--px-64);
-
   --element-tiny--font-size: var(--px-12);
+  --element-tiny--line-height: var(--px-16);
+  /* --element-tiny--padding-inline: var(--px-4); */
+  --element-tiny--icon-size: var(--px-16);
+
+  /* Small */
+  --element-small--height: var(--px-32);
   --element-small--font-size: var(--px-14);
+  --element-small--line-height: var(--px-20);
+  /* --element-small--padding-inline: var(--px-8); */
+  --element-small--icon-size: var(--px-20);
+
+  /* Medium */
+  --element-medium--height: var(--px-40);
   --element-medium--font-size: var(--px-16);
+  --element-medium--line-height: var(--px-24);
+  /* --element-medium--padding-inline: var(--px-12); */
+  --element-medium--icon-size: var(--px-24);
+
+  /* Large */
+  --element-large--height: var(--px-48);
   --element-large--font-size: var(--px-18);
+  --element-large--line-height: var(--px-28);
+  --element-large--padding-inline: var(--px-16);
+  --element-large--icon-size: var(--px-28);
+
+  /* Grand */
+  --element-grand--height: var(--px-56);
   --element-grand--font-size: var(--px-20);
+  --element-grand--line-height: var(--px-32);
+  --element-grand--padding-inline: var(--px-20);
+  --element-grand--icon-size: var(--px-32);
+
+  /* Huge */
+  --element-huge--height: var(--px-64);
   --element-huge--font-size: var(--px-24);
-
+  --element-huge--line-height: var(--px-36);
+  --element-huge--padding-inline: var(--px-24);
+  --element-huge--icon-size: var(--px-36);
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-
-  }
-} */

@@ -1,47 +1,34 @@
-/* ============================================================================
-   Base Button (Default: 40px)
-   ============================================================================ */
-
 .btn {
-  /* Icon size tokens */
-  --btn-icon-size-tiny: var(--px-16);
-  --btn-icon-size-small: var(--px-20);
-  --btn-icon-size-default: var(--px-24);
+  --btn--height: var(--element-medium--height);
+  --btn--icon-size: var(--element-medium--icon-size);
+  --optical-compensation: 0.25em;
 
-  /* Layout */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--px-4);
+  gap: var(--element--gap);
   
-  /* Spacing */
-  padding-inline: .75em;
+  padding-inline: var(--element--padding-inline);
   
-  /* Dimensions & Typography */
-  --btn-height: var(--px-40);
-  height: var(--btn-height);
-  font-size: var(--font-size-l);
+  height: var(--element-medium--height);
+  font-size: var(--element-medium--font-size);
   line-height: 1; /* Reset line-height to use height/flex for centering */
   font-weight: 500;
   
-  /* Appearance */
-  background-color: var(--element-color-bg);
-  border-radius: var(--element-radius);
+  background-color: var(--element--color-bg);
+  border-radius: var(--element--radius);
   
-  /* Variables */
-  --btn-icon-size: var(--btn-icon-size-default);
-  --optical-compensation: 0.25em;
   
-  /* Animation */
+  
   transition: background-color 0.1s linear;
-
-  /* States */
+  
+  /* States ------------------------------------------------------------ */
   &:hover:not(:disabled) {
-    background-color: var(--element-color-bg-hover);
+    background-color: var(--element--color-bg-hover);
   }
 
   &:active:not(:disabled) {
-    background-color: var(--element-color-bg-active);
+    background-color: var(--element--color-bg-active);
     transform: translateY(1px);
   }
 
@@ -56,18 +43,13 @@
   }
 }
 
-/* ============================================================================
-   Icons
-   ============================================================================ */
+
+
+/* Icons ------------------------------------------------------------ */
 
 .btn-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: var(--btn-icon-size);
-  height: var(--btn-icon-size);
-  color: inherit;
+  width: var(--btn--icon-size);
+  height: var(--btn--icon-size);
 }
 
 .btn-icon svg,
@@ -90,8 +72,8 @@
 
 /* Icon-only Button (square) */
 .btn-icon-only {
-  width: var(--btn-height);
-  min-width: var(--btn-height);
+  width: var(--btn--height);
+  min-width: var(--btn--height);
   padding: 0;
   justify-content: center;
 }
@@ -106,40 +88,54 @@
 }
 
 
-/* ============================================================================
-   Sizes
-   ============================================================================ */
 
-.btn-small {
-  --btn-height: var(--px-32);
-  height: var(--btn-height);
-  font-size: var(--font-size-m);
-  padding-inline: var(--element-padding-inline);
-  --btn-icon-size: var(--btn-icon-size-small);
-}
+/* Sizes ------------------------------------------------------------ */
 
 .btn-tiny {
-  --btn-height: var(--px-24);
-  height: var(--btn-height);
-  font-size: var(--font-size-s);
-  padding-inline: var(--element-padding-inline);
-  --btn-icon-size: var(--btn-icon-size-tiny);
+  height: var(--element-tiny--height);
+  font-size: var(--element-tiny--font-size);
+  line-height: var(--element-tiny--line-height);
+  --btn--icon-size: var(--element-tiny--icon-size);
 }
+
+.btn-tiny.btn-icon-only {
+  width: var(--element-tiny--height);
+  min-width: var(--element-tiny--height);
+}
+
+.btn-small {
+  height: var(--element-small--height);
+  font-size: var(--element-small--font-size);
+  line-height: var(--element-small--line-height);
+  --btn--icon-size: var(--element-small--icon-size);
+}
+
+.btn-small.btn-icon-only {
+  width: var(--element-small--height);
+  min-width: var(--element-small--height);
+}
+
+
 
 /* Override optical compensation for smaller sizes (using their specific padding) */
-.btn-small:not(.btn-icon-only):has(.btn-icon-left),
 .btn-tiny:not(.btn-icon-only):has(.btn-icon-left) {
-  padding-inline-end: calc(var(--element-padding-inline) + var(--optical-compensation));
+  padding-inline-end: calc(var(--element--padding-inline) + var(--optical-compensation));
 }
-.btn-small:not(.btn-icon-only):has(.btn-icon-right),
 .btn-tiny:not(.btn-icon-only):has(.btn-icon-right) {
-  padding-inline-start: calc(var(--element-padding-inline) + var(--optical-compensation));
+  padding-inline-start: calc(var(--element--padding-inline) + var(--optical-compensation));
+}
+
+.btn-small:not(.btn-icon-only):has(.btn-icon-left) {
+  padding-inline-end: calc(var(--element--padding-inline) + var(--optical-compensation));
+}
+.btn-small:not(.btn-icon-only):has(.btn-icon-right) {
+  padding-inline-start: calc(var(--element--padding-inline) + var(--optical-compensation));
 }
 
 
-/* ============================================================================
-   Variants
-   ============================================================================ */
+
+/* Variants ------------------------------------------------------------ */
+
 
 /* Primary Variant */
 .btn-primary {
@@ -169,11 +165,8 @@
   }
 }
 
-/* ============================================================================
-   Modifiers
-   ============================================================================ */
+/* Modifiers ------------------------------------------------------------ */
 
-/* Rounded Button */
 .btn-rounded {
   border-radius: var(--radius-full);
 }
