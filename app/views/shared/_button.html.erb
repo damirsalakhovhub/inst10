@@ -1,6 +1,6 @@
 <%#
   Универсальный партиал кнопки
-  Параметры: text, icon_left, icon_right, variant, size, loader (true/false), icon_decorative (true/false), ...
+  Параметры: text, icon_left, icon_right, variant, size, loader, icon_decorative, full_width, title, target, ...
 %>
 
 <%
@@ -10,22 +10,26 @@
   icon_right  = local_assigns[:icon_right]
   loader      = !!local_assigns[:loader]
   icon_decorative = local_assigns.fetch(:icon_decorative, true)
+  full_width  = !!local_assigns[:full_width]
   
   variant     = local_assigns[:variant]
   size        = local_assigns[:size]
   href        = local_assigns[:href]
+  target      = local_assigns[:target]
   disabled    = !!local_assigns[:disabled]
   loading     = !!local_assigns[:loading]
   
   extra_class = local_assigns[:extra_class]
+  title_attr  = local_assigns[:title]
   aria_attrs  = local_assigns[:aria] || {}
   data_attrs  = local_assigns[:data] || {}
   icon_only   = !!local_assigns[:icon_only]
 
-  # 2. Accessibility: для icon-only кнопок с семантическими иконками добавляем aria-label
-  if icon_only && !icon_decorative && aria_attrs[:label].blank? && local_assigns[:title].blank?
+  # 2. Accessibility: для icon-only кнопок добавляем aria-label и title
+  if icon_only && !icon_decorative && aria_attrs[:label].blank? && title_attr.blank?
     aria_attrs[:label] = text
   end
+  title_attr ||= text if icon_only # Всплывающая подсказка для иконок по умолчанию
 
   # 3. Формирование классов
   classes = ["btn"]
@@ -33,10 +37,11 @@
   classes << "btn-#{size}"    if size.present?
   classes << "btn-loading"    if loading
   classes << "btn-has-loader" if loader
-  classes << extra_class      if extra_class.present?
+  classes << "btn-full-width" if full_width
   classes << "btn-icon-only"  if icon_only
+  classes << extra_class      if extra_class.present?
   
-  # 4. Подготовка иконок и спиннера
+  # 4. Подготовка контента
   icon_aria_attrs = icon_decorative ? { hidden: true } : {}
 
   # Спиннер
@@ -53,7 +58,7 @@
     content_tag(:span, icon_left.html_safe, class: "btn-icon-normal", aria: icon_aria_attrs)
   end
 
-  # Левый слот (иконка + спиннер или просто спиннер)
+  # Левый слот (иконка + спиннер)
   left_slot = if loader || icon_left.present?
     content_tag(:span, safe_join([spinner_html, icon_left_html].compact), class: "btn-icon-left")
   end
@@ -67,14 +72,12 @@
   inner = safe_join([left_slot, text_html, icon_right_html].compact)
 %>
 
-
-<%# 5. Вывод финального элемента: ссылка (если есть href) или кнопка %>
 <% if href.present? %>
-  <%= link_to href, class: classes.join(" "), aria: aria_attrs, data: data_attrs do %>
+  <%= link_to href, class: classes.join(" "), aria: aria_attrs, data: data_attrs, title: title_attr, target: target do %>
     <%= inner %>
   <% end %>
 <% else %>
-  <%= button_tag type: local_assigns[:type] || :button, class: classes.join(" "), disabled: disabled, aria: aria_attrs, data: data_attrs do %>
+  <%= button_tag type: local_assigns[:type] || :button, class: classes.join(" "), disabled: disabled, aria: aria_attrs, data: data_attrs, title: title_attr do %>
     <%= inner %>
   <% end %>
 <% end %>
