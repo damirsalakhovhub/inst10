@@ -11,7 +11,8 @@
     <% sizes = [
       [:tiny, "Tiny"], 
       [:small, "Small"], 
-      [nil, "Default"]
+      [nil, "Default"],
+      [:large, "Large"]
     ] %>
 
     <% sections = [
@@ -41,6 +42,25 @@
         </div>
       </section>
     <% end %>
+
+    <%# Loading state %>
+    <section class="ui-kit-section" data-controller="loading-button">
+      <h2>Loading</h2>
+      <div class="ui-kit-element-group">
+        <% sizes.each do |size_key, label| %>
+          <div class="ui-kit-row">
+            <span class="ui-kit-row-label"><%= label %></span>
+            <div class="ui-kit-row-content">
+              <%= render "shared/button", text: "Submit", size: size_key, variant: nil, loader: true, extra_class: "btn-loading-demo" %>
+              <% if icon_svg.present? %>
+                <%= render "shared/button", text: "Like", icon_left: icon_svg, size: size_key, variant: nil, loader: true, extra_class: "btn-loading-demo" %>
+                <%= render "shared/button", icon_left: icon_svg, icon_only: true, size: size_key, variant: nil, loader: true, extra_class: "btn-loading-demo", aria: { label: "Like" } %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
 
     <% unless icon_svg.present? %>
       <section class="ui-kit-section">

@@ -1,53 +1,62 @@
-:root {
-  /* Icon sizes ----- */
-  --input-icon-size-small: var(--px-16);
-  --input-icon-size-medium: var(--px-20);
-  --input-icon-size-large: var(--px-24);
+.input {
+  --input--height: var(--element-medium--height);
+  --input--icon-size: var(--element-medium--icon-size);
+  --input--padding-inline: var(--element--padding-inline);
+  --input--optical-compensation: 0.125em;
 
-  /* Colors & Styles ----- */
+  display: block;
+  width: 100%;
+  
+  padding-inline: var(--input--padding-inline);
+  
+  height: var(--element-medium--height);
+  font-size: var(--element-medium--font-size);
+  line-height: 1;
+  font-weight: 500;
+  
+  background-color: var(--element--color-bg);
+  border: 1px solid var(--element--color-bg-hover);
+  border-radius: var(--element--radius);
+  color: var(--color-font-uno);
+  
+  transition: background-color 0.1s linear, border-color 0.1s linear;
+  
+  /* States ------------------------------------------------------------ */
+  &:hover:not(:disabled) {
+    background-color: var(--element--color-bg-hover);
+    border-color: var(--element--color-bg-active);
+  }
 
-  /* Input field */
-  --input--bg: var(--color-bg-uno);
-  --input--border-width: var(--px-1);
-  --input--border-color: var(--color-bg-cinco);
-  --input--border-color-hover: var(--color-bg-cinco);
-  --input--border-color-focus: var(--color-outline-uno);
-  --input--text-color: var(--color-font-uno);
-  --input--placeholder-color: var(--color-font-cuatro);
-  --input--border-radius: var(--element-radius);
+  &:focus:not(:disabled) {
+    background-color: var(--element--color-bg);
+    border-color: var(--color-outline-uno);
+    outline: none;
+  }
 
-  /* Label ----- */
-  --input--label-font-size: var(--font-size-s);
-  --input--label-line-height: var(--px-20);
-  --input--label-color: var(--color-font-dos);
-  --input--label-font-weight: 500;
-  --input--label-margin-bottom: var(--px-4);
+  &:focus-visible {
+    outline-width: 2px;
+    outline-offset: 0px;
+    outline-color: var(--color-outline-uno);
+    transition: outline 0.075s linear;
+  }
 
-  /* Required indicator (asterisk) ----- */
-  --input--required-color: var(--color-danger);
-  --input--required-margin-left: var(--px-4);
+  &:disabled {
+    background-color: var(--disabled-color-bg);
+    border-color: var(--disabled-color-bg);
+    color: var(--disabled-color-font);
+    cursor: not-allowed;
+  }
 
-  /* Icon ----- */
-  --input--icon-color: var(--color-font-tres);
+  &::placeholder {
+    color: var(--color-font-cuatro);
+  }
 
-  /* Disabled state ----- */
-  --input--disabled-bg: var(--color-bg-uno);
-  --input--disabled-text-color: var(--color-font-cinco);
-  --input--disabled-border-color: var(--color-bg-tres);
-
-  /* Variants ----- */
-
-  /* Accent variant (for promo/landing pages) */
-  --input-accent--bg: var(--white);
-  --input-accent--border-color: var(--gray-50);
-  --input-accent--border-color-hover: var(--color-bg-cuatro);
-  --input-accent--border-color-focus: var(--color-outline-uno);
-  --input-accent--text-color: var(--color-font-uno);
-  --input-accent--placeholder-color: var(--color-font-cuatro);
+  &:disabled::placeholder {
+    color: var(--disabled-color-font);
+  }
 }
 
-
-/* Base Styles ----- */
+/* Wrapper ------------------------------------------------------------ */
 
 .input-wrapper {
   display: flex;
@@ -55,14 +64,16 @@
   width: 100%;
 }
 
+/* Label ------------------------------------------------------------ */
+
 .input-label {
   display: flex;
   align-items: center;
-  margin-bottom: var(--input--label-margin-bottom);
-  font-size: var(--input--label-font-size);
-  line-height: var(--input--label-line-height);
-  font-weight: var(--input--label-font-weight);
-  color: var(--input--label-color);
+  margin-bottom: var(--px-4);
+  font-size: var(--font-size-s);
+  line-height: var(--px-20);
+  font-weight: 500;
+  color: var(--color-font-dos);
   cursor: pointer;
 }
 
@@ -72,10 +83,17 @@
 
 .input-label-required {
   display: inline-block;
-  margin-left: var(--input--required-margin-left);
-  color: var(--input--required-color);
+  margin-left: var(--px-4);
+  color: var(--color-danger);
   font-weight: 600;
 }
+
+.input-wrapper:has(.input:disabled) .input-label {
+  color: var(--disabled-color-font);
+  cursor: not-allowed;
+}
+
+/* Container ------------------------------------------------------------ */
 
 .input-container {
   position: relative;
@@ -83,46 +101,23 @@
   align-items: center;
 }
 
-.input {
-  width: 100%;
-  font-family: var(--font-family-sans);
-  
-  /* Medium (default) - from element tokens */
-  height: var(--element-medium--height);
-  font-size: var(--element-medium--font-size);
-  line-height: 1;
-  padding-inline: var(--element-padding-inline);
-  
-  background-color: var(--input--bg);
-  box-shadow: inset 0 0 0 var(--input--border-width) var(--input--border-color);
-  border-radius: var(--input--border-radius);
-  color: var(--input--text-color);
-  
-  transition: box-shadow 0.15s linear, background-color 0.15s linear;
-  
-  &::placeholder {
-    color: var(--input--placeholder-color);
-  }
-
-  /* Input with icon - add left padding for icon space */
-  &.input-with-icon {
-    padding-left: var(--px-40);
-  }
-}
+/* Icons ------------------------------------------------------------ */
 
 .input-icon {
   position: absolute;
-  left: var(--px-12);
+  left: var(--input--padding-inline);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--input-icon-size-medium);
-  height: var(--input-icon-size-medium);
-  color: var(--input--icon-color);
+  flex-shrink: 0;
+  width: var(--input--icon-size);
+  height: var(--input--icon-size);
+  color: var(--color-font-tres);
   pointer-events: none;
 }
 
-.input-icon-svg {
+.input-icon svg,
+.input-icon .input-icon-svg {
   width: 100%;
   height: 100%;
   display: block;
@@ -131,132 +126,39 @@
   stroke-width: 2;
 }
 
-
-
-/* States ----- */
-
-.input {
-  /* Hover state */
-  &:hover:not(:disabled):not(:focus) {
-    box-shadow: inset 0 0 0 var(--input--border-width) var(--input--border-color-hover);
-  }
-
-  /* Focus state - keyboard and mouse */
-  &:focus {
-    outline: none;
-    box-shadow: inset 0 0 0 var(--input--border-width) var(--input--border-color-focus);
-  }
-
-  /* Focus visible (keyboard navigation only) */
-  &:focus-visible {
-    outline: 2px solid var(--input--border-color-focus);
-    outline-offset: 2px;
-  }
-
-  /* Disabled state */
-  &:disabled {
-    background-color: var(--input--disabled-bg);
-    box-shadow: inset 0 0 0 var(--input--border-width) var(--input--disabled-border-color);
-    color: var(--input--disabled-text-color);
-    cursor: not-allowed;
-
-    &::placeholder {
-      color: var(--input--disabled-text-color);
-    }
-  }
-}
-
-/* Disabled label style */
-.input-wrapper:has(.input:disabled) .input-label {
-  color: var(--input--disabled-text-color);
-  cursor: not-allowed;
-}
-
-/* Disabled icon style */
 .input-wrapper:has(.input:disabled) .input-icon {
-  color: var(--input--disabled-text-color);
+  color: var(--disabled-color-font);
 }
 
-/* Error state */
+/* Input with icon - add left padding for icon space */
+.input-with-icon {
+  padding-left: calc(var(--input--padding-inline) + var(--input--icon-size) + var(--element--gap));
+}
+
+/* Error state ------------------------------------------------------------ */
+
 .input-wrapper-error {
   .input {
-    box-shadow: inset 0 0 0 var(--input--border-width) var(--input--error-border-color, #dc2626);
+    border-color: var(--color-danger);
   }
 
   .input-label {
-    color: var(--input--error-label-color, #dc2626);
+    color: var(--color-danger);
   }
 }
 
 .input-error {
-  margin-top: 0.375rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: var(--input--error-text-color, #dc2626);
+  margin-top: var(--px-6);
+  font-size: var(--font-size-s);
+  line-height: var(--px-20);
+  color: var(--color-danger);
   opacity: 0;
   height: 0;
   overflow: hidden;
+  transition: opacity 0.1s linear, height 0.1s linear;
   
   &.input-error-visible {
     opacity: 1;
     height: auto;
   }
-}
-
-
-/* Sizes ----- */
-
-/* Medium size is default, no additional class needed */
-
-/* Small size */
-.input-small,
-.input-wrapper-small .input {
-  height: var(--element-small--height);
-  font-size: var(--element-small--font-size);
-  line-height: 1;
-}
-
-/* Large size */
-.input-large,
-.input-wrapper-large .input {
-  height: var(--element-large--height);
-  font-size: var(--element-large--font-size);
-  line-height: 1;
-}
-
-.input-large.input-with-icon,
-.input-wrapper-large .input.input-with-icon {
-  padding-left: var(--px-48);
-}
-
-.input-wrapper-large .input-icon {
-  left: var(--px-16);
-  width: var(--input-icon-size-large);
-  height: var(--input-icon-size-large);
-}
-
-
-/* Variants ----- */
-
-/* Accent variant (for promo/landing pages) */
-.input-accent,
-.input-wrapper-accent .input {
-  background-color: var(--input-accent--bg);
-  box-shadow: inset 0 0 0 var(--input--border-width) var(--input-accent--border-color);
-  color: var(--input-accent--text-color);
-}
-
-.input-accent::placeholder,
-.input-wrapper-accent .input::placeholder {
-  color: var(--input-accent--placeholder-color);
-}
-
-.input-accent:hover:not(:disabled):not(:focus),
-.input-wrapper-accent .input:hover:not(:disabled):not(:focus) {
-  box-shadow: inset 0 0 0 var(--input--border-width) var(--input-accent--border-color-hover);
-}
-
-.input-accent:focus,
-.input-wrapper-accent .input:focus {
-  box-shadow: inset 0 0 0 var(--input--border-width) var(--input-accent--border-color-focus);
 }

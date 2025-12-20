@@ -1,27 +1,27 @@
 .btn {
   --btn--height: var(--element-medium--height);
   --btn--icon-size: var(--element-medium--icon-size);
-  --optical-compensation: 0.25em;
+  --btn--padding-inline: var(--element--padding-inline);
+  --btn--optical-compensation: 0.125em;
 
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--element--gap);
+  gap: var(--element--gap); /* Возвращаем стандартный gap */
   
-  padding-inline: var(--element--padding-inline);
+  padding-inline: var(--btn--padding-inline);
   
   height: var(--element-medium--height);
   font-size: var(--element-medium--font-size);
-  line-height: 1; /* Reset line-height to use height/flex for centering */
+  line-height: 1;
   font-weight: 500;
   
   background-color: var(--element--color-bg);
   border-radius: var(--element--radius);
   
-  
-  
-  transition: background-color 0.1s linear;
-  
+  transition: background-color 0.1s linear, transform 0.1s linear;
+
   /* States ------------------------------------------------------------ */
   &:hover:not(:disabled) {
     background-color: var(--element--color-bg-hover);
@@ -29,11 +29,13 @@
 
   &:active:not(:disabled) {
     background-color: var(--element--color-bg-active);
-    transform: translateY(1px);
+    transform: scale(0.98);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-outline-uno);
+    outline-width: 2px;
+    outline-offset: 0px;
+    transition: outline 0.075s linear;
   }
 
   &:disabled {
@@ -43,17 +45,17 @@
   }
 }
 
-
+.btn-loading {
+  pointer-events: none;
+}
 
 /* Icons ------------------------------------------------------------ */
 
-.btn-icon {
-  width: var(--btn--icon-size);
-  height: var(--btn--icon-size);
-}
-
-.btn-icon svg,
-.btn-icon .btn-icon-svg {
+/* Общие стили для всех иконок и спиннера: только обводка, никакой заливки */
+.btn-icon-left svg,
+.btn-icon-right svg,
+.btn-spinner svg,
+.btn-icon-svg {
   width: 100%;
   height: 100%;
   display: block;
@@ -62,12 +64,71 @@
   stroke-width: 2;
 }
 
-/* Icon Position */
+.btn-icon-left, 
+.btn-icon-right {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--btn--icon-size);
+  height: var(--btn--icon-size);
+  flex-shrink: 0;
+}
+
 .btn-icon-left {
+  position: relative;
   order: -1;
 }
-.btn-icon-right {
-  order: 1;
+
+/* Перекрытие спиннера и обычной иконки */
+.btn-spinner, 
+.btn-icon-normal {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s linear, transform 0.2s linear;
+}
+
+.btn-spinner {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.btn-spinner svg {
+  animation: btn-spin 1s linear infinite;
+}
+
+.btn-loading .btn-spinner {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.btn-loading .btn-icon-normal {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Случай: спиннер появляется в кнопке без иконки */
+/* Слот изначально схлопнут по ширине и не имеет gap */
+.btn:not(:has(.btn-icon-normal)) .btn-icon-left {
+  width: 0;
+  opacity: 0;
+  transform: scale(0);
+  margin-inline-end: calc(var(--element--gap) * -1); /* Убираем gap */
+  transition: width 0.2s linear, opacity 0.2s linear, transform 0.2s linear, margin 0.2s linear;
+}
+
+.btn-loading:not(:has(.btn-icon-normal)) .btn-icon-left {
+  width: var(--btn--icon-size);
+  opacity: 1;
+  transform: scale(1);
+  margin-inline-end: 0; /* Возвращаем к стандартному gap через общую настройку .btn */
+}
+
+@keyframes btn-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* Icon-only Button (square) */
@@ -76,25 +137,28 @@
   min-width: var(--btn--height);
   padding: 0;
   justify-content: center;
+  gap: 0;
 }
 
-/* Optical Compensation: add extra padding on the side without icon */
-.btn:not(.btn-icon-only):has(.btn-icon-left) {
-  padding-inline-end: calc(.75em + var(--optical-compensation));
+.btn-icon-only .btn-icon-left,
+.btn-icon-only .btn-icon-right {
+  margin: 0;
+}
+
+/* Optical Compensation */
+.btn:not(.btn-icon-only):has(.btn-icon-left:not(:empty)) {
+  padding-inline-end: calc(var(--btn--padding-inline) + var(--btn--optical-compensation));
 }
 
 .btn:not(.btn-icon-only):has(.btn-icon-right) {
-  padding-inline-start: calc(.75em + var(--optical-compensation));
+  padding-inline-start: calc(var(--btn--padding-inline) + var(--btn--optical-compensation));
 }
-
-
 
 /* Sizes ------------------------------------------------------------ */
 
 .btn-tiny {
   height: var(--element-tiny--height);
   font-size: var(--element-tiny--font-size);
-  line-height: var(--element-tiny--line-height);
   --btn--icon-size: var(--element-tiny--icon-size);
 }
 
@@ -106,7 +170,6 @@
 .btn-small {
   height: var(--element-small--height);
   font-size: var(--element-small--font-size);
-  line-height: var(--element-small--line-height);
   --btn--icon-size: var(--element-small--icon-size);
 }
 
@@ -115,57 +178,32 @@
   min-width: var(--element-small--height);
 }
 
-
-
-/* Override optical compensation for smaller sizes (using their specific padding) */
-.btn-tiny:not(.btn-icon-only):has(.btn-icon-left) {
-  padding-inline-end: calc(var(--element--padding-inline) + var(--optical-compensation));
-}
-.btn-tiny:not(.btn-icon-only):has(.btn-icon-right) {
-  padding-inline-start: calc(var(--element--padding-inline) + var(--optical-compensation));
+.btn-large {
+  height: var(--element-large--height);
+  font-size: var(--element-large--font-size);
+  --btn--icon-size: var(--element-large--icon-size);
 }
 
-.btn-small:not(.btn-icon-only):has(.btn-icon-left) {
-  padding-inline-end: calc(var(--element--padding-inline) + var(--optical-compensation));
+.btn-large.btn-icon-only {
+  width: var(--element-large--height);
+  min-width: var(--element-large--height);
 }
-.btn-small:not(.btn-icon-only):has(.btn-icon-right) {
-  padding-inline-start: calc(var(--element--padding-inline) + var(--optical-compensation));
-}
-
-
 
 /* Variants ------------------------------------------------------------ */
 
-
-/* Primary Variant */
 .btn-primary {
   background-color: var(--color-bg-primary);
   color: var(--white);
+  &:hover:not(:disabled) { background-color: var(--color-bg-primary-hover); }
+  &:active:not(:disabled) { background-color: var(--color-bg-primary-active); }
 }
 
-.btn-primary:hover:not(:disabled) {
-  background-color: var(--color-bg-primary-hover);
-}
-
-.btn-primary:active:not(:disabled) {
-  background-color: var(--color-bg-primary-active);
-}
-
-/* Contrast Variant */
 .btn-contrast {
   background-color: var(--color-bg-invert);
   color: var(--color-font-invert);
-  
-  &:hover:not(:disabled) {
-    background-color: var(--color-bg-invert-hover);
-  }
-
-  &:active:not(:disabled) {
-    background-color: var(--color-bg-invert-active);
-  }
+  &:hover:not(:disabled) { background-color: var(--color-bg-invert-hover); }
+  &:active:not(:disabled) { background-color: var(--color-bg-invert-active); }
 }
-
-/* Modifiers ------------------------------------------------------------ */
 
 .btn-rounded {
   border-radius: var(--radius-full);

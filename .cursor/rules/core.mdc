@@ -50,3 +50,15 @@ Response format
 - If code is provided: output code first, then one short paragraph for a manager.
 - Default verbosity: low (about 2/10) unless user asks for more detail.
 - In chat responses: prefer plain text (no markdown), unless the user requests markdown.
+- Do not self-evaluate the work (avoid phrases like “идеально”, “ready”, “done” about your output).
+
+Browser verification (CRITICAL)
+- **NEVER claim "ready" or "done" without verifying in browser first.**
+- After implementing UI changes, JavaScript, or interactive features:
+  1. Open the page in browser using browser tools
+  2. Test the functionality manually (click buttons, fill forms, etc.)
+  3. Verify visual appearance matches requirements
+  4. Check console for JavaScript errors
+  5. Only then report completion
+- If browser verification fails, fix the issue before reporting completion.
+- Use browser tools (navigate, click, evaluate, snapshot) to verify functionality.

@@ -1,44 +1,78 @@
-<%
-text        = local_assigns[:text] || "Button"
-icon_left   = local_assigns[:icon_left]
-icon_right  = local_assigns[:icon_right]
-variant     = local_assigns[:variant]
-size        = local_assigns[:size]      # :small (32px), :tiny (24px), nil (default: 40px)
-rounded     = !!local_assigns[:rounded]
-icon_only   = !!local_assigns[:icon_only]
-href        = local_assigns[:href]
-type        = local_assigns.fetch(:type, :button)
-disabled    = !!local_assigns[:disabled]
-aria_attrs  = local_assigns[:aria] || {}
-data_attrs  = local_assigns[:data] || {}
-title_attr  = local_assigns[:title]
-extra_class = local_assigns[:extra_class]
-
-classes = ["btn"]
-classes << "btn-primary"   if variant == :primary
-classes << "btn-contrast"  if variant == :contrast
-classes << "btn-small"     if size == :small
-classes << "btn-tiny"      if size == :tiny
-classes << "btn-rounded"   if rounded
-classes << "btn-icon-only" if icon_only
-classes << extra_class if extra_class.present?
-class_attr = classes.join(" ")
+<%#
+  Универсальный партиал кнопки
+  Параметры: text, icon_left, icon_right, variant, size, loader (true/false), icon_decorative (true/false), ...
 %>
 
-<%# Build inner content %>
 <%
-icon_left_html  = icon_left.present?  ? content_tag(:span, icon_left.respond_to?(:html_safe) ? icon_left.html_safe : icon_left,   class: "btn-icon btn-icon-left")  : nil
-icon_right_html = icon_right.present? ? content_tag(:span, icon_right.respond_to?(:html_safe) ? icon_right.html_safe : icon_right, class: "btn-icon btn-icon-right") : nil
-text_html       = icon_only ? nil : content_tag(:span, text)
-inner = safe_join([icon_left_html, text_html, icon_right_html].compact)
+  # 1. Сбор параметров
+  text        = local_assigns[:text] || "Button"
+  icon_left   = local_assigns[:icon_left]
+  icon_right  = local_assigns[:icon_right]
+  loader      = !!local_assigns[:loader]
+  icon_decorative = local_assigns.fetch(:icon_decorative, true)
+  
+  variant     = local_assigns[:variant]
+  size        = local_assigns[:size]
+  href        = local_assigns[:href]
+  disabled    = !!local_assigns[:disabled]
+  loading     = !!local_assigns[:loading]
+  
+  extra_class = local_assigns[:extra_class]
+  aria_attrs  = local_assigns[:aria] || {}
+  data_attrs  = local_assigns[:data] || {}
+  icon_only   = !!local_assigns[:icon_only]
+
+  # 2. Accessibility: для icon-only кнопок с семантическими иконками добавляем aria-label
+  if icon_only && !icon_decorative && aria_attrs[:label].blank? && local_assigns[:title].blank?
+    aria_attrs[:label] = text
+  end
+
+  # 3. Формирование классов
+  classes = ["btn"]
+  classes << "btn-#{variant}" if variant.present?
+  classes << "btn-#{size}"    if size.present?
+  classes << "btn-loading"    if loading
+  classes << "btn-has-loader" if loader
+  classes << extra_class      if extra_class.present?
+  classes << "btn-icon-only"  if icon_only
+  
+  # 4. Подготовка иконок и спиннера
+  icon_aria_attrs = icon_decorative ? { hidden: true } : {}
+
+  # Спиннер
+  spinner_html = if loader
+    @_button_spinner_svg ||= begin
+      path = Rails.root.join("app/assets/images/icons/spinner.svg")
+      File.read(path).gsub(/<svg/, '<svg class="btn-icon-svg"').html_safe if File.exist?(path)
+    end
+    content_tag(:span, @_button_spinner_svg, class: "btn-spinner", aria: { hidden: true })
+  end
+
+  # Левая иконка
+  icon_left_html = if icon_left.present?
+    content_tag(:span, icon_left.html_safe, class: "btn-icon-normal", aria: icon_aria_attrs)
+  end
+
+  # Левый слот (иконка + спиннер или просто спиннер)
+  left_slot = if loader || icon_left.present?
+    content_tag(:span, safe_join([spinner_html, icon_left_html].compact), class: "btn-icon-left")
+  end
+
+  # Правая иконка
+  icon_right_html = if icon_right.present?
+    content_tag(:span, icon_right.html_safe, class: "btn-icon btn-icon-right", aria: icon_aria_attrs)
+  end
+
+  text_html = icon_only ? nil : content_tag(:span, text, class: "btn-text")
+  inner = safe_join([left_slot, text_html, icon_right_html].compact)
 %>
 
 <% if href.present? %>
-  <%= link_to href, class: class_attr, aria: aria_attrs, data: data_attrs, title: title_attr do %>
+  <%= link_to href, class: classes.join(" "), aria: aria_attrs, data: data_attrs do %>
     <%= inner %>
   <% end %>
 <% else %>
-  <%= button_tag type: type, class: class_attr, aria: aria_attrs, data: data_attrs, title: title_attr, disabled: disabled do %>
+  <%= button_tag type: local_assigns[:type] || :button, class: classes.join(" "), disabled: disabled, aria: aria_attrs, data: data_attrs do %>
     <%= inner %>
   <% end %>
 <% end %>
