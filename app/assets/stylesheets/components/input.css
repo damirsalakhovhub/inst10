@@ -14,7 +14,7 @@
   line-height: 1;
   font-weight: 500;
   
-  background-color: var(--element--color-bg);
+  /* background-color: var(--element--color-bg); */
   border: 1px solid var(--element--color-bg-hover);
   border-radius: var(--element--radius);
   color: var(--color-font-uno);

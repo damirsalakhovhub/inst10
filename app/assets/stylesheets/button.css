@@ -8,7 +8,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--element--gap); /* Возвращаем стандартный gap */
+  gap: var(--element--gap);
   
   padding-inline: var(--btn--padding-inline);
   
@@ -51,10 +51,8 @@
 
 /* Icons ------------------------------------------------------------ */
 
-/* Общие стили для всех иконок и спиннера: только обводка, никакой заливки */
-.btn-icon-left svg,
-.btn-icon-right svg,
-.btn-spinner svg,
+/* Единое правило для всех SVG внутри кнопок */
+.btn svg,
 .btn-icon-svg {
   width: 100%;
   height: 100%;
@@ -109,13 +107,12 @@
   transform: scale(0);
 }
 
-/* Случай: спиннер появляется в кнопке без иконки */
-/* Слот изначально схлопнут по ширине и не имеет gap */
+/* Плавное появление спиннера в кнопке без иконки */
 .btn:not(:has(.btn-icon-normal)) .btn-icon-left {
   width: 0;
   opacity: 0;
   transform: scale(0);
-  margin-inline-end: calc(var(--element--gap) * -1); /* Убираем gap */
+  margin-inline-end: calc(var(--element--gap) * -1);
   transition: width 0.2s linear, opacity 0.2s linear, transform 0.2s linear, margin 0.2s linear;
 }
 
@@ -123,7 +120,7 @@
   width: var(--btn--icon-size);
   opacity: 1;
   transform: scale(1);
-  margin-inline-end: 0; /* Возвращаем к стандартному gap через общую настройку .btn */
+  margin-inline-end: 0;
 }
 
 @keyframes btn-spin {
@@ -140,18 +137,15 @@
   gap: 0;
 }
 
-.btn-icon-only .btn-icon-left,
-.btn-icon-only .btn-icon-right {
-  margin: 0;
-}
-
 /* Optical Compensation */
-.btn:not(.btn-icon-only):has(.btn-icon-left:not(:empty)) {
-  padding-inline-end: calc(var(--btn--padding-inline) + var(--btn--optical-compensation));
-}
-
-.btn:not(.btn-icon-only):has(.btn-icon-right) {
-  padding-inline-start: calc(var(--btn--padding-inline) + var(--btn--optical-compensation));
+/* Срабатывает только если есть ВИДИМАЯ иконка (нормальная или активный лоадер) */
+.btn:not(.btn-icon-only):has(.btn-icon-normal) {
+  &.btn:has(.btn-icon-left) {
+    padding-inline-end: calc(var(--btn--padding-inline) + var(--btn--optical-compensation));
+  }
+  &.btn:has(.btn-icon-right) {
+    padding-inline-start: calc(var(--btn--padding-inline) + var(--btn--optical-compensation));
+  }
 }
 
 /* Sizes ------------------------------------------------------------ */

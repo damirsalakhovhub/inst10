@@ -67,6 +67,8 @@
   inner = safe_join([left_slot, text_html, icon_right_html].compact)
 %>
 
+
+<%# 5. Вывод финального элемента: ссылка (если есть href) или кнопка %>
 <% if href.present? %>
   <%= link_to href, class: classes.join(" "), aria: aria_attrs, data: data_attrs do %>
     <%= inner %>
