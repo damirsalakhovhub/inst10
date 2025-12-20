@@ -37,3 +37,9 @@ Animation timing functions
 UI robustness
 - Avoid fragile selectors; prefer stable data attributes (e.g., data-testid).
 - Keep UI changes minimal and consistent with existing patterns.
+
+Accessibility (keyboard navigation)
+- For interactive elements (buttons, links, form controls), always include explicit `tabindex`:
+  - `tabindex="0"` for enabled interactive elements (ensures Safari compatibility)
+  - `tabindex="-1"` for disabled elements (removes them from tab order)
+- This is already handled in shared component templates (e.g., `_button.html.erb`), but apply the same pattern when creating new interactive components.

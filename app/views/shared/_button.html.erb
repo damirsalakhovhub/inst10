@@ -73,11 +73,11 @@
 %>
 
 <% if href.present? %>
-  <%= link_to href, class: classes.join(" "), aria: aria_attrs, data: data_attrs, title: title_attr, target: target do %>
+  <%= link_to href, class: classes.join(" "), aria: aria_attrs, data: data_attrs, title: title_attr, target: target, tabindex: disabled ? -1 : 0 do %>
     <%= inner %>
   <% end %>
 <% else %>
-  <%= button_tag type: local_assigns[:type] || :button, class: classes.join(" "), disabled: disabled, aria: aria_attrs, data: data_attrs, title: title_attr do %>
+  <%= button_tag type: local_assigns[:type] || :button, class: classes.join(" "), disabled: disabled, aria: aria_attrs, data: data_attrs, title: title_attr, tabindex: disabled ? -1 : 0 do %>
     <%= inner %>
   <% end %>
 <% end %>
