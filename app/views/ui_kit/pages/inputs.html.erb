@@ -47,6 +47,8 @@
         <%= render "shared/input", label: "Required", name: "req", required: true, placeholder: "Required field" %>
         <%= render "shared/input", label: "Disabled", name: "dis", disabled: true, placeholder: "Disabled field", value: "Disabled value" %>
         <%= render "shared/input", label: "Error", name: "err", error: "This field is invalid", placeholder: "Error field" %>
+        <%= render "shared/input", label: "With description", name: "desc", placeholder: "Input with description", description: "Helper text that lives below the input." %>
+        <%= render "shared/input", label: "Error + description", name: "err_desc", error: "This field is invalid", description: "Helper text appears below the error.", placeholder: "Error with description" %>
       </div>
     </section>
 

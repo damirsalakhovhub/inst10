@@ -5,6 +5,7 @@
 <% input_variant = local_assigns[:variant] %>
 <% has_icon = local_assigns[:icon].present? %>
 <% has_error = local_assigns[:error].present? %>
+<% has_description = local_assigns[:description].present? %>
 
 <%# Wrapper classes %>
 <% wrapper_classes = ["input-wrapper"] %>
@@ -24,18 +25,25 @@
 <% autocomplete_value = local_assigns[:autocomplete] || auto_detect_autocomplete(type: input_type, name: local_assigns[:name]) %>
 
 <div class="<%= wrapper_classes.compact.join(" ") %>" role="group">
-  <%# Label with required indicator (only if label is provided) %>
+
+  <%# LABEL %>
   <% if local_assigns[:label].present? %>
     <label class="input-label" for="<%= input_id %>">
-      <span class="input-label-text"><%= local_assigns[:label] %></span>
+      
+      <%# Label text %>
+      <span><%= local_assigns[:label] %></span>
+
+      <%# Required indicator %>
       <% if local_assigns[:required] %>
         <span class="input-label-required" aria-hidden="true">*</span>
       <% end %>
     </label>
   <% end %>
-  
-  <%# Input container with optional icon %>
+
+  <%# INPUT %>
+
   <div class="input-container">
+
     <%# Render icon on the left if present %>
     <% if has_icon %>
       <span class="input-icon" aria-hidden="true">
@@ -45,29 +53,34 @@
     
     <%# Input element %>
     <input type="<%= input_type %>"
-           id="<%= input_id %>"
-           name="<%= local_assigns[:name] %>"
-           class="<%= input_classes.compact.join(" ") %>"
-           <% if local_assigns[:placeholder] %>placeholder="<%= local_assigns[:placeholder] %>"<% end %>
-           <% if local_assigns[:value] %>value="<%= local_assigns[:value] %>"<% end %>
-           <% if local_assigns[:required] %>required<% end %>
-           <% if local_assigns[:disabled] %>disabled<% end %>
-           <% if autocomplete_value %>autocomplete="<%= autocomplete_value %>"<% end %>
-           <% if local_assigns[:aria] %>
-             <% local_assigns[:aria].each do |k, v| %>
-               aria-<%= k %>="<%= v %>"
-             <% end %>
-           <% end %>
-           <% if local_assigns[:data] %>
-             <% local_assigns[:data].each do |k, v| %>
-               data-<%= k %>="<%= v %>"
-             <% end %>
-           <% end %>>
+      id="<%= input_id %>"
+      name="<%= local_assigns[:name] %>"
+      class="<%= input_classes.compact.join(" ") %>"
+      <% if local_assigns[:placeholder] %>placeholder="<%= local_assigns[:placeholder] %>"<% end %>
+      <% if local_assigns[:value] %>value="<%= local_assigns[:value] %>"<% end %>
+      <% if local_assigns[:required] %>required<% end %>
+      <% if local_assigns[:disabled] %>disabled<% end %>
+      <% if autocomplete_value %>autocomplete="<%= autocomplete_value %>"<% end %>
+      <% if local_assigns[:aria] %>
+        <% local_assigns[:aria].each do |k, v| %>
+          aria-<%= k %>="<%= v %>"
+        <% end %>
+      <% end %>
+      <% if local_assigns[:data] %>
+        <% local_assigns[:data].each do |k, v| %>
+          data-<%= k %>="<%= v %>"
+        <% end %>
+    <% end %>>
   </div>
   
   <%# Error message - always render container to prevent layout shift %>
   <div class="input-error<%= ' input-error-visible' if has_error %>" role="alert" aria-live="polite">
     <%= local_assigns[:error] if has_error %>
   </div>
+  
+  <%# Description (helper text) %>
+  <% if has_description %>
+    <div class="input-description"><%= local_assigns[:description] %></div>
+  <% end %>
 </div>
 
