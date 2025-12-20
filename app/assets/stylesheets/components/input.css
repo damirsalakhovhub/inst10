@@ -34,20 +34,6 @@
   --input--padding-inline: var(--element-large--padding-inline);
 }
 
-.input-wrapper-grand {
-  --input--height: var(--element-grand--height);
-  --input--icon-size: var(--element-grand--icon-size);
-  --input--font-size: var(--element-grand--font-size);
-  --input--padding-inline: var(--element-large--padding-inline);
-}
-
-.input-wrapper-huge {
-  --input--height: var(--element-huge--height);
-  --input--icon-size: var(--element-huge--icon-size);
-  --input--font-size: var(--element-huge--font-size);
-  --input--padding-inline: var(--element-large--padding-inline);
-}
-
 /* Base Input ------------------------------------------------------------ */
 
 .input {

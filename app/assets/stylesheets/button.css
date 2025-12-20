@@ -175,6 +175,7 @@
 .btn-large {
   height: var(--element-large--height);
   font-size: var(--element-large--font-size);
+  --btn--padding-inline: var(--element-large--padding-inline);
   --btn--icon-size: var(--element-large--icon-size);
 }
 
