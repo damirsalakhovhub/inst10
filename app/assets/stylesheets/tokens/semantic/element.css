@@ -1,26 +1,26 @@
 :root {
 
-  --element--color-bg: var(--color-bg-cuatro);
-  --element--color-bg-hover: var(--color-bg-cuatro-hover);
-  --element--color-bg-active: var(--color-bg-cuatro-active);
+  --element--bg-color: var(--color-bg-cuatro);
+  --element--bg-color-hover: var(--color-bg-cuatro-hover);
+  --element--bg-color-active: var(--color-bg-cuatro-active);
 
-  --element--color-bg-transp: var(--color-bg-transp);
-  --element--color-bg-transp-hover: var(--color-bg-transp-hover-50);
-  --element--color-bg-transp-active: var(--color-bg-transp-active-50);
+  --element--bg-color-transp: var(--color-bg-transp);
+  --element--bg-color-transp-hover: var(--color-bg-transp-hover-50);
+  --element--bg-color-transp-active: var(--color-bg-transp-active-50);
 
-  --element--color-border: var(--color-border-tres);
-  --element--color-border-hover: var(--color-border-tres-hover);
-  --element--color-border-active: var(--color-border-tres-active);
+  --element--border-color: var(--color-border-tres);
+  --element--border-color-hover: var(--color-border-tres-hover);
+  --element--border-color-active: var(--color-border-cuatro);
+  --element--border-radius: .375em;
 
   --element--padding-inline: 0.75em;
-  --element--radius: .375em;
   --element--gap: var(--px-4);
 
-  --element--focus-outline-width: var(--px-2);;
+  --element--focus-outline-width: var(--px-2);
   --element--focus-outline-offset: 1px;
   --element--focus-outline-style: solid;
 
-
+  --element--placeholder-color: var(--color-font-siete);
 
 
   /* Tiny */

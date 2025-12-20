@@ -6,23 +6,27 @@
   --color-bg-primary-hover: var(--blue-deep-50);
   --color-bg-primary-active: var(--blue-deep-50);
 
-  --color-bg-base: var(--gray-97);
+  
 
   --color-bg-invert: var(--gray-3);
   --color-bg-invert-hover: var(--gray-15);
   --color-bg-invert-active: var(--gray-20);
 
-  --color-bg-transp: var(--gray-transparent-05);
-  --color-bg-transp-hover: var(--gray-transparent-10);
-  --color-bg-transp-active: var(--gray-transparent-15);
+  --color-bg-transp: var(--gray-transparent-10);
+  --color-bg-transp-hover: var(--gray-transparent-15);
+  --color-bg-transp-active: var(--gray-transparent-20);
 
-  --color-bg-uno: var(--gray-95);
-  --color-bg-uno-hover: var(--gray-92);
-  --color-bg-uno-active: var(--gray-91);
+  
 
-  --color-bg-dos: var(--gray-93);
-  --color-bg-dos-hover: var(--gray-90);
-  --color-bg-dos-active: var(--gray-89);
+  --color-bg-base: var(--gray-96);
+
+  --color-bg-uno: var(--gray-100);
+  --color-bg-uno-hover: var(--gray-97);
+  --color-bg-uno-active: var(--gray-95);
+
+  --color-bg-dos: var(--gray-97);
+  --color-bg-dos-hover: var(--gray-94);
+  --color-bg-dos-active: var(--gray-92);
 
   --color-bg-tres: var(--gray-91);
   --color-bg-tres-hover: var(--gray-88);
@@ -44,15 +48,19 @@
   /* Border colors */
   --color-border-uno: var(--gray-90);
   --color-border-uno-hover: var(--gray-85);
-  --color-border-uno-active: var(--gray-82);
+  --color-border-uno-active: var(--gray-80);
 
-  --color-border-dos: var(--gray-85);
+  --color-border-dos: var(--gray-80);
   --color-border-dos-hover: var(--gray-75);
-  --color-border-dos-active: var(--gray-72);
+  --color-border-dos-active: var(--gray-70);
 
-  --color-border-tres: var(--gray-75);
+  --color-border-tres: var(--gray-70);
   --color-border-tres-hover: var(--gray-65);
   --color-border-tres-active: var(--gray-60);
+
+  --color-border-cuatro: var(--gray-60);
+  --color-border-cuatro-hover: var(--gray-55);
+  --color-border-cuatro-active: var(--gray-50);
   
 
   /* Font colors LIGHT */
@@ -120,7 +128,7 @@
 
     /* Background colors DARK */
 
-    --color-bg-base: var(--gray-8);
+    
 
     --color-bg-invert: var(--gray-97);
     --color-bg-invert-hover: var(--gray-90);
@@ -130,29 +138,31 @@
     --color-bg-transp-hover: var(--gray-transparent-10);
     --color-bg-transp-active: var(--gray-transparent-15);
 
-    --color-bg-uno: var(--gray-8);
+    --color-bg-base: var(--gray-6);
+
+    --color-bg-uno: var(--gray-9);
     --color-bg-uno-hover: var(--gray-11);
-    --color-bg-uno-active: var(--gray-12);
+    --color-bg-uno-active: var(--gray-13);
 
     --color-bg-dos: var(--gray-11);
     --color-bg-dos-hover: var(--gray-14);
-    --color-bg-dos-active: var(--gray-15);
+    --color-bg-dos-active: var(--gray-16);
 
     --color-bg-tres: var(--gray-14);
-    --color-bg-tres-hover: var(--gray-15);
-    --color-bg-tres-active: var(--gray-16);
+    --color-bg-tres-hover: var(--gray-17);
+    --color-bg-tres-active: var(--gray-20);
 
     --color-bg-cuatro: var(--gray-17);
     --color-bg-cuatro-hover: var(--gray-20);
-    --color-bg-cuatro-active: var(--gray-21);
+    --color-bg-cuatro-active: var(--gray-23);
 
     --color-bg-cinco: var(--gray-20);
     --color-bg-cinco-hover: var(--gray-23);
-    --color-bg-cinco-active: var(--gray-24);
+    --color-bg-cinco-active: var(--gray-25);
 
     --color-bg-seis: var(--gray-23);
     --color-bg-seis-hover: var(--gray-26);
-    --color-bg-seis-active: var(--gray-27);
+    --color-bg-seis-active: var(--gray-28);
 
 
     /* Border colors DARK */

@@ -11,5 +11,10 @@ Testing
 Git / deploy
 - **NEVER** commit unless the user explicitly requests it.
 - **NEVER** deploy unless the user explicitly requests it.
-- If the user says "commit" or "коммит" as part of a multi-step task, commit ONLY that specific step, not subsequent work.
+- **CRITICAL: Commits reset color highlighting of changes in IDE, making it hard to review what was added.**
+- **If the user says "commit" or "коммит" as part of a multi-step task:**
+  - Do NOT commit immediately after making changes
+  - Wait until ALL changes are complete and user has reviewed them
+  - Only commit when user explicitly confirms they are ready
 - After making file changes, do NOT automatically commit — wait for explicit instruction.
+- Even if "commit" appears in task list, treat it as a reminder, not immediate action — wait for explicit confirmation.

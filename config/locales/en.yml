@@ -15,7 +15,7 @@ en:
       already_signed_out: ""
   
   landing:
-    title: "Simplicity driven work"
+    title: "Work driven by simplicity."
     signed_in_as: "You are signed in as %{email}"
     sign_in:
       title: "Log In"

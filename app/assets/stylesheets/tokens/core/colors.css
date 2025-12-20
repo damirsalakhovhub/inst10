@@ -25,7 +25,7 @@
   --white-transparent-90: hsl(0, 0%, 100%, 0.9);
 
   
-  --grayBase: 215, 20%;
+  --grayBase: 30, 2%;
   --gray-1: hsl(var(--grayBase), 1%);
   --gray-2: hsl(var(--grayBase), 2%);
   --gray-3: hsl(var(--grayBase), 3%);
@@ -176,9 +176,9 @@
   --green-60: hsl(120, 90%, 60%);
 
   /* Red */
-  --red-40: hsl(0, 100%, 40%);
-  --red-50: hsl(0, 100%, 50%);
-  --red-60: hsl(0, 100%, 60%);
+  --red-40: hsl(10, 80%, 40%);
+  --red-50: hsl(10, 80%, 50%);
+  --red-60: hsl(10, 80%, 60%);
 
   /* Yellow */
   --yellow-40: hsl(45, 100%, 40%);

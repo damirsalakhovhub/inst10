@@ -34,6 +34,10 @@ How to make changes
 - Avoid new files unless necessary (migrations/tests/new components are allowed when required); if created, explain why.
 - If a proposed solution is inefficient, call it out and explain why (time/memory/complexity).
 
+Git / commit (CRITICAL)
+- **NEVER commit unless explicitly requested. Commits reset IDE color highlighting, making code review difficult.**
+- Even if "commit" appears in task list, wait for explicit confirmation after all changes are complete.
+
 Security (baseline)
 - Never log secrets, tokens, or personal data.
 - For file uploads: validate type/size; do not serve raw files without access control.

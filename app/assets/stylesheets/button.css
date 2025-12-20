@@ -17,18 +17,18 @@
   line-height: 1;
   font-weight: 500;
   
-  background-color: var(--element--color-bg);
-  border-radius: var(--element--radius);
+  background-color: var(--element--bg-color);
+  border-radius: var(--element--border-radius);
   
   transition: background-color 0.1s linear, transform 0.1s linear;
 
   /* States ------------------------------------------------------------ */
   &:hover:not(:disabled) {
-    background-color: var(--element--color-bg-hover);
+    background-color: var(--element--bg-color-hover);
   }
 
   &:active:not(:disabled) {
-    background-color: var(--element--color-bg-active);
+    background-color: var(--element--bg-color-active);
     transform: scale(0.98);
   }
 
@@ -39,8 +39,8 @@
   }
 
   &:disabled {
-    background-color: var(--disabled-color-bg);
-    color: var(--disabled-color-font);
+    background-color: var(--disabled--bg-color);
+    color: var(--disabled--font-color);
     cursor: not-allowed;
   }
 }

@@ -6,7 +6,8 @@
 
 <header class="layout-header">
   <div class="layout-header--left">
-    <span class="layout-header--brand"><%= t("common.app_name") %></span>
+    <span class="layout-header--brand"><%= link_to t("common.app_name"), root_path %></span>
+    <span class="layout-header--brand"><%= link_to "UI Kit", ui_kit_root_path %></span>
   </div>
 
   <% if user_signed_in? %>

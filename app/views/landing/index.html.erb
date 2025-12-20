@@ -2,169 +2,46 @@
 
   <section class="hero-section">
     <h1 class="text-display"><%= t("landing.title") %></h1>
-
-
-    <p class="text-hero">
-    YAGNI KISS DRY</p>
+    <p class="text-hero">No fancy slogans here. Just take a look, try it for a while, and decide for yourself.</strong></p>
   </section>
 
-  <section class="auth-section">
-    <% if user_signed_in? %>
-      <p><%= t("landing.signed_in_as", email: current_user.email) %></p>
-    
-    <% else %>
+  <section class="email-first-card">
 
-    <%# Email-first flow %>
-    <div class="email-first-card">
+    <h4 class="text-accent">Start with email:</h4>
 
-      <h4 class="text-accent">
-        Start with email:
-      </h4>
-
-      <form class="email-first-form" action="#" method="post">
-        <%= render "shared/input",
-          name: "email",
-          type: "email",
-          placeholder: "Type your email here",
-          required: true,
-          size: :large,
-          wrapper_class: "email-first-input"
-        %>
-        <%= render "shared/button", 
-          text: "Continue", 
-          variant: :contrast, 
-          type: :submit, 
-          class: "email-first-button",
-          size: :large
-        %>
-      </form>
-
-          <%# <p class="text-accent">
-        We don't use Google Auth to minimize connections.
-      </p> %>
-
+    <form class="email-first-form" action="#" method="post">
+      <%= render "shared/input",
+        name: "email",
+        type: "email",
+        placeholder: "Type your email here",
+        required: true,
+        size: :large,
+        wrapper_class: "email-first-input"
+      %>
       
-    </div>
-
-
-    <% if false %>
-    <div class="auth-card">
-    
-      <h3><%= t("landing.sign_in.title") %></h3>
-    
-      <%= form_for(
-        @resource,
-        as: @resource_name,
-        url: session_path(@resource_name),
-        html: { class: "auth-form", novalidate: true }
-      ) do |f| %>
-        
-        <%= render "shared/input",
-          label: t("landing.sign_in.email_label"),
-          name: "user[email]",
-          type: "email",
-          required: true,
-          value: f.object.email,
-          autocomplete: "email",
-          error: flash[:alert]
-        %>
-        
-        <%= render "shared/input",
-          label: t("landing.sign_in.password_label"),
-          name: "user[password]",
-          type: "password",
-          required: true,
-          autocomplete: "current-password"
-        %>
-        
-        <% if @devise_mapping&.rememberable? %>
-          <%= render "shared/checkbox",
-            label: t("landing.sign_in.remember_me"),
-            name: "user[remember_me]"
-          %>
-        <% end %>
-        
-        <%= render "shared/button", text: t("landing.sign_in.submit"), variant: :primary, type: :submit %>
-      <% end %>
-      
-      <% if @devise_mapping&.recoverable? %>
-        <div class="auth-form-forgot">
-          <%= link_to t("landing.sign_in.forgot_password"), new_password_path(@resource_name), class: "auth-link" %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="auth-card">
-        <h3><%= t("landing.sign_up.title") %></h3>
-        <%= form_for(
-          @resource,
-          as: @resource_name,
-          url: registration_path(@resource_name),
-          html: { class: "auth-form", novalidate: true }
-        ) do |f| %>
-          <%= render "shared/input",
-            label: t("landing.sign_up.email_label"),
-            name: "user[email]",
-            type: "email",
-            required: true,
-            value: f.object.email,
-            error: @resource.errors[:email].first
-          %>
-          <%= render "shared/input",
-            label: t("landing.sign_up.password_label"),
-            name: "user[password]",
-            type: "password",
-            required: true,
-            error: @resource.errors[:password].first
-          %>
-          <%= render "shared/input",
-            label: t("landing.sign_up.password_confirmation_label"),
-            name: "user[password_confirmation]",
-            type: "password",
-            required: true,
-            error: @resource.errors[:password_confirmation].first
-          %>
-          <%= render "shared/button", text: t("landing.sign_up.submit"), variant: :primary, type: :submit %>
-        <% end %>
-      </div>
-    <% end %>
-    <% end %>
-  </section>
-
-  <%# <section id="features">
-    <h2>Features</h2>
-    <article>
-      <h3>Feature title</h3>
-      <p>Feature description</p>
-    </article>
-    <article>
-      <h3>Feature title</h3>
-      <p>Feature description</p>
-    </article>
-    <article>
-      <h3>Feature title</h3>
-      <p>Feature description</p>
-    </article>
-  </section> %>
-
-  <%# <section id="about">
-    <h2>About</h2>
-    <p>About content</p>
-  </section> %>
-
-  <%# <section id="contact">
-    <h2>Contact</h2>
-    <form>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" required></textarea>
-      <button type="submit">Send</button>
+      <%= render "shared/button", 
+        text: "Continue", 
+        variant: :contrast, 
+        type: :submit, 
+        class: "email-first-button",
+        size: :large
+      %>
     </form>
-  </section> %>
 
-  <%# <footer>
-    <p>&copy; inst10</p>
-  </footer>   %>
+        <%#= render "shared/button", 
+        text: "Authorize via Google", 
+        variant: :default, 
+        type: :submit, 
+        size: :small%>
+
+  </section>
+
+    
+
+
+
+  <footer class="footer">
+    <p>&copy; 2025, Instantum </p>
+  </footer>  
 </main>
 

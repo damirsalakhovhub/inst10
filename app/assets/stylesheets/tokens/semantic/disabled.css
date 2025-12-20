@@ -1,12 +1,12 @@
 :root {
-  --disabled-color-bg: hsla(215, 5%, 50%, 0.20);
-  --disabled-color-font: hsla(215, 5%, 50%, 0.6);
+  --disabled--bg-color: hsla(215, 5%, 50%, 0.20);
+  --disabled--font-color: hsla(215, 5%, 50%, 0.6);
 }
 
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --disabled-color-bg: hsla(215, 5%, 50%, 0.15);
-    --disabled-color-font: hsla(215, 5%, 50%, 0.45);
+    --disabled--bg-color: hsla(215, 5%, 50%, 0.15);
+    --disabled--font-color: hsla(215, 5%, 50%, 0.45);
   }
 }

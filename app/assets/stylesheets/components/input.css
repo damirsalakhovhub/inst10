@@ -1,4 +1,3 @@
-
 .input-wrapper {
   --input--height: var(--element-medium--height);
   --input--icon-size: var(--element-medium--icon-size);
@@ -8,6 +7,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  gap: var(--px-6);
 }
 
 /* Sizes ------------------------------------------------------------ */
@@ -31,6 +31,8 @@
   --input--padding-inline: var(--element-large--padding-inline);
 }
 
+
+
 /* Base Input ------------------------------------------------------------ */
 
 .input {
@@ -44,30 +46,34 @@
   font-weight: 500;
   
   background-color: var(--element--bg-color-transp);
-  box-shadow: inset 0 0 0 1px var(--element--border-color);
   border-radius: var(--element--border-radius);
   color: var(--color-font-uno);
   
-  transition: background-color 0.1s linear, box-shadow 0.1s linear;
+  transition: background-color 0.1s linear;
   
   &:hover:not(:disabled) {
-    box-shadow: inset 0 0 0 1px var(--element--border-color-hover);
+    outline: solid 1px var(--element--border-color);
+    outline-offset: -1px;
   }
 
   &:focus:not(:disabled) {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--element--border-color-active);
+    outline: solid 2px var(--element--border-color-active);
+    outline-offset: 1px;
+
+    &::placeholder {
+      opacity: 0.75;
+    }
   }
 
   &:disabled {
     background-color: var(--disabled--bg-color);
-    box-shadow: inset 0 0 0 1px var(--disabled--bg-color);
     color: var(--disabled--font-color);
     cursor: not-allowed;
   }
 
   &::placeholder {
-    color: var(--color-font-siete);
+    color: var(--element--placeholder-color);
+    font-weight: 400;
   }
 
   &:disabled::placeholder {
@@ -76,7 +82,6 @@
 }
 
 /* Container ------------------------------------------------------------ */
-
 .input-container {
   position: relative;
   display: flex;
@@ -84,7 +89,6 @@
 }
 
 /* Icons ------------------------------------------------------------ */
-
 .input-icon {
   position: absolute;
   left: var(--input--padding-inline);
@@ -117,11 +121,9 @@
 }
 
 /* Label ------------------------------------------------------------ */
-
 .input-label {
   display: flex;
   align-items: center;
-  margin-bottom: var(--px-4);
   font-weight: 600;
 }
 
@@ -136,15 +138,28 @@
   cursor: not-allowed;
 }
 
-/* Error state ------------------------------------------------------------ */
 
+/* Description ------------------------------------------------------------ */
+.input-description {
+  color: var(--color-font-cinco);
+  font-weight: 400;
+}
+
+
+/* Error state ------------------------------------------------------------ */
 .input-wrapper-error {
   .input {
-    box-shadow: inset 0 0 0 1px var(--color-danger);
+    outline: solid 1px var(--color-danger);
+    outline-offset: -1px;
+
+    &:hover:not(:disabled) {
+      outline: solid 1px var(--color-danger);
+      outline-offset: -1px;
+    }
     
     &:focus:not(:disabled) {
-      outline-style: var(--element--focus-outline-style);
-      outline-color: var(--color-danger);
+      outline: solid 2px var(--color-danger);
+      outline-offset: -1px;
     }
   }
 
@@ -158,21 +173,13 @@
 }
 
 .input-error {
-  margin-top: var(--px-6);
   color: var(--color-danger);
-  
-  overflow: hidden;
   font-weight: 400;
+  display: none;
   
   &.input-error-visible {
-    opacity: 1;
-    height: auto;
+    display: block;
   }
 }
 
-.input-description {
-  margin-top: var(--px-6);
-  color: var(--color-font-tres);
-  overflow: hidden;
-  font-weight: 400;
-}
+

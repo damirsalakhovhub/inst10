@@ -9,7 +9,7 @@
   
   &:has(input:disabled) {
     cursor: not-allowed;
-    color: var(--disabled-color-font);
+    color: var(--disabled--font-color);
   }
 }
 
