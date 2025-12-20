@@ -3,109 +3,68 @@
     <h1>Inputs</h1>
 
     <section class="ui-kit-section">
-      <h2>Input Variants</h2>
-      <div class="ui-kit-element-group">
-        <div class="ui-kit-element">
-          <%= render "shared/input",
-            label: "Label",
-            name: "input_basic",
-            placeholder: "Placeholder text"
-          %>
-        </div>
-
-        <div class="ui-kit-element">
-          <%= render "shared/input",
-            label: "Required Field",
-            name: "input_required",
-            placeholder: "This field is required",
-            required: true
-          %>
-        </div>
-
-        <div class="ui-kit-element">
-          <%= render "shared/input",
-            label: "With Icon",
-            name: "input_icon",
-            placeholder: "Input with left icon",
-            icon: "heart"
-          %>
-        </div>
-
-        <div class="ui-kit-element">
-          <%= render "shared/input",
-            label: "Disabled Input",
-            name: "input_disabled",
-            placeholder: "Cannot edit this field",
-            disabled: true
-          %>
-        </div>
-
-        <div class="ui-kit-element">
-          <%= render "shared/input",
-            label: "Input with Error",
-            name: "input_error",
-            placeholder: "Enter email",
-            type: "email",
-            error: "Please include an '@' in the email address"
-          %>
-        </div>
-      </div>
-    </section>
-
-    <section class="ui-kit-section">
       <h2>Input Sizes</h2>
-      <div class="ui-kit-element-group" style="display: flex; flex-direction: column; gap: 1rem;">
-        <div class="ui-kit-element">
-          <%= render "shared/input",
-            label: "Medium (Default)",
-            name: "input_medium",
-            placeholder: "Medium size input",
-            size: :medium
-          %>
+      <div class="ui-kit-element-group" style="display: flex; flex-direction: column; gap: 1.5rem;">
+        
+        <div class="ui-kit-row">
+          <span class="ui-kit-row-label">Tiny (24px)</span>
+          <div class="ui-kit-row-content">
+            <%= render "shared/input", name: "tiny", size: :tiny, placeholder: "Tiny input..." %>
+            <%= render "shared/input", name: "tiny_icon", size: :tiny, icon: "heart", placeholder: "With icon" %>
+          </div>
         </div>
 
-        <div class="ui-kit-element">
-          <%= render "shared/input",
-            label: "Large",
-            name: "input_large",
-            placeholder: "Large size input",
-            size: :large
-          %>
+        <div class="ui-kit-row">
+          <span class="ui-kit-row-label">Small (32px)</span>
+          <div class="ui-kit-row-content">
+            <%= render "shared/input", name: "small", size: :small, placeholder: "Small input..." %>
+            <%= render "shared/input", name: "small_icon", size: :small, icon: "heart", placeholder: "With icon" %>
+          </div>
         </div>
+
+        <div class="ui-kit-row">
+          <span class="ui-kit-row-label">Medium (40px)</span>
+          <div class="ui-kit-row-content">
+            <%= render "shared/input", name: "medium", size: :medium, placeholder: "Medium input (default)..." %>
+            <%= render "shared/input", name: "medium_icon", size: :medium, icon: "heart", placeholder: "With icon" %>
+          </div>
+        </div>
+
+        <div class="ui-kit-row">
+          <span class="ui-kit-row-label">Large (48px)</span>
+          <div class="ui-kit-row-content">
+            <%= render "shared/input", name: "large", size: :large, placeholder: "Large input..." %>
+            <%= render "shared/input", name: "large_icon", size: :large, icon: "heart", placeholder: "With icon" %>
+          </div>
+        </div>
+
+        <div class="ui-kit-row">
+          <span class="ui-kit-row-label">Grand (56px)</span>
+          <div class="ui-kit-row-content">
+            <%= render "shared/input", name: "grand", size: :grand, placeholder: "Grand input..." %>
+            <%= render "shared/input", name: "grand_icon", size: :grand, icon: "heart", placeholder: "With icon" %>
+          </div>
+        </div>
+
+        <div class="ui-kit-row">
+          <span class="ui-kit-row-label">Huge (64px)</span>
+          <div class="ui-kit-row-content">
+            <%= render "shared/input", name: "huge", size: :huge, placeholder: "Huge input..." %>
+            <%= render "shared/input", name: "huge_icon", size: :huge, icon: "heart", placeholder: "With icon" %>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section class="ui-kit-section">
-      <h2>Input Variants</h2>
+      <h2>States</h2>
       <div class="ui-kit-element-group" style="display: flex; flex-direction: column; gap: 1rem;">
-        <div class="ui-kit-element">
-          <%= render "shared/input",
-            label: "Default",
-            name: "input_default",
-            placeholder: "Default input style"
-          %>
-        </div>
-
-        <div class="ui-kit-element">
-          <%= render "shared/input",
-            label: "Accent (for promo/landing pages)",
-            name: "input_accent",
-            placeholder: "Accent variant input",
-            variant: :accent
-          %>
-        </div>
-
-        <div class="ui-kit-element">
-          <%= render "shared/input",
-            label: "Large Accent",
-            name: "input_large_accent",
-            placeholder: "Large accent input",
-            size: :large,
-            variant: :accent
-          %>
-        </div>
+        <%= render "shared/input", label: "Required", name: "req", required: true, placeholder: "Required field" %>
+        <%= render "shared/input", label: "Disabled", name: "dis", disabled: true, placeholder: "Disabled field", value: "Disabled value" %>
+        <%= render "shared/input", label: "Error", name: "err", error: "This field is invalid", placeholder: "Error field" %>
       </div>
     </section>
+
   </main>
 <% end %>
-
