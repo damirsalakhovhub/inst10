@@ -12,6 +12,11 @@
   --element--radius: .375em;
   --element--gap: var(--px-4);
 
+  --element--focus-outline-width: 2px;
+  --element--focus-outline-offset: 0px;
+  --element--focus-outline-style: auto;
+
+
 
   /* Tiny */
   --element-tiny--height: var(--px-24);

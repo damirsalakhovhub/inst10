@@ -33,9 +33,9 @@
   }
 
   &:focus-visible {
-    outline-width: 2px;
-    outline-offset: 0px;
-    transition: outline 0.075s linear;
+    outline-width: var(--element--focus-outline-width);
+    outline-style: var(--element--focus-outline-style);
+    outline-offset: var(--element--focus-outline-offset);
   }
 
   &:disabled {
