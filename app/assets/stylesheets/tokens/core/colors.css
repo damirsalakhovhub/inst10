@@ -104,7 +104,9 @@
   --gray-100: hsl(var(--grayBase), 100%);
 
 
+  --gray-transparent-05: hsl(var(--grayBase), 50%, 0.05);
   --gray-transparent-10: hsl(var(--grayBase), 50%, 0.1);
+  --gray-transparent-15: hsl(var(--grayBase), 50%, 0.15);
   --gray-transparent-20: hsl(var(--grayBase), 50%, 0.2);
   --gray-transparent-30: hsl(var(--grayBase), 50%, 0.3);
   --gray-transparent-40: hsl(var(--grayBase), 50%, 0.4);

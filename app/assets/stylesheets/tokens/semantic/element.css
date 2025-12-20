@@ -4,6 +4,10 @@
   --element--color-bg-hover: var(--color-bg-cuatro-hover);
   --element--color-bg-active: var(--color-bg-cuatro-active);
 
+  --element--color-bg-transp: var(--color-bg-transp);
+  --element--color-bg-transp-hover: var(--color-bg-transp-hover-50);
+  --element--color-bg-transp-active: var(--color-bg-transp-active-50);
+
   --element--color-border: var(--color-border-tres);
   --element--color-border-hover: var(--color-border-tres-hover);
   --element--color-border-active: var(--color-border-tres-active);
@@ -12,10 +16,10 @@
   --element--radius: .375em;
   --element--gap: var(--px-4);
 
-  --element--focus-outline-width: 2px;
-  --element--focus-outline-offset: 0px;
+  --element--focus-outline-width: var(--px-2);;
+  --element--focus-outline-offset: 1px;
   --element--focus-outline-style: solid;
-  --element--focus-outline-color: var(--color-font-uno);
+
 
 
 

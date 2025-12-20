@@ -65,7 +65,8 @@
 
 /* Focus state */
 .checkbox-input:focus-visible ~ .checkbox-control {
-  outline: var(--element--focus-outline-width) var(--element--focus-outline-style) var(--element--focus-outline-color);
+  outline-width: var(--element--focus-outline-width);
+  outline-style: var(--element--focus-outline-style);
   outline-offset: var(--element--focus-outline-offset);
 }
 
