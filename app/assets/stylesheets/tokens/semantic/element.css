@@ -14,7 +14,8 @@
 
   --element--focus-outline-width: 2px;
   --element--focus-outline-offset: 0px;
-  --element--focus-outline-style: auto;
+  --element--focus-outline-style: solid;
+  --element--focus-outline-color: var(--color-font-uno);
 
 
 

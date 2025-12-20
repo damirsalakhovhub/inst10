@@ -33,8 +33,7 @@
   }
 
   &:focus-visible {
-    outline-width: var(--element--focus-outline-width);
-    outline-style: var(--element--focus-outline-style);
+    outline: var(--element--focus-outline-width) var(--element--focus-outline-style) var(--element--focus-outline-color);
     outline-offset: var(--element--focus-outline-offset);
   }
 
