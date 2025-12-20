@@ -36,6 +36,21 @@
   --color-bg-seis-hover: var(--gray-83);
   --color-bg-seis-active: var(--gray-81);
 
+
+  /* Border colors */
+  --color-border-uno: var(--gray-90);
+  --color-border-uno-hover: var(--gray-85);
+  --color-border-uno-active: var(--gray-82);
+
+  --color-border-dos: var(--gray-85);
+  --color-border-dos-hover: var(--gray-75);
+  --color-border-dos-active: var(--gray-72);
+
+  --color-border-tres: var(--gray-75);
+  --color-border-tres-hover: var(--gray-72);
+  --color-border-tres-active: var(--gray-69);
+  
+
   /* Font colors LIGHT */
   --color-font-invert: var(--white);
 

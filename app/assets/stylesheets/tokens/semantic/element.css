@@ -4,6 +4,10 @@
   --element--color-bg-hover: var(--color-bg-cuatro-hover);
   --element--color-bg-active: var(--color-bg-cuatro-active);
 
+  --element--color-border: var(--color-border-tres);
+  --element--color-border-hover: var(--color-border-tres-hover);
+  --element--color-border-active: var(--color-border-tres-active);
+
   --element--padding-inline: 0.75em;
   --element--radius: .375em;
   --element--gap: var(--px-4);
