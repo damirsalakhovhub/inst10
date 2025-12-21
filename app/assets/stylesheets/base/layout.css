@@ -11,3 +11,10 @@
   flex-direction: column;
   gap: var(--gap-m);
 }
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-l);
+}

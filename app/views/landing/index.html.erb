@@ -2,25 +2,41 @@
 
   <section class="hero-section">
     <h1 class="text-display"><%= t("landing.title") %></h1>
-    <p class="text-hero">No fancy slogans here. Just take a look and decide for yourself.</strong></p>
+    <%# <p class="text-hero">No fancy slogans here. Just take a look and decide for yourself.</p> %>
+    <%# <p class="text-hero">Good for small teams without enterprise needs</p> %>
+    
   </section>
 
   <section class="email-first-card">
 
-    <h4 class="text-accent">Quick start with email:</h4>
+    <h4 class="text-accent">Quick start:</h4>
 
     <form class="email-first-form column" action="#" method="post">
+
+
       <%= render "shared/input",
+        label: "Workspace",
+        name: "workspace",
+        type: "text",
+        placeholder: "Acme company",
+        required: false,
+        size: :large,
+        wrapper_class: "email-first-input"
+      %>
+    
+      <%= render "shared/input",
+        label: "Email",
         name: "email",
         type: "email",
-        placeholder: "Type your email here",
+        placeholder: "you@example.com",
         required: true,
         size: :large,
         wrapper_class: "email-first-input"
       %>
       
+      
       <%= render "shared/button", 
-        text: "Send me a code", 
+        text: "Continue", 
         variant: :contrast, 
         type: :submit, 
         class: "email-first-button",

@@ -2,7 +2,7 @@ en:
   hello: "Hello world"
   
   common:
-    app_name: "Instantum"
+    app_name: "Workinorder"
     sign_out: "Sign Out"
 
   home:
@@ -15,7 +15,7 @@ en:
       already_signed_out: ""
   
   landing:
-    title: "Work driven by simplicity."
+    title: "Workflows driven by simplicity."
     signed_in_as: "You are signed in as %{email}"
     sign_in:
       title: "Log In"

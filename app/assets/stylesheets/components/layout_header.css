@@ -14,10 +14,21 @@
   display: flex;
   align-items: center;
   gap: var(--px-12);
+  flex: 1;
+  justify-content: space-between;
 }
 
 .layout-header--brand {
-  font-weight: 700;
+  font-weight: 400;
+  
+  a {
+    color: var(--font-uno--color);
+    text-decoration: none;
+    
+    &:hover {
+      color: var(--font-uno--color);
+    }
+  }
 }
 
 .layout-header--right {

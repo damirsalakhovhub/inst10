@@ -3,9 +3,10 @@
   --padding-inline-edge: clamp(var(--px-16), 2vw, var(--px-32));
 
   --gap-xs: var(--px-8);
-  --gap-small: var(--px-8);
+  --gap-s: var(--px-12);
   --gap-m: var(--px-16);
-  --gap-l: var(--px-24);
+  --gap-l: var(--px-20);
+  --gap-xl: var(--px-32);
 
   --group-row--gap: var(--gap-m);
 }

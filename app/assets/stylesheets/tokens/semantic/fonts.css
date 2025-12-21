@@ -30,9 +30,9 @@
   --letters-tighter:  -0.05em;
   --letters-tight:    -0.025em;
   --letters-normal:   0;
-  --letters-wide:     0.025em;
-  --letters-wider:    0.05em;
-  --letters-widest:   0.1em;
+  --letters-loose:     0.025em;
+  --letters-looser:    0.05em;
+  --letters-loosest:   0.1em;
 
   /* Font families */
   --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;

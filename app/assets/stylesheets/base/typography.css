@@ -3,7 +3,7 @@
 
 body {
   font-family: var(--font-family-sans);
-  font-size: clamp(var(--font-size-m), 1vw, var(--font-size-l));
+  font-size: var(--font-size-m);
   line-height: var(--px-20);
   color: var(--font-uno--color);
   background: var(--bg-color-base);
