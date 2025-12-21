@@ -6,6 +6,7 @@
   align-items: flex-start;
   gap: var(--gap-l);
   min-height: calc(100vh - var(--layout-header-height, 80px));
+  margin-top: var(--px-40);
 }
 
 .landing-main .footer {

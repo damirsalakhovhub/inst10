@@ -9,13 +9,13 @@
 
   <section class="email-first-card">
 
-    <h4 class="text-accent">Quick start:</h4>
+    <%# <h4 class="text-accent">Name your workspace:</h4> %>
 
     <form class="email-first-form column" action="#" method="post">
 
 
       <%= render "shared/input",
-        label: "Workspace",
+        label: "Name your workspace",
         name: "workspace",
         type: "text",
         placeholder: "Acme company",
@@ -23,9 +23,20 @@
         size: :large,
         wrapper_class: "email-first-input"
       %>
+
+
+      <%= render "shared/input",
+        label: "Project name",
+        name: "project_name",
+        type: "text",
+        placeholder: "Development",
+        required: false,
+        size: :large,
+        wrapper_class: "email-first-input"
+      %>
     
       <%= render "shared/input",
-        label: "Email",
+        label: "Your email",
         name: "email",
         type: "email",
         placeholder: "you@example.com",

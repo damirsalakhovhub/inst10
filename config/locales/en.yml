@@ -2,7 +2,7 @@ en:
   hello: "Hello world"
   
   common:
-    app_name: "Workinorder"
+    app_name: "IMASUGU 今すぐ"
     sign_out: "Sign Out"
 
   home:
@@ -15,7 +15,7 @@ en:
       already_signed_out: ""
   
   landing:
-    title: "Workflows driven by simplicity."
+    title: "Fast workflows, driven by simplicity."
     signed_in_as: "You are signed in as %{email}"
     sign_in:
       title: "Log In"
