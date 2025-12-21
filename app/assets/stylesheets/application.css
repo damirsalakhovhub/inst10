@@ -1,16 +1,21 @@
 /* Build entrypoint: imports only (PostCSS resolves nesting/imports) */
-@import "./tokens.css";
-@import "./base.css";
+/* Foundation */
+@import "./base/reset.css";
+@import "./base/tokens.css";
+@import "./base/typography.css";
+@import "./base/base.css";
+@import "./base/layout.css";
+
+/* Components */
 @import "./components/layout_header.css";
-@import "./button.css";
+@import "./components/button.css";
 @import "./components/input.css";
 @import "./components/checkbox.css";
 @import "./components/dialog.css";
-@import "./landing.css";
-@import "./ui_kit.css";
 
-.group-row {
-  display: flex;
-  flex-direction: row;
-  gap: var(--gap-s);
-}
+/* Pages */
+@import "./pages/landing.css";
+
+/* Utilities */
+@import "./base/accessibility.css";
+@import "./pages/ui_kit.css";
