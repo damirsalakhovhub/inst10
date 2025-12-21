@@ -8,6 +8,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  min-width: 0;
 }
 
 html {
@@ -19,16 +20,6 @@ html {
   tab-size: 4;
 }
 
-body {
-  font-family: var(--font-family-sans);
-  font-size: var(--font-size-m);
-  line-height: var(--px-20);
-  color: var(--font-uno--color);
-  background: var(--bg-color-base);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
 
 h1, h2, h3, h4, h5, h6 {
   font-size: inherit;

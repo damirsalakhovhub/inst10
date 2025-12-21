@@ -1,12 +1,10 @@
 :root {
 
-  /* Background colors LIGHT */
+  /* BACKGROUND LIGHT */
     
   --bg-primary--color: var(--blue-50);
   --bg-primary--color-hover: var(--blue-deep-50);
   --bg-primary--color-active: var(--blue-deep-50);
-
-  
 
   --bg-invert--color: var(--gray-3);
   --bg-invert--color-hover: var(--gray-15);
@@ -45,7 +43,7 @@
   --bg-seis--color-active: var(--gray-81);
 
 
-  /* Border colors */
+  /* BORDER LIGHT */
   --border-uno--color: var(--gray-90);
   --border-uno--color-hover: var(--gray-85);
   --border-uno--color-active: var(--gray-80);
@@ -63,7 +61,7 @@
   --border-cuatro--color-active: var(--gray-50);
   
 
-  /* Font colors LIGHT */
+  /* FONT LIGHT */
   --font-invert--color: var(--white);
 
   --font-uno--color: var(--gray-10);
@@ -94,26 +92,26 @@
   --font-siete--color-hover: var(--gray-75);
   --font-siete--color-active: var(--gray-80);
 
-  /* Outline colors */
+  /* OUTLINE LIGHT */
   --outline-uno--color: var(--blue-transp-50);
 
   
-  /* Link colors LIGHT */
+  /* LINK LIGHT */
   --link-uno--color: var(--blue-50);
   --link-uno--color-hover: var(--blue-deep-50);
   --link-uno--color-active: var(--blue-deep-45);
 
-  /* Success colors */
+  /* SUCCESS LIGHT */
   --color-success: var(--green-50);
   --color-success-hover: var(--green-60);
   --color-success-active: var(--green-40);
 
-  /* Danger colors LIGHT */
+  /* DANGER LIGHT */
   --color-danger: var(--red-50);
   --color-danger-hover: var(--red-60);
   --color-danger-active: var(--red-40);
 
-  /* Warning colors LIGHT */
+  /* WARNING LIGHT */
   --color-warning: var(--yellow-50);
   --color-warning-hover: var(--yellow-60);
   --color-warning-active: var(--yellow-40);
@@ -126,7 +124,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
 
-    /* Background colors DARK */
+    /* BACKGROUND DARK */
 
     
 
@@ -165,7 +163,7 @@
     --bg-seis--color-active: var(--gray-28);
 
 
-    /* Border colors DARK */
+    /* BORDER DARK */
     --border-uno--color: var(--gray-12);
     --border-uno--color-hover: var(--gray-22);
     --border-uno--color-active: var(--gray-24);
@@ -180,7 +178,7 @@
 
 
 
-    /* Font colors DARK */
+    /* FONT DARK */
     --font-invert--color: var(--black);
 
     --font-uno--color: var(--gray-98);
@@ -211,25 +209,25 @@
     --font-siete--color-hover: var(--gray-35);
     --font-siete--color-active: var(--gray-30);
 
-    /* Outline colors DARK */
+    /* OUTLINE DARK */
     --outline-uno--color: var(--blue-transp-50);
     
-    /* Link colors DARK */
+    /* LINK DARK */
     --link-uno--color: var(--blue-60);
     --link-uno--color-hover: var(--blue-70);
     --link-uno--color-active: var(--blue-75);
 
-    /* Success colors DARK */
+    /* SUCCESS DARK */
     --color-success: var(--green-60);
     --color-success-hover: var(--green-70);
     --color-success-active: var(--green-50);
 
-    /* Danger colors DARK */
+    /* DANGER DARK */
     --color-danger: var(--red-60);
     --color-danger-hover: var(--red-70);
     --color-danger-active: var(--red-50);
 
-    /* Warning colors DARK */
+    /* WARNING DARK */
     --color-warning: var(--yellow-60);
     --color-warning-hover: var(--yellow-70);
     --color-warning-active: var(--yellow-50);

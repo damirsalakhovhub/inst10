@@ -5,8 +5,8 @@
   --element--bg-color-active: var(--bg-tres--color-active);
 
   --element--bg-transp--color: var(--bg-transp--color);
-  --element--bg-transp--color-hover: var(--bg-transp--color-hover-50);
-  --element--bg-transp--color-active: var(--bg-transp--color-active-50);
+  --element--bg-transp--color-hover: var(--bg-transp--color-hover);
+  --element--bg-transp--color-active: var(--bg-transp--color-active);
 
   --element--border-color: var(--border-uno--color);
   --element--border-color-hover: var(--border-uno--color-hover);

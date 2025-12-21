@@ -53,7 +53,7 @@ main {
 
   background-color: var(--bg-uno--color);
   padding: var(--px-32);
-  padding-top: var(--px-28);
+  padding-top: var(--px-24);
   border-radius: var(--radius-l);
   box-shadow: 0 4px 40px 1px hsla(210, 10%, 2%, .05);
 }
@@ -62,6 +62,7 @@ main {
   display: flex;
   gap: var(--px-12);
   width: 100%;
+
 }
 
 .footer {

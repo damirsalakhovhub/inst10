@@ -1,5 +1,3 @@
-/* Design tokens */
-/* Hierarchical token system: core → semantic → component */
 
 /* Core tokens (primitives) */
 @import "../tokens/core/px.css";

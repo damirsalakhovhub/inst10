@@ -98,9 +98,6 @@ a:focus:not(:focus-visible) {
   display: none !important;
 }
 
-[aria-hidden="true"] {
-  display: none;
-}
 
 /* ============================================ */
 /* ARIA LIVE REGIONS */

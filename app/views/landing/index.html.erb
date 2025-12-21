@@ -7,7 +7,7 @@
 
   <section class="email-first-card">
 
-    <h4 class="text-accent">Start with email:</h4>
+    <h4 class="text-accent">Quick start with email:</h4>
 
     <form class="email-first-form column" action="#" method="post">
       <%= render "shared/input",
@@ -20,13 +20,15 @@
       %>
       
       <%= render "shared/button", 
-        text: "Continue", 
+        text: "Send me a code", 
         variant: :contrast, 
         type: :submit, 
         class: "email-first-button",
         size: :large
       %>
     </form>
+
+    <%# <p>We will send you a code on this email.</p> %>
 
         <%#= render "shared/button", 
         text: "Authorize via Google", 
