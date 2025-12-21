@@ -15,23 +15,23 @@
   
   /* COLORS & STYLES */
   
-  --checkbox--bg: var(--color-bg-dos);
+  --checkbox--bg: var(--bg-dos--color);
   --checkbox--border-width: var(--px-2);
-  --checkbox--border-color: var(--color-bg-cuatro);
-  --checkbox--border-color-hover: var(--color-bg-cinco);
-  --checkbox--border-color-focus: var(--color-outline-uno);
+  --checkbox--border-color: var(--bg-cuatro--color);
+  --checkbox--border-color-hover: var(--bg-cinco--color);
+  --checkbox--border-color-focus: var(--outline-uno--color);
   
-  --checkbox--checked-bg: var(--color-bg-primary);
-  --checkbox--checked-bg-hover: var(--color-bg-primary-hover);
-  --checkbox--checked-border-color: var(--color-bg-primary);
+  --checkbox--checked-bg: var(--bg-primary--color);
+  --checkbox--checked-bg-hover: var(--bg-primary--color-hover);
+  --checkbox--checked-border-color: var(--bg-primary--color);
   --checkbox--checkmark-color: white;
 
-  --checkbox--label-color: var(--color-font-uno);
+  --checkbox--label-color: var(--font-uno--color);
   --checkbox--label-margin-left: var(--px-8);
 
   /* Disabled state */
-  --checkbox--disabled-bg: var(--color-bg-dos);
-  --checkbox--disabled-border-color: var(--color-bg-tres);
-  --checkbox--disabled-checkmark-color: var(--color-font-cinco);
+  --checkbox--disabled-bg: var(--bg-dos--color);
+  --checkbox--disabled-border-color: var(--bg-tres--color);
+  --checkbox--disabled-checkmark-color: var(--font-cinco--color);
 }
 

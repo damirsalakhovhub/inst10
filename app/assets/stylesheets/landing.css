@@ -31,7 +31,7 @@ main {
 
 .text-hero {
   font-size: var(--px-32);
-  color: var(--color-font-tres);
+  color: var(--font-tres--color);
   line-height: 1.35;
   max-width: 70vw;
 }
@@ -51,7 +51,7 @@ main {
   width: 50vw;
   min-width: 600px;
 
-  background-color: var(--color-bg-uno);
+  background-color: var(--bg-uno--color);
   padding: var(--px-32);
   padding-top: var(--px-28);
   border-radius: var(--radius-l);

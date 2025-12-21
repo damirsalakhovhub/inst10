@@ -1,12 +1,12 @@
 .ui-kit {
   display: flex;
   flex-direction: row;
-  background-color: var(--color-bg-base);
+  background-color: var(--bg-color-base);
 }
 
 .ui-kit-sidebar {
   width: clamp(200px, 15vw, 300px);
-  background-color: var(--color-bg-uno);
+  /* background-color: var(--bg-uno--color); */
   flex-shrink: 0; 
   /* height: 100vh; */
 }
@@ -19,7 +19,7 @@
 .ui-kit-nav-link {
   display: flex;
   align-items: center;
-  color: var(--color-font-tres);
+  color: var(--font-tres--color);
   text-decoration: none;
   height: var(--px-40);
   padding-inline: var(--px-12);
@@ -27,13 +27,13 @@
 }
 
 .ui-kit-nav-link:hover {
-  background: var(--color-bg-dos);
-  color: var(--color-font-uno);
+  background: var(--bg-dos--color);
+  color: var(--font-uno--color);
   text-decoration: none;
 }
 
 .ui-kit-nav-link.active {
-  background: var(--color-bg-dos);
+  background: var(--bg-dos--color);
 }
 
 .ui-kit-main {
@@ -43,6 +43,7 @@
   padding: var(--px-48) var(--px-64);
   margin: 0 auto;
   width: 100%;
+  background-color: var(--bg-uno--color);
 }
 
 .ui-kit-section {

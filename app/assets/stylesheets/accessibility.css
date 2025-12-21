@@ -26,7 +26,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 a:focus-visible {
-  outline: 2px solid var(--color-outline-uno);
+  outline: 2px solid var(--outline-uno--color);
   outline-offset: 2px;
 }
 
@@ -78,8 +78,8 @@ a:focus:not(:focus-visible) {
   top: calc(var(--px-40) * -1);
   left: 0;
   padding: var(--px-12) var(--px-16);
-  background: var(--color-bg-base);
-  color: var(--color-font-uno);
+  background: var(--bg-color-base);
+  color: var(--font-uno--color);
   text-decoration: none;
   font-weight: var(--font-semibold);
   z-index: 9999;

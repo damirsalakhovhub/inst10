@@ -45,30 +45,34 @@
   line-height: 1;
   font-weight: 500;
   
-  background-color: var(--element--bg-color-transp);
-  outline: solid 1px var(--color-border-dos);
+  background-color: var(--element--bg-transp--color);
+  outline: solid 1px var(--element--border-color);
   border-radius: var(--element--border-radius);
-  color: var(--color-font-uno);
+  color: var(--font-uno--color);
   
   transition: background-color 0.1s linear;
   
   &:hover:not(:disabled) {
-    outline: solid 1px var(--element--border-color);
-    outline-offset: -1px;
-  }
-
-  &:focus:not(:disabled) {
-    outline: solid 2px var(--element--border-color-active);
-    outline-offset: 1px;
+    outline: solid 1px var(--element--border-color-hover);
 
     &::placeholder {
       opacity: 0.75;
     }
+    /* outline-offset: -1px; */
+  }
+
+  &:focus:not(:disabled) {
+    outline: solid 2px var(--element--border-color-hover);
+    outline-offset: 1px;
+
+    &::placeholder {
+      opacity: 0.60;
+    }
   }
 
   &:disabled {
-    background-color: var(--disabled--bg-color);
-    color: var(--disabled--font-color);
+    background-color: var(--bg-disabled--color);
+    color: var(--font-disabled--color);
     cursor: not-allowed;
   }
 
@@ -78,7 +82,7 @@
   }
 
   &:disabled::placeholder {
-    color: var(--disabled--font-color);
+    color: var(--font-disabled--color);
   }
 }
 
@@ -99,7 +103,7 @@
   flex-shrink: 0;
   width: var(--input--icon-size);
   height: var(--input--icon-size);
-  color: var(--color-font-tres);
+  color: var(--font-tres--color);
   pointer-events: none;
 }
 
@@ -114,7 +118,7 @@
 }
 
 .input-wrapper:has(.input:disabled) .input-icon {
-  color: var(--disabled--font-color);
+  color: var(--font-disabled--color);
 }
 
 .input-with-icon {
@@ -135,14 +139,14 @@
 }
 
 .input-wrapper:has(.input:disabled) .input-label {
-  color: var(--disabled--font-color);
+  color: var(--font-disabled--color);
   cursor: not-allowed;
 }
 
 
 /* Description ------------------------------------------------------------ */
 .input-description {
-  color: var(--color-font-cinco);
+  color: var(--font-cinco--color);
   font-weight: 400;
 }
 

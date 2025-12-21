@@ -36,11 +36,12 @@
     outline-width: var(--element--focus-outline-width);
     outline-style: var(--element--focus-outline-style);
     outline-offset: var(--element--focus-outline-offset);
+    outline-color: var(--element--border-color-hover);
   }
 
   &:disabled {
-    background-color: var(--disabled--bg-color);
-    color: var(--disabled--font-color);
+    background-color: var(--bg-disabled--color);
+    color: var(--font-disabled--color);
     cursor: not-allowed;
   }
 }
@@ -187,17 +188,27 @@
 /* Variants ------------------------------------------------------------ */
 
 .btn-primary {
-  background-color: var(--color-bg-primary);
+  background-color: var(--bg-primary--color);
   color: var(--white);
-  &:hover:not(:disabled) { background-color: var(--color-bg-primary-hover); }
-  &:active:not(:disabled) { background-color: var(--color-bg-primary-active); }
+  &:hover:not(:disabled) { background-color: var(--bg-primary--color-hover); }
+  &:active:not(:disabled) { background-color: var(--bg-primary--color-active); }
+
+  &:focus-visible {
+    outline-color: var(--bg-primary--color-hover);
+  }
 }
 
+
+
 .btn-contrast {
-  background-color: var(--color-bg-invert);
-  color: var(--color-font-invert);
-  &:hover:not(:disabled) { background-color: var(--color-bg-invert-hover); }
-  &:active:not(:disabled) { background-color: var(--color-bg-invert-active); }
+  background-color: var(--bg-invert--color);
+  color: var(--font-invert--color);
+  &:hover:not(:disabled) { background-color: var(--bg-invert--color-hover); }
+  &:active:not(:disabled) { background-color: var(--bg-invert--color-active); }
+
+  &:focus-visible {
+    outline-color: var(--bg-invert--color-hover);
+  }
 }
 
 .btn-rounded {

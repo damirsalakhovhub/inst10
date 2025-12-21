@@ -23,8 +23,8 @@ body {
   font-family: var(--font-family-sans);
   font-size: var(--font-size-m);
   line-height: var(--px-20);
-  color: var(--color-font-uno);
-  background: var(--color-bg-base);
+  color: var(--font-uno--color);
+  background: var(--bg-color-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
