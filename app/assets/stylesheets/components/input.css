@@ -1,8 +1,8 @@
 .input-wrapper {
-  --input--height: var(--element-medium--height);
-  --input--icon-size: var(--element-medium--icon-size);
+  --input--height: var(--element-m--height);
+  --input--icon-size: var(--element-m--icon-size);
   --input--padding-inline: var(--element--padding-inline);
-  --input--font-size: var(--element-medium--font-size);
+  --input--font-size: var(--element-m--font-size);
 
   display: flex;
   flex-direction: column;
@@ -13,22 +13,22 @@
 /* Sizes ------------------------------------------------------------ */
 
 .input-wrapper-tiny {
-  --input--height: var(--element-tiny--height);
-  --input--icon-size: var(--element-tiny--icon-size);
-  --input--font-size: var(--element-tiny--font-size);
+  --input--height: var(--element-xs--height);
+  --input--icon-size: var(--element-xs--icon-size);
+  --input--font-size: var(--element-xs--font-size);
 }
 
 .input-wrapper-small {
-  --input--height: var(--element-small--height);
-  --input--icon-size: var(--element-small--icon-size);
-  --input--font-size: var(--element-small--font-size);
+  --input--height: var(--element-s--height);
+  --input--icon-size: var(--element-s--icon-size);
+  --input--font-size: var(--element-s--font-size);
 }
 
 .input-wrapper-large {
-  --input--height: var(--element-large--height);
-  --input--icon-size: var(--element-large--icon-size);
-  --input--font-size: var(--element-large--font-size);
-  --input--padding-inline: var(--element-large--padding-inline);
+  --input--height: var(--element-l--height);
+  --input--icon-size: var(--element-l--icon-size);
+  --input--font-size: var(--element-l--font-size);
+  --input--padding-inline: var(--element-l--padding-inline);
 }
 
 
@@ -46,6 +46,7 @@
   font-weight: 500;
   
   background-color: var(--element--bg-color-transp);
+  outline: solid 1px var(--color-border-dos);
   border-radius: var(--element--border-radius);
   color: var(--color-font-uno);
   

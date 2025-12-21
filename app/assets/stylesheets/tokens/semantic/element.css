@@ -24,39 +24,39 @@
 
 
   /* Tiny */
-  --element-tiny--height: var(--px-24);
-  --element-tiny--font-size: var(--px-12);
-  --element-tiny--line-height: var(--px-16);
-  --element-tiny--icon-size: var(--px-16);
+  --element-xs--height: var(--px-24);
+  --element-xs--font-size: var(--px-12);
+  --element-xs--line-height: var(--px-16);
+  --element-xs--icon-size: var(--px-16);
 
   /* Small */
-  --element-small--height: var(--px-32);
-  --element-small--font-size: var(--px-14);
-  --element-small--line-height: var(--px-20);
-  --element-small--icon-size: var(--px-20);
+  --element-s--height: var(--px-32);
+  --element-s--font-size: var(--px-14);
+  --element-s--line-height: var(--px-20);
+  --element-s--icon-size: var(--px-20);
 
   /* Medium */
-  --element-medium--height: var(--px-40);
-  --element-medium--font-size: var(--px-16);
-  --element-medium--line-height: var(--px-24);
-  --element-medium--icon-size: var(--px-24);
+  --element-m--height: var(--px-40);
+  --element-m--font-size: var(--px-16);
+  --element-m--line-height: var(--px-24);
+  --element-m--icon-size: var(--px-24);
 
   /* Large */
-  --element-large--height: var(--px-48);
-  --element-large--font-size: var(--px-18);
-  --element-large--line-height: var(--px-28);
-  --element-large--padding-inline: var(--px-16);
-  --element-large--icon-size: var(--px-28);
+  --element-l--height: var(--px-48);
+  --element-l--font-size: var(--px-18);
+  --element-l--line-height: var(--px-28);
+  --element-l--padding-inline: var(--px-16);
+  --element-l--icon-size: var(--px-28);
 
   /* Grand */
-  --element-grand--height: var(--px-56);
-  --element-grand--font-size: var(--px-20);
-  --element-grand--line-height: var(--px-32);
-  --element-grand--icon-size: var(--px-32);
+  --element-xl--height: var(--px-56);
+  --element-xl--font-size: var(--px-20);
+  --element-xl--line-height: var(--px-32);
+  --element-xl--icon-size: var(--px-32);
 
   /* Huge */
-  --element-huge--height: var(--px-64);
-  --element-huge--font-size: var(--px-24);
-  --element-huge--line-height: var(--px-36);
-  --element-huge--icon-size: var(--px-36);
+  --element-xxl--height: var(--px-64);
+  --element-xxl--font-size: var(--px-24);
+  --element-xxl--line-height: var(--px-36);
+  --element-xxl--icon-size: var(--px-36);
 }

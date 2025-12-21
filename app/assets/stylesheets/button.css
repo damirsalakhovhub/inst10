@@ -1,6 +1,6 @@
 .btn {
-  --btn--height: var(--element-medium--height);
-  --btn--icon-size: var(--element-medium--icon-size);
+  --btn--height: var(--element-m--height);
+  --btn--icon-size: var(--element-m--icon-size);
   --btn--padding-inline: var(--element--padding-inline);
   --btn--optical-compensation: 0.125em;
 
@@ -12,8 +12,8 @@
   
   padding-inline: var(--btn--padding-inline);
   
-  height: var(--element-medium--height);
-  font-size: var(--element-medium--font-size);
+  height: var(--element-m--height);
+  font-size: var(--element-m--font-size);
   line-height: 1;
   font-weight: 500;
   
@@ -151,37 +151,37 @@
 /* Sizes ------------------------------------------------------------ */
 
 .btn-tiny {
-  height: var(--element-tiny--height);
-  font-size: var(--element-tiny--font-size);
-  --btn--icon-size: var(--element-tiny--icon-size);
+  height: var(--element-xs--height);
+  font-size: var(--element-xs--font-size);
+  --btn--icon-size: var(--element-xs--icon-size);
 }
 
 .btn-tiny.btn-icon-only {
-  width: var(--element-tiny--height);
-  min-width: var(--element-tiny--height);
+  width: var(--element-xs--height);
+  min-width: var(--element-xs--height);
 }
 
 .btn-small {
-  height: var(--element-small--height);
-  font-size: var(--element-small--font-size);
-  --btn--icon-size: var(--element-small--icon-size);
+  height: var(--element-s--height);
+  font-size: var(--element-s--font-size);
+  --btn--icon-size: var(--element-s--icon-size);
 }
 
 .btn-small.btn-icon-only {
-  width: var(--element-small--height);
-  min-width: var(--element-small--height);
+  width: var(--element-s--height);
+  min-width: var(--element-s--height);
 }
 
 .btn-large {
-  height: var(--element-large--height);
-  font-size: var(--element-large--font-size);
-  --btn--padding-inline: var(--element-large--padding-inline);
-  --btn--icon-size: var(--element-large--icon-size);
+  height: var(--element-l--height);
+  font-size: var(--element-l--font-size);
+  --btn--padding-inline: var(--element-l--padding-inline);
+  --btn--icon-size: var(--element-l--icon-size);
 }
 
 .btn-large.btn-icon-only {
-  width: var(--element-large--height);
-  min-width: var(--element-large--height);
+  width: var(--element-l--height);
+  min-width: var(--element-l--height);
 }
 
 /* Variants ------------------------------------------------------------ */
