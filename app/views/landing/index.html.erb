@@ -7,9 +7,14 @@
     
   </section>
 
-  <section class="email-first-card">
+  
+    
 
-    <%# <h4 class="text-accent">Name your workspace:</h4> %>
+              
+  
+
+  
+  <section class="email-first-card">
 
     <form class="email-first-form column" action="#" method="post">
 
@@ -20,7 +25,7 @@
         type: "text",
         placeholder: "Acme company",
         required: false,
-        size: :large,
+        size: :medium,
         wrapper_class: "email-first-input"
       %>
 
@@ -31,7 +36,7 @@
         type: "text",
         placeholder: "Development",
         required: false,
-        size: :large,
+        size: :medium,
         wrapper_class: "email-first-input"
       %>
     
@@ -41,29 +46,31 @@
         type: "email",
         placeholder: "you@example.com",
         required: true,
-        size: :large,
+        size: :medium,
         wrapper_class: "email-first-input"
       %>
       
-      
+      <div class="hero-section-buttons">
       <%= render "shared/button", 
-        text: "Continue", 
+        text: "Continue with email", 
         variant: :contrast, 
         type: :submit, 
         class: "email-first-button",
-        size: :large
+        size: :medium
       %>
-    </form>
 
-    <%# <p>We will send you a code on this email.</p> %>
-
-        <%#= render "shared/button", 
-        text: "Authorize via Google", 
+      <%= render "shared/button", 
+        text: "Continue with Google", 
         variant: :default, 
         type: :submit, 
-        size: :small%>
+        class: "email-first-button",
+        size: :medium
+      %>
+      </div>
+    </form>
 
   </section>
+  
 
     
 

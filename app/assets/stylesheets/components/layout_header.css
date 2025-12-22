@@ -19,8 +19,8 @@
 }
 
 .layout-header--brand {
-  font-weight: 700;
-  font-size: var(--px-26);
+  font-weight: 600;
+  font-size: var(--px-22);
   
   
   a {

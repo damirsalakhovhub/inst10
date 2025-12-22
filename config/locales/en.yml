@@ -2,7 +2,8 @@ en:
   hello: "Hello world"
   
   common:
-    app_name: "IMASUGU 今すぐ"
+    app_name: "IMAGUSU イマグス 0.1"
+    # app_name: "Instantum"
     sign_out: "Sign Out"
 
   home:
@@ -15,7 +16,7 @@ en:
       already_signed_out: ""
   
   landing:
-    title: "Fast workflows, driven by simplicity."
+    title: "Fast workflows driven by simplicity."
     signed_in_as: "You are signed in as %{email}"
     sign_in:
       title: "Log In"

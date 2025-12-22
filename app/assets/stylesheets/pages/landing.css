@@ -32,7 +32,7 @@
   font-size: clamp(var(--px-40), 8vw, var(--px-64));
   letter-spacing: var(--letters-tight);
   line-height: 1.1;
-  font-weight: 900;
+  font-weight: 800;
   margin-left: -0.025em;
 }
 
